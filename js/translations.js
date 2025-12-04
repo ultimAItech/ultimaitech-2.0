@@ -4,6 +4,7 @@ const translations = {
             mission: "Mission",
             features: "Features",
             industries: "Industries",
+            portfolio: "Portfolio",
             pricing: "Pricing",
             contact: "Contact us Now"
         },
@@ -60,6 +61,32 @@ const translations = {
                 restaurants: "Restaurants"
             }
         },
+        portfolio: {
+            title: "Our Work",
+            subtitle: "Explore how we've transformed digital experiences for hospitality brands.",
+            items: {
+                project1: {
+                    title: "Azure Bay Resort",
+                    category: "Website + AI Chatbot",
+                    description: "A complete digital overhaul for a luxury seaside resort, featuring a seamless booking engine integration and a 24/7 concierge AI."
+                },
+                project2: {
+                    title: "The Urban Loft",
+                    category: "Website Development",
+                    description: "A modern, high-conversion website for a boutique city hotel, focusing on mobile experience and direct booking incentives."
+                },
+                project3: {
+                    title: "Alpine Retreat",
+                    category: "AI Chatbot Integration",
+                    description: "Implemented a multilingual AI concierge to handle guest inquiries and activity bookings for a mountain lodge."
+                },
+                project4: {
+                    title: "Harbor View Dining",
+                    category: "Digital Bundle",
+                    description: "Integrated reservation system and AI assistant for a high-end waterfront restaurant."
+                }
+            }
+        },
         cta: {
             title: "Ready for Your New Website?",
             text: "Get a custom-designed website with your own integrated AI chatbot. Start your digital transformation today.",
@@ -73,18 +100,27 @@ const translations = {
                 subtitle: "Stunning, high-performance websites designed to convert visitors into guests.",
                 essential: {
                     title: "Essential",
-                    period: "one-time setup",
+                    period: "setup + €99/mo",
                     features: ["Modern One-Page Design", "Mobile Responsive", "Basic SEO Setup", "Contact Form Integration", "1 Month Support"]
                 },
                 professional: {
                     title: "Professional",
-                    period: "one-time setup",
+                    period: "setup + €199/mo",
                     features: ["Multi-Page Website (up to 8)", "CMS Integration", "Advanced SEO Optimization", "Booking Engine Link", "3 Months Support"]
                 },
                 premium: {
                     title: "Premium",
                     period: "custom pricing",
                     features: ["Fully Custom Design", "Unlimited Pages", "Advanced Animations", "Multi-Language Setup", "6 Months Support"]
+                },
+                includes: {
+                    title: "Included in Monthly Care Plan",
+                    hosting: "✓ Managed Hosting",
+                    security: "✓ Security Updates",
+                    backups: "✓ Daily Backups",
+                    updates: "✓ Core/Plugin Updates",
+                    monitoring: "✓ Uptime Monitoring",
+                    content: "✓ Monthly Content Changes"
                 }
             },
             chatbot: {
@@ -92,12 +128,12 @@ const translations = {
                 subtitle: "Intelligent, 24/7 guest support trained on your specific property.",
                 basic: {
                     title: "Basic Bot",
-                    period: "setup + €50/mo",
+                    period: "setup + €299/mo",
                     features: ["FAQ Automation", "1 Language", "Website Widget", "Basic Analytics", "Email Handoff"]
                 },
                 smart: {
                     title: "Smart Concierge",
-                    period: "setup + €100/mo",
+                    period: "setup + €499/mo",
                     features: ["Advanced Context Awareness", "3 Languages", "Booking Intent Detection", "Custom Brand Tone", "Monthly Performance Report"]
                 },
                 enterprise: {
@@ -181,6 +217,7 @@ const translations = {
             mission: "Mission",
             features: "Funktionen",
             industries: "Branchen",
+            portfolio: "Portfolio",
             pricing: "Preise",
             contact: "Kontaktieren Sie uns"
         },
@@ -237,6 +274,32 @@ const translations = {
                 restaurants: "Restaurants"
             }
         },
+        portfolio: {
+            title: "Unsere Arbeit",
+            subtitle: "Entdecken Sie, wie wir digitale Erlebnisse für Gastgewerbemarken transformiert haben.",
+            items: {
+                project1: {
+                    title: "Azure Bay Resort",
+                    category: "Website + KI-Chatbot",
+                    description: "Eine komplette digitale Überarbeitung für ein luxuriöses Strandresort, mit nahtloser Buchungsmaschinen-Integration und 24/7 Concierge-KI."
+                },
+                project2: {
+                    title: "The Urban Loft",
+                    category: "Website-Entwicklung",
+                    description: "Eine moderne, konversionsstarke Website für ein Boutique-Stadthotel, fokussiert auf mobile Erfahrung und Direktbuchungsanreize."
+                },
+                project3: {
+                    title: "Alpine Retreat",
+                    category: "KI-Chatbot-Integration",
+                    description: "Implementierung eines mehrsprachigen KI-Concierges zur Bearbeitung von Gästeanfragen und Aktivitätsbuchungen für eine Berghütte."
+                },
+                project4: {
+                    title: "Harbor View Dining",
+                    category: "Digital-Paket",
+                    description: "Integriertes Reservierungssystem und KI-Assistent für ein gehobenes Restaurant am Wasser."
+                }
+            }
+        },
         cta: {
             title: "Bereit für Ihre neue Website?",
             text: "Erhalten Sie eine individuell gestaltete Website mit Ihrem eigenen integrierten KI-Chatbot. Starten Sie Ihre digitale Transformation noch heute.",
@@ -250,18 +313,27 @@ const translations = {
                 subtitle: "Atemberaubende, leistungsstarke Websites, die Besucher in Gäste verwandeln.",
                 essential: {
                     title: "Essential",
-                    period: "Einmalige Einrichtung",
+                    period: "Einrichtung + €99/Monat",
                     features: ["Modernes One-Page-Design", "Mobil optimiert", "Basis SEO-Setup", "Kontaktformular-Integration", "1 Monat Support"]
                 },
                 professional: {
                     title: "Professional",
-                    period: "Einmalige Einrichtung",
+                    period: "Einrichtung + €199/Monat",
                     features: ["Mehrseitige Website (bis zu 8)", "CMS-Integration", "Erweiterte SEO-Optimierung", "Buchungsmaschinen-Link", "3 Monate Support"]
                 },
                 premium: {
                     title: "Premium",
                     period: "Individueller Preis",
                     features: ["Vollständig individuelles Design", "Unbegrenzte Seiten", "Erweiterte Animationen", "Mehrsprachiges Setup", "6 Monate Support"]
+                },
+                includes: {
+                    title: "Im monatlichen Pflegeplan enthalten",
+                    hosting: "✓ Managed Hosting",
+                    security: "✓ Sicherheits-Updates",
+                    backups: "✓ Tägliche Backups",
+                    updates: "✓ Core/Plugin-Updates",
+                    monitoring: "✓ Uptime-Monitoring",
+                    content: "✓ Monatliche Inhaltsänderungen"
                 }
             },
             chatbot: {
@@ -269,12 +341,12 @@ const translations = {
                 subtitle: "Intelligenter 24/7 Gäste-Support, trainiert auf Ihre spezifische Unterkunft.",
                 basic: {
                     title: "Basic Bot",
-                    period: "Einrichtung + €50/Monat",
+                    period: "Einrichtung + €299/Monat",
                     features: ["FAQ-Automatisierung", "1 Sprache", "Website-Widget", "Basis-Analytik", "E-Mail-Übergabe"]
                 },
                 smart: {
                     title: "Smart Concierge",
-                    period: "Einrichtung + €100/Monat",
+                    period: "Einrichtung + €499/Monat",
                     features: ["Erweitertes Kontextverständnis", "3 Sprachen", "Buchungsabsichtserkennung", "Individueller Markenton", "Monatlicher Leistungsbericht"]
                 },
                 enterprise: {
@@ -358,6 +430,7 @@ const translations = {
             mission: "Missie",
             features: "Kenmerken",
             industries: "Sectoren",
+            portfolio: "Portfolio",
             pricing: "Prijzen",
             contact: "Neem nu contact op"
         },
@@ -414,6 +487,32 @@ const translations = {
                 restaurants: "Restaurants"
             }
         },
+        portfolio: {
+            title: "Ons Werk",
+            subtitle: "Ontdek hoe we digitale ervaringen voor horecamerken hebben getransformeerd.",
+            items: {
+                project1: {
+                    title: "Azure Bay Resort",
+                    category: "Website + AI Chatbot",
+                    description: "Een complete digitale revisie voor een luxe badplaats, met naadloze integratie van de boekingsmachine en een 24/7 conciërge AI."
+                },
+                project2: {
+                    title: "The Urban Loft",
+                    category: "Website Ontwikkeling",
+                    description: "Een moderne, hoog-converterende website voor een boetiekhotel in de stad, gericht op mobiele ervaring en directe boekingsprikkels."
+                },
+                project3: {
+                    title: "Alpine Retreat",
+                    category: "AI Chatbot Integratie",
+                    description: "Implementatie van een meertalige AI-conciërge voor het afhandelen van gastvragen en activiteitsboekingen voor een berghut."
+                },
+                project4: {
+                    title: "Harbor View Dining",
+                    category: "Digitale Bundel",
+                    description: "Geïntegreerd reserveringssysteem en AI-assistent voor een high-end restaurant aan het water."
+                }
+            }
+        },
         cta: {
             title: "Klaar voor uw nieuwe website?",
             text: "Krijg een op maat gemaakte website met uw eigen geïntegreerde AI-chatbot. Start vandaag nog uw digitale transformatie.",
@@ -427,18 +526,27 @@ const translations = {
                 subtitle: "Prachtige, krachtige websites ontworpen om bezoekers om te zetten in gasten.",
                 essential: {
                     title: "Essential",
-                    period: "eenmalige installatie",
+                    period: "installatie + €99/mnd",
                     features: ["Modern One-Page Ontwerp", "Mobiel Responsief", "Basis SEO Setup", "Contactformulier Integratie", "1 Maand Ondersteuning"]
                 },
                 professional: {
                     title: "Professional",
-                    period: "eenmalige installatie",
+                    period: "installatie + €199/mnd",
                     features: ["Multi-Page Website (tot 8)", "CMS Integratie", "Geavanceerde SEO Optimalisatie", "Boekingsmachine Koppeling", "3 Maanden Ondersteuning"]
                 },
                 premium: {
                     title: "Premium",
                     period: "aangepaste prijs",
                     features: ["Volledig Aangepast Ontwerp", "Onbeperkt Aantal Pagina's", "Geavanceerde Animaties", "Meertalige Setup", "6 Maanden Ondersteuning"]
+                },
+                includes: {
+                    title: "Inbegrepen in Maandelijks Zorgplan",
+                    hosting: "✓ Managed Hosting",
+                    security: "✓ Beveiligingsupdates",
+                    backups: "✓ Dagelijkse Back-ups",
+                    updates: "✓ Core/Plugin Updates",
+                    monitoring: "✓ Uptime Monitoring",
+                    content: "✓ Maandelijkse Inhoudswijzigingen"
                 }
             },
             chatbot: {
@@ -446,12 +554,12 @@ const translations = {
                 subtitle: "Intelligente, 24/7 gastondersteuning getraind op uw specifieke accommodatie.",
                 basic: {
                     title: "Basic Bot",
-                    period: "installatie + €50/mnd",
+                    period: "installatie + €299/mnd",
                     features: ["FAQ Automatisering", "1 Taal", "Website Widget", "Basis Analytics", "E-mail Overdracht"]
                 },
                 smart: {
                     title: "Smart Concierge",
-                    period: "installatie + €100/mnd",
+                    period: "installatie + €499/mnd",
                     features: ["Geavanceerd Contextbewustzijn", "3 Talen", "Boekingsintentie Detectie", "Aangepaste Merktoon", "Maandelijks Prestatierapport"]
                 },
                 enterprise: {
