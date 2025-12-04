@@ -79,8 +79,9 @@ nav {
 }
 
 .logo img {
-    height: auto;
-    width: 200px;
+    height: 60px;
+    width: auto;
+    max-width: 250px;
     /* No blend mode needed for SVG with transparent background */
     transition: var(--transition);
 }
@@ -371,8 +372,20 @@ h2 {
 
 .industries-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
+}
+
+@media (max-width: 900px) {
+    .industries-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .industries-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .industry-badge {
@@ -685,5 +698,44 @@ textarea.form-control {
     .contact-content-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
+    }
+}
+
+/* Language Switcher */
+.lang-switcher {
+    display: flex;
+    gap: 0.5rem;
+    margin-left: 1rem;
+    align-items: center;
+}
+
+.lang-btn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--color-text-muted);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-family: var(--font-family);
+    transition: var(--transition);
+}
+
+.lang-btn:hover {
+    border-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.lang-btn.active {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+@media (max-width: 768px) {
+    .lang-switcher {
+        margin-left: 0;
+        margin-top: 1rem;
+        justify-content: center;
     }
 }
