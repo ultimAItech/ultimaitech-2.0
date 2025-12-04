@@ -780,23 +780,25 @@ textarea.form-control {
     nav ul {
         position: fixed;
         top: 0;
-        right: -100%;
+        left: 0;
         width: 100%;
         height: 100vh;
         background: rgba(15, 23, 42, 0.98);
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
+        display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         gap: 2rem;
-        transition: 0.4s ease-in-out;
-        z-index: 1000;
+        transform: translateX(100%);
+        transition: transform 0.4s ease-in-out;
+        z-index: 999;
         padding: 0;
     }
 
     nav ul.active {
-        right: 0;
+        transform: translateX(0);
     }
 
     nav ul li a {
@@ -805,5 +807,11 @@ textarea.form-control {
 
     .lang-switcher {
         margin-top: 2rem;
+    }
+
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        text-align: left;
     }
 }
