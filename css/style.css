@@ -154,6 +154,7 @@ nav a:not(.cta-button):hover::after {
     cursor: pointer;
     font-size: 0.95rem;
     box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+    white-space: nowrap;
 }
 
 .cta-button:hover {

@@ -139,7 +139,7 @@ const translations = {
                 enterprise: {
                     title: "Enterprise AI",
                     period: "tailored solution",
-                    features: ["Full PMS Integration", "Unlimited Languages", "Omnichannel (WhatsApp, etc.)", "Dedicated Success Manager", "Priority Support"]
+                    features: ["Full PMS Integration", "Unlimited Languages", "Enterprise Security & GDPR-Compliant Data Storage", "Dedicated Success Manager", "Priority Support"]
                 }
             },
             bundle: {
@@ -352,7 +352,7 @@ const translations = {
                 enterprise: {
                     title: "Enterprise AI",
                     period: "Maßgeschneiderte Lösung",
-                    features: ["Volle PMS-Integration", "Unbegrenzte Sprachen", "Omnichannel (WhatsApp, etc.)", "Dedizierter Success Manager", "Priority Support"]
+                    features: ["Volle PMS-Integration", "Unbegrenzte Sprachen", "Enterprise Security & GDPR-konforme Datenspeicherung", "Dedizierter Success Manager", "Priority Support"]
                 }
             },
             bundle: {
@@ -565,7 +565,7 @@ const translations = {
                 enterprise: {
                     title: "Enterprise AI",
                     period: "op maat gemaakte oplossing",
-                    features: ["Volledige PMS Integratie", "Onbeperkt Aantal Talen", "Omnichannel (WhatsApp, etc.)", "Toegewijde Success Manager", "Prioriteit Ondersteuning"]
+                    features: ["Volledige PMS Integratie", "Onbeperkt Aantal Talen", "Enterprise Security & GDPR-conform Gegevensopslag", "Toegewijde Success Manager", "Prioriteit Ondersteuning"]
                 }
             },
             bundle: {
