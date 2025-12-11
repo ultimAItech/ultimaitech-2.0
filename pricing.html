@@ -1,285 +1,349 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pricing - UltimAItech</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <title>Pricing - ultimAItech</title>
+    <meta name="description" content="Flexible pricing for businesses of all sizes. Start from €299/month.">
+
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/decorative-elements.css">
     <style>
-        .pricing-section-header {
+        .page-hero {
+            padding-top: 140px;
+            padding-bottom: var(--space-16);
+            background: var(--gradient-hero);
             text-align: center;
-            margin-top: 4rem;
-            margin-bottom: 2rem;
+            color: var(--color-white);
+            position: relative;
+            overflow: hidden;
         }
 
-        .pricing-section-header h2 {
-            font-size: 2.2rem;
+        .page-hero h1 {
+            color: var(--color-white);
+            margin-bottom: var(--space-4);
+        }
+
+        .page-hero p {
+            font-size: var(--font-size-xl);
+            color: var(--color-neutral-200);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-8);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .pricing-card {
+            background: rgba(26, 26, 62, 0.4);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            border-radius: var(--radius-2xl);
+            padding: var(--space-10);
+            box-shadow: var(--shadow-lg);
+            text-align: center;
+            position: relative;
+            transition: all var(--transition-base);
+        }
+
+        .pricing-card:hover {
+            border-color: rgba(99, 102, 241, 0.5);
+            box-shadow: var(--shadow-xl), var(--shadow-glow);
+        }
+
+        .pricing-card.featured {
+            background: var(--gradient-primary);
+            color: var(--color-white);
+            transform: scale(1.05);
+            border: none;
+            box-shadow: var(--shadow-neon);
+        }
+
+        .pricing-card.featured * {
             color: var(--color-white);
         }
 
-        .pricing-section-header p {
-            color: var(--color-text-muted);
+        .plan-name {
+            font-size: var(--font-size-2xl);
+            font-weight: var(--font-weight-bold);
+            margin-bottom: var(--space-4);
         }
 
-        .pricing-page-container {
-            padding-top: 120px;
-            padding-bottom: 5rem;
-            background: var(--color-bg);
+        .plan-price {
+            font-size: var(--font-size-5xl);
+            font-weight: var(--font-weight-extrabold);
+            margin-bottom: var(--space-2);
+        }
+
+        .plan-period {
+            font-size: var(--font-size-base);
+            color: var(--color-neutral-400);
+            margin-bottom: var(--space-8);
+        }
+
+        .pricing-card.featured .plan-period {
+            color: var(--color-neutral-200);
+        }
+
+        .plan-features {
+            list-style: none;
+            text-align: left;
+            margin-bottom: var(--space-8);
+        }
+
+        .plan-features li {
+            padding: var(--space-3) 0;
+            border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+        }
+
+        .pricing-card.featured .plan-features li {
+            border-bottom-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .plan-features li::before {
+            content: "✓ ";
+            color: var(--color-primary-400);
+            font-weight: bold;
+            margin-right: var(--space-2);
+        }
+
+        .pricing-card.featured .plan-features li::before {
+            color: var(--color-white);
+        }
+
+        details {
+            margin-bottom: var(--space-6);
+            padding: var(--space-6);
+            background: rgba(26, 26, 62, 0.4);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            border-radius: var(--radius-lg);
+        }
+
+        details summary {
+            font-weight: bold;
+            cursor: pointer;
+            color: var(--color-white);
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        details summary::-webkit-details-marker {
+            display: none;
+        }
+
+        details summary::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--color-primary-400);
+            transition: transform 0.3s ease;
+        }
+
+        details[open] summary::after {
+            transform: rotate(45deg);
+        }
+
+        details:hover {
+            border-color: rgba(99, 102, 241, 0.5);
+            background: rgba(30, 30, 70, 0.6);
+        }
+
+        details p {
+            margin-top: var(--space-4);
+            color: var(--color-neutral-300);
         }
     </style>
 </head>
 
 <body>
-    <!-- Navigation -->
-    <nav>
-        <a href="index.html" class="logo">
-            <img src="images/logo_converted.svg" alt="UltimAItech">
-        </a>
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
+    <nav class="nav">
+        <div class="container nav-container">
+            <a href="./" class="nav-logo" aria-label="ultimAItech Home">
+                <img src="images/logo.svg" alt="ultimAItech" style="height: 62px; width: auto;">
+            </a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="./" class="nav-link">Home</a></li>
+                <li><a href="./services.html" class="nav-link">Services</a></li>
+                <li><a href="./technology.html" class="nav-link">Technology</a></li>
+                <li><a href="./pricing.html" class="nav-link">Pricing</a></li>
+                <li><a href="./about.html" class="nav-link">About</a></li>
+                <li><a href="./contact.html" class="btn btn-primary btn-sm">Contact</a></li>
+                <li class="lang-switcher">
+                    <span class="lang-option active" data-lang="en">EN</span>
+                    <span class="lang-option" data-lang="de">DE</span>
+                    <span class="lang-option" data-lang="nl">NL</span>
+                </li>
+            </ul>
         </div>
-        <ul>
-            <li><a href="index.html#mission" data-i18n="nav.mission">Mission</a></li>
-            <li><a href="index.html#features" data-i18n="nav.features">Features</a></li>
-            <li><a href="index.html#industries" data-i18n="nav.industries">Industries</a></li>
-            <li><a href="about.html" data-i18n="nav.about">About</a></li>
-            <li><a href="portfolio.html" data-i18n="nav.portfolio">Portfolio</a></li>
-            <li><a href="pricing.html" data-i18n="nav.pricing">Pricing</a></li>
-            <li><a href="contact.html" class="cta-button" data-i18n="nav.contact">Contact us Now</a></li>
-            <li class="lang-switcher">
-                <button class="lang-btn" data-lang="nl">NL</button>
-                <button class="lang-btn" data-lang="en">EN</button>
-                <button class="lang-btn" data-lang="de">DE</button>
-            </li>
-        </ul>
     </nav>
 
-    <div class="pricing-page-container">
-        <div class="section-container">
-            <h1 style="text-align: center; margin-bottom: 1rem; font-size: 3.5rem; background: linear-gradient(to right, #ffffff 20%, #94a3b8 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;"
-                data-i18n="pricing.title">Transparent Pricing</h1>
-            <p class="section-subtitle" data-i18n="pricing.subtitle">Choose the perfect solution for your hospitality
-                business.</p>
+    <section class="page-hero" style="position: relative; overflow: hidden;">
+        <div
+            style="position: absolute; inset: 0; background-image: url('images/innovation-technology.png'); background-size: cover; background-position: center; opacity: 0.2; z-index: 0;">
+        </div>
+        <div
+            style="position: absolute; inset: 0; background: radial-gradient(circle at 30% 50%, rgba(99, 102, 241, 0.1) 0%, transparent 50%); z-index: 1;">
+        </div>
+        <div class="glow-orb pink" style="top: 15%; right: 20%;"></div>
+        <div class="glow-orb blue" style="bottom: 20%; left: 15%;"></div>
+        <div class="container" style="position: relative; z-index: 2;">
+            <h1>Pricing Plans</h1>
+            <p>Flexible pricing designed to scale with your business needs</p>
+        </div>
+    </section>
 
-            <!-- Section 1: Website Only -->
-            <div class="pricing-section-header">
-                <h2 data-i18n="pricing.website.title">Website Development</h2>
-                <p data-i18n="pricing.website.subtitle">Stunning, high-performance websites designed to convert visitors
-                    into guests.</p>
-            </div>
+    <section class="section" style="background: var(--color-dark-900);">
+        <div class="container">
             <div class="pricing-grid">
-                <div class="pricing-card">
-                    <h3 data-i18n="pricing.website.essential.title">Essential</h3>
-                    <div class="price">€1,500</div>
-                    <p class="price-period" data-i18n="pricing.website.essential.period">setup + €99/mo</p>
-                    <ul class="pricing-features" data-i18n="pricing.website.essential.features">
-                        <li>Modern One-Page Design</li>
-                        <li>Mobile Responsive</li>
-                        <li>Basic SEO Setup</li>
-                        <li>Contact Form Integration</li>
-                        <li>1 Month Support</li>
+
+                <div class="pricing-card" data-animate="animate-scaleIn">
+                    <div class="plan-name">Starter</div>
+                    <div class="plan-price">€299</div>
+                    <div class="plan-period">/month</div>
+                    <ul class="plan-features">
+                        <li>1 chatbot</li>
+                        <li>Up to 500 pages crawled</li>
+                        <li>5,000 conversations/month</li>
+                        <li>Email support</li>
+                        <li>Basic analytics</li>
+                        <li>Standard branding</li>
                     </ul>
-                    <a href="contact.html" class="btn-primary" data-i18n="pricing.buttons.start">Get Started</a>
+                    <a href="./contact.html" class="btn btn-primary" style="width: 100%;">Get Started</a>
                 </div>
 
-                <div class="pricing-card featured">
-                    <h3 data-i18n="pricing.website.professional.title">Professional</h3>
-                    <div class="price">€3,200</div>
-                    <p class="price-period" data-i18n="pricing.website.professional.period">setup + €199/mo</p>
-                    <ul class="pricing-features" data-i18n="pricing.website.professional.features">
-                        <li>Multi-Page Website (up to 8)</li>
-                        <li>CMS Integration</li>
-                        <li>Advanced SEO Optimization</li>
-                        <li>Booking Engine Link</li>
-                        <li>3 Months Support</li>
+                <div class="pricing-card featured" data-animate="animate-scaleIn" data-delay="100">
+                    <div class="plan-name">Professional</div>
+                    <div class="plan-price">€799</div>
+                    <div class="plan-period">/month</div>
+                    <ul class="plan-features">
+                        <li>Up to 3 chatbots</li>
+                        <li>Unlimited pages crawled</li>
+                        <li>25,000 conversations/month</li>
+                        <li>Priority support</li>
+                        <li>Advanced analytics</li>
+                        <li>Custom branding</li>
+                        <li>API access</li>
                     </ul>
-                    <a href="contact.html" class="btn-primary" data-i18n="pricing.buttons.start">Get Started</a>
+                    <a href="./contact.html" class="btn btn-accent" style="width: 100%;">Get Started</a>
                 </div>
 
-                <div class="pricing-card">
-                    <h3 data-i18n="pricing.website.premium.title">Premium</h3>
-                    <div class="price">€5,000+</div>
-                    <p class="price-period" data-i18n="pricing.website.premium.period">custom pricing</p>
-                    <ul class="pricing-features" data-i18n="pricing.website.premium.features">
-                        <li>Fully Custom Design</li>
-                        <li>Unlimited Pages</li>
-                        <li>Advanced Animations</li>
-                        <li>Multi-Language Setup</li>
-                        <li>6 Months Support</li>
+                <div class="pricing-card" data-animate="animate-scaleIn" data-delay="200">
+                    <div class="plan-name">Enterprise</div>
+                    <div class="plan-price">Custom</div>
+                    <div class="plan-period">pricing</div>
+                    <ul class="plan-features">
+                        <li>Unlimited chatbots</li>
+                        <li>Unlimited conversations</li>
+                        <li>White-label solution</li>
+                        <li>Dedicated support</li>
+                        <li>Custom integrations</li>
+                        <li>SLA guarantees</li>
+                        <li>On-premise deployment</li>
                     </ul>
-                    <a href="contact.html" class="btn-primary" data-i18n="pricing.buttons.contact">Contact Us</a>
+                    <a href="./contact.html" class="btn btn-secondary" style="width: 100%;">Contact Sales</a>
                 </div>
             </div>
 
-            <div class="website-includes"
-                style="text-align: center; margin-top: 2rem; padding: 2rem; background: rgba(255,255,255,0.03); border-radius: 1rem; border: 1px solid rgba(255,255,255,0.1);">
-                <h4 style="color: var(--color-white); margin-bottom: 1rem; font-size: 1.2rem;"
-                    data-i18n="pricing.website.includes.title">Included in Monthly Care Plan</h4>
+            <div style="margin-top: var(--space-16); text-align: center;">
+                <h2>Add-On Services</h2>
+                <p <p
+                    style="color: var(--color-neutral-300); max-width: 700px; margin: var(--space-4) auto var(--space-12);">
+                    Extend your chatbot capabilities with our premium add-ons
+                </p>
                 <div
-                    style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; color: var(--color-text-muted);">
-                    <span data-i18n="pricing.website.includes.hosting">✓ Managed Hosting</span>
-                    <span data-i18n="pricing.website.includes.security">✓ Security Updates</span>
-                    <span data-i18n="pricing.website.includes.backups">✓ Daily Backups</span>
-                    <span data-i18n="pricing.website.includes.updates">✓ Core/Plugin Updates</span>
-                    <span data-i18n="pricing.website.includes.monitoring">✓ Uptime Monitoring</span>
-                    <span data-i18n="pricing.website.includes.content">✓ Monthly Content Changes</span>
+                    style="display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-8); max-width: 800px; margin: 0 auto;">
+                    <div class="pricing-card" data-animate="animate-scaleIn">
+                        <div style="font-size: 3rem; margin-bottom: var(--space-4);">🤖</div>
+                        <h4>Additional Chatbots</h4>
+                        <div class="plan-price" style="font-size: var(--font-size-3xl);">€150</div>
+                        <p style="color: var(--color-neutral-400);">/month per chatbot</p>
+                    </div>
+                    <div class="pricing-card" data-animate="animate-scaleIn" data-delay="100">
+                        <div style="font-size: 3rem; margin-bottom: var(--space-4);">🌐</div>
+                        <h4>Extended Crawl Depth</h4>
+                        <div class="plan-price" style="font-size: var(--font-size-3xl);">€100</div>
+                        <p style="color: var(--color-neutral-400);">/month</p>
+                    </div>
+                    <div class="pricing-card" data-animate="animate-scaleIn" data-delay="200">
+                        <div style="font-size: 3rem; margin-bottom: var(--space-4);">🧠</div>
+                        <h4>Custom Model Training</h4>
+                        <div class="plan-price" style="font-size: var(--font-size-3xl);">€500+</div>
+                        <p style="color: var(--color-neutral-400);">one-time</p>
+                    </div>
+                    <div class="pricing-card" data-animate="animate-scaleIn" data-delay="300">
+                        <div style="font-size: 3rem; margin-bottom: var(--space-4);">💎</div>
+                        <h4>Premium Support</h4>
+                        <div class="plan-price" style="font-size: var(--font-size-3xl);">€300</div>
+                        <p style="color: var(--color-neutral-400);">/month</p>
+                    </div>
                 </div>
             </div>
 
-            <!-- Section 2: Chatbot Only -->
-            <div class="pricing-section-header">
-                <h2 data-i18n="pricing.chatbot.title">AI Chatbot Integration</h2>
-                <p data-i18n="pricing.chatbot.subtitle">Intelligent, 24/7 guest support trained on your specific
-                    property.</p>
-            </div>
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <h3 data-i18n="pricing.chatbot.basic.title">Basic Bot</h3>
-                    <div class="price">€950</div>
-                    <p class="price-period" data-i18n="pricing.chatbot.basic.period">setup + €299/mo</p>
-                    <ul class="pricing-features" data-i18n="pricing.chatbot.basic.features">
-                        <li>FAQ Automation</li>
-                        <li>1 Language</li>
-                        <li>Website Widget</li>
-                        <li>Basic Analytics</li>
-                        <li>Email Handoff</li>
-                    </ul>
-                    <a href="contact.html" class="btn-primary" data-i18n="pricing.buttons.start">Get Started</a>
+            <div style="margin-top: var(--space-16); text-align: center;">
+                <h2>Frequently Asked Questions</h2>
+                <div style="max-width: 800px; margin: var(--space-8) auto; text-align: left;">
+                    <details>
+                        <summary>Can I upgrade or downgrade my plan?</summary>
+                        <p>Yes, you can change your plan at any time. Changes take effect at the start of your next
+                            billing cycle.</p>
+                    </details>
+                    <details>
+                        <summary>What happens if I exceed my conversation limit?</summary>
+                        <p>We'll notify you when you're approaching your limit. You can upgrade your plan or purchase
+                            additional conversation credits.</p>
+                    </details>
+                    <details>
+                        <summary>Is there a setup fee?</summary>
+                        <p>No setup fees. You only pay the monthly subscription based on your chosen plan.</p>
+                    </details>
+                    <details>
+                        <summary>Do you offer a free trial?</summary>
+                        <p>Yes! Contact us to schedule a demo and trial period for your business.</p>
+                    </details>
                 </div>
-
-                <div class="pricing-card featured">
-                    <h3 data-i18n="pricing.chatbot.smart.title">Smart Concierge</h3>
-                    <div class="price">€1,800</div>
-                    <p class="price-period" data-i18n="pricing.chatbot.smart.period">setup + €499/mo</p>
-                    <ul class="pricing-features" data-i18n="pricing.chatbot.smart.features">
-                        <li>Advanced Context Awareness</li>
-                        <li>3 Languages</li>
-                        <li>Booking Intent Detection</li>
-                        <li>Custom Brand Tone</li>
-                        <li>Monthly Performance Report</li>
-                    </ul>
-                    <a href="contact.html" class="btn-primary" data-i18n="pricing.buttons.start">Get Started</a>
-                </div>
-
-                <div class="pricing-card">
-                    <h3 data-i18n="pricing.chatbot.enterprise.title">Enterprise AI</h3>
-                    <div class="price">Custom</div>
-                    <p class="price-period" data-i18n="pricing.chatbot.enterprise.period">tailored solution</p>
-                    <ul class="pricing-features" data-i18n="pricing.chatbot.enterprise.features">
-                        <li>Full PMS Integration</li>
-                        <li>Unlimited Languages</li>
-                        <li>Enterprise Security & GDPR-Compliant Data Storage</li>
-                        <li>Dedicated Success Manager</li>
-                        <li>Priority Support</li>
-                    </ul>
-                    <a href="contact.html" class="btn-primary" data-i18n="pricing.buttons.contact">Contact Us</a>
-                </div>
-            </div>
-
-            <!-- Section 3: Website + Chatbot Bundle -->
-            <div class="pricing-section-header">
-                <h2 data-i18n="pricing.bundle.title">Complete Digital Bundle</h2>
-                <p data-i18n="pricing.bundle.subtitle">The ultimate package: a new website seamlessly integrated with
-                    your custom AI.</p>
-            </div>
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <h3 data-i18n="pricing.bundle.starter.title">Starter Bundle</h3>
-                    <div class="price">€2,250</div>
-                    <p class="price-period" data-i18n="pricing.bundle.starter.period">setup + €349/mo</p>
-                    <ul class="pricing-features" data-i18n="pricing.bundle.starter.features">
-                        <li>Essential Website</li>
-                        <li>Basic Chatbot Integration</li>
-                        <li>Mobile Optimized</li>
-                        <li>Basic SEO</li>
-                        <li>3 Months Support</li>
-                    </ul>
-                    <a href="contact.html" class="btn-primary" data-i18n="pricing.buttons.start">Get Started</a>
-                </div>
-
-                <div class="pricing-card featured">
-                    <h3 data-i18n="pricing.bundle.growth.title">Growth Bundle</h3>
-                    <div class="price">€4,600</div>
-                    <p class="price-period" data-i18n="pricing.bundle.growth.period">setup + €599/mo</p>
-                    <ul class="pricing-features" data-i18n="pricing.bundle.growth.features">
-                        <li>Professional Website</li>
-                        <li>Smart Concierge Chatbot</li>
-                        <li>Seamless Integration</li>
-                        <li>Multilingual Setup</li>
-                        <li>6 Months Support</li>
-                    </ul>
-                    <a href="contact.html" class="btn-primary" data-i18n="pricing.buttons.start">Get Started</a>
-                </div>
-
-                <div class="pricing-card">
-                    <h3 data-i18n="pricing.bundle.ultimate.title">Ultimate Bundle</h3>
-                    <div class="price">Custom</div>
-                    <p class="price-period" data-i18n="pricing.bundle.ultimate.period">maximum impact</p>
-                    <ul class="pricing-features" data-i18n="pricing.bundle.ultimate.features">
-                        <li>Premium Custom Website</li>
-                        <li>Enterprise AI Solution</li>
-                        <li>Deep System Integration</li>
-                        <li>Advanced Analytics Dashboard</li>
-                        <li>12 Months Priority Support</li>
-                    </ul>
-                    <a href="contact.html" class="btn-primary" data-i18n="pricing.buttons.contact">Contact Us</a>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4 data-i18n="footer.product">Product</h4>
-                <ul>
-                    <li><a href="index.html#features" data-i18n="footer.links.features">Features</a></li>
-                    <li><a href="pricing.html" data-i18n="footer.links.pricing">Pricing</a></li>
-                    <li><a href="security.html" data-i18n="footer.links.security">Security</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4 data-i18n="footer.company">Company</h4>
-                <ul>
-                    <li><a href="index.html#mission" data-i18n="footer.links.mission">Mission</a></li>
-                    <li><a href="about.html" data-i18n="footer.links.about">About</a></li>
-                    <li><a href="#" data-i18n="footer.links.careers">Careers</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4 data-i18n="footer.support">Support</h4>
-                <ul>
-                    <li><a href="#" data-i18n="footer.links.help">Help Center</a></li>
-                    <li><a href="contact.html" data-i18n="footer.links.contact">Contact</a></li>
-                    <li><a href="#" data-i18n="footer.links.status">Status</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4 data-i18n="footer.legal">Legal</h4>
-                <ul>
-                    <li><a href="privacy.html" data-i18n="footer.links.privacy">Privacy</a></li>
-                    <li><a href="#" data-i18n="footer.links.terms">Terms</a></li>
-                    <li><a href="#" data-i18n="footer.links.cookies">Cookies</a></li>
-                </ul>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p data-i18n="footer.copyright">&copy; 2025 UltimAItech. All rights reserved. Empowering hospitality with
-                human-centric AI.</p>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4 class="nav-logo">ultimAItech</h4>
+                    <p>Intelligent Chatbots for Modern Businesses</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <a href="./about.html">About Us</a>
+                    <a href="./contact.html">Contact</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <a href="./services.html">Chatbot Development</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 ultimAItech. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
-    <script src="js/translations.js"></script>
-    <script src="js/script.js"></script>
+    <script type="module" src="js/i18n.js"></script>
+    <script type="module" src="js/navigation.js"></script>
+    <script type="module" src="js/animations.js"></script>
 </body>
 
 </html>

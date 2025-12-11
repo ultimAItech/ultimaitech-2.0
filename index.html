@@ -1,226 +1,333 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UltimAItech - Human-Centric AI for Hospitality</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ultimAItech - Intelligent Chatbots for Modern Businesses</title>
+  <meta name="description"
+    content="Deploy AI-powered chatbot solutions trained on your content. RAG technology, simple integration, full lifecycle management.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="ultimAItech - Intelligent Chatbots for Modern Businesses">
+  <meta property="og:description" content="Deploy AI-powered chatbot solutions trained on your content.">
+  <meta property="og:type" content="website">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/decorative-elements.css">
 </head>
 
 <body>
-    <!-- Navigation -->
-    <nav>
-        <a href="index.html" class="logo">
-            <img src="images/logo_converted.svg" alt="UltimAItech">
-        </a>
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="container nav-container">
+      <a href="./" class="nav-logo" aria-label="ultimAItech Home">
+        <img src="images/logo.svg" alt="ultimAItech" style="height: 62px; width: auto;">
+      </a>
+
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-menu">
+        <li><a href="./" class="nav-link" data-i18n="nav.home">Home</a></li>
+        <li><a href="./services.html" class="nav-link" data-i18n="nav.services">Services</a></li>
+        <li><a href="./technology.html" class="nav-link" data-i18n="nav.technology">Technology</a></li>
+        <li><a href="./pricing.html" class="nav-link" data-i18n="nav.pricing">Pricing</a></li>
+        <li><a href="./about.html" class="nav-link" data-i18n="nav.about">About</a></li>
+        <li><a href="./contact.html" class="btn btn-primary btn-sm">Contact</a></li>
+
+        <!-- Language Switcher -->
+        <li class="lang-switcher">
+          <span class="lang-option active" data-lang="en">EN</span>
+          <span class="lang-option" data-lang="de">DE</span>
+          <span class="lang-option" data-lang="nl">NL</span>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-background">
+      <div class="glow-orb blue" style="top: 10%; left: 5%;"></div>
+      <div class="glow-orb purple" style="top: 50%; right: 10%;"></div>
+      <div class="glow-orb pink" style="bottom: 20%; left: 40%;"></div>
+      <div class="tech-pattern"></div>
+    </div>
+    <div class="container">
+      <div class="hero-content" data-animate="animate-fadeInUp">
+        <h1 class="hero-title" data-i18n="hero.headline">
+          Intelligent Chatbots That Understand Your Business
+        </h1>
+        <p class="hero-subtitle" data-i18n="hero.subheadline">
+          Deploy AI-powered conversational agents trained on your website content. No coding required.
+        </p>
+        <div class="hero-ctas">
+          <a href="./contact.html" class="btn btn-primary btn-lg" data-i18n="hero.cta_primary">
+            Get Your Custom Chatbot
+          </a>
+          <a href="#how-it-works" class="btn btn-secondary btn-lg" data-i18n="hero.cta_secondary">
+            See How It Works
+          </a>
         </div>
-        <ul>
-            <li><a href="#mission" data-i18n="nav.mission">Mission</a></li>
-            <li><a href="#features" data-i18n="nav.features">Features</a></li>
-            <li><a href="index.html#industries" data-i18n="nav.industries">Industries</a></li>
-            <li><a href="about.html" data-i18n="nav.about">About</a></li>
-            <li><a href="portfolio.html" data-i18n="nav.portfolio">Portfolio</a></li>
-            <li><a href="pricing.html" data-i18n="nav.pricing">Pricing</a></li>
-            <li><a href="contact.html" class="cta-button" data-i18n="nav.contact">Contact us Now</a></li>
-            <li class="lang-switcher">
-                <button class="lang-btn" data-lang="nl">NL</button>
-                <button class="lang-btn" data-lang="en">EN</button>
-                <button class="lang-btn" data-lang="de">DE</button>
-            </li>
-        </ul>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1 data-i18n="hero.title">Stunning Websites. Intelligent Chatbots.</h1>
-            <p data-i18n="hero.subtitle">We build premium, high-converting websites for hospitality brands, seamlessly
-                integrated with your own custom AI chatbot to serve guests 24/7.</p>
-            <div class="hero-buttons">
-                <a href="contact.html" class="btn-primary" data-i18n="hero.cta_primary">Build Your Digital Presence</a>
-                <a href="portfolio.html" class="btn-secondary" data-i18n="hero.cta_secondary">See Our Work</a>
+      </div>
+      <div class="hero-visual" data-animate="animate-fadeIn" data-delay="300">
+        <div class="chatbot-mockup">
+          <div class="mockup-window">
+            <div class="mockup-header">
+              <div class="mockup-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <div class="mockup-title">AI Assistant</div>
             </div>
+            <div class="mockup-chat">
+              <div class="chat-message bot">
+                <div class="avatar bot-avatar"></div>
+                <div class="message-bubble">Hi! How can I help you today?</div>
+              </div>
+              <div class="chat-message user">
+                <div class="message-bubble">What are your business hours?</div>
+                <div class="avatar user-avatar"></div>
+              </div>
+              <div class="chat-message bot">
+                <div class="avatar bot-avatar"></div>
+                <div class="message-bubble">We're open Monday-Friday, 9 AM to 6 PM EST. How else can I assist you?</div>
+              </div>
+            </div>
+            <div class="mockup-input">
+              <input type="text" placeholder="Type your message..." disabled>
+            </div>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- Mission Section (New) -->
-    <section id="mission">
-        <div class="section-container">
-            <h2 data-i18n="mission.title">Your Digital Front Desk</h2>
-            <p class="section-subtitle" style="max-width: 800px; margin-left: auto; margin-right: auto;"
-                data-i18n="mission.subtitle">
-                A complete digital presence designed to convert visitors into guests.
-            </p>
-            <div style="text-align: center; max-width: 800px; margin: 0 auto; font-size: 1.1rem; line-height: 1.8;">
-                <p data-i18n="mission.text">UltimAItech creates the perfect digital experience for your property. We
-                    combine modern,
-                    high-performance website design with a custom-trained chatbot that speaks your brand's voice. It's
-                    not just a website; it's a 24/7 sales and support engine that frees your team to focus on the guest
-                    in front of them.</p>
-            </div>
+  <!-- Value Propositions -->
+  <section class="section values">
+    <div class="container">
+      <h2 class="section-title text-center" data-i18n="values.title" data-animate="animate-fadeInUp">
+        Why Choose ultimAItech
+      </h2>
+
+      <div class="values-grid">
+        <div class="value-card card card-gradient" data-animate="animate-fadeInUp" data-delay="0">
+          <div class="value-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+              <path d="M2 17l10 5 10-5M2 12l10 5 10-5"></path>
+            </svg>
+          </div>
+          <h3 data-i18n="values.trained_title">Trained on Your Content</h3>
+          <p data-i18n="values.trained_desc">RAG technology ensures accurate, contextual responses based on your
+            business knowledge</p>
         </div>
-    </section>
 
-    <!-- Features Section -->
-    <section id="features" class="features">
-        <div class="section-container">
-            <h2 data-i18n="features.title">Your Complete Digital Solution</h2>
-            <p class="section-subtitle" data-i18n="features.subtitle">Everything you need to impress guests online and
-                drive direct bookings.</p>
-
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">💬</div>
-                    <h3 data-i18n="features.cards.chatbot.title">Your Custom Chatbot</h3>
-                    <p data-i18n="features.cards.chatbot.text">A dedicated AI assistant trained specifically on your
-                        property's details. It answers questions
-                        and guides bookings just like your best staff member would.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">💻</div>
-                    <h3 data-i18n="features.cards.design.title">Modern Web Design</h3>
-                    <p data-i18n="features.cards.design.text">We build fast, stunning websites optimized for mobile and
-                        designed to turn visitors into
-                        confirmed bookings.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">🌍</div>
-                    <h3 data-i18n="features.cards.multilingual.title">Multilingual Ready</h3>
-                    <p data-i18n="features.cards.multilingual.text">Your website and chatbot automatically adapt to your
-                        guest's language, ensuring a warm welcome
-                        for travelers from anywhere.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">🧠</div>
-                    <h3 data-i18n="features.cards.brand.title">Trained on Your Brand</h3>
-                    <p data-i18n="features.cards.brand.text">Your chatbot learns your tone, your policies, and your
-                        unique offers. It's an extension of your
-                        team, available 24/7.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
-                    <h3 data-i18n="features.cards.integration.title">Seamless Integration</h3>
-                    <p data-i18n="features.cards.integration.text">Your new website and chatbot work in perfect harmony.
-                        No clunky plugins—just a smooth, unified
-                        experience for your guests.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">📈</div>
-                    <h3 data-i18n="features.cards.booking.title">Direct Booking Focus</h3>
-                    <p data-i18n="features.cards.booking.text">Every element of your site and chatbot is engineered to
-                        encourage guests to book directly with
-                        you, saving on commission fees.</p>
-                </div>
-            </div>
+        <div class="value-card card card-gradient" data-animate="animate-fadeInUp" data-delay="100">
+          <div class="value-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="m9 12 2 2 4-4"></path>
+            </svg>
+          </div>
+          <h3 data-i18n="values.deploy_title">Deploy in Minutes</h3>
+          <p data-i18n="values.deploy_desc">Simple embedding widget with no technical expertise needed</p>
         </div>
-    </section>
 
-    <!-- Industries Section -->
-    <section id="industries" class="industries">
-        <div class="section-container">
-            <h2 data-i18n="industries.title">Created for Every Host</h2>
-            <p class="section-subtitle" data-i18n="industries.subtitle">Whether you run a cozy B&B or a bustling resort,
-                we help you host better.</p>
-
-            <div class="industries-grid">
-                <div class="industry-badge">
-                    <div class="industry-badge-icon">🏨</div>
-                    <h3 data-i18n="industries.items.hotels">Hotels</h3>
-                </div>
-                <div class="industry-badge">
-                    <div class="industry-badge-icon">🏖️</div>
-                    <h3 data-i18n="industries.items.resorts">Resorts</h3>
-                </div>
-                <div class="industry-badge">
-                    <div class="industry-badge-icon">✨</div>
-                    <h3 data-i18n="industries.items.experience">Experience Brands</h3>
-                </div>
-                <div class="industry-badge">
-                    <div class="industry-badge-icon">🏕️</div>
-                    <h3 data-i18n="industries.items.campings">Campings</h3>
-                </div>
-                <div class="industry-badge">
-                    <div class="industry-badge-icon">⛵</div>
-                    <h3 data-i18n="industries.items.boat">Boat Rentals</h3>
-                </div>
-                <div class="industry-badge">
-                    <div class="industry-badge-icon">🍽️</div>
-                    <h3 data-i18n="industries.items.restaurants">Restaurants</h3>
-                </div>
-            </div>
+        <div class="value-card card card-gradient" data-animate="animate-fadeInUp" data-delay="200">
+          <div class="value-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path
+                d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
+              </path>
+            </svg>
+          </div>
+          <h3 data-i18n="values.management_title">Full Management</h3>
+          <p data-i18n="values.management_desc">Complete development, training, deployment, and ongoing maintenance
+            included</p>
         </div>
-    </section>
 
-
-
-    <!-- CTA Section -->
-    <section id="contact" class="cta-section">
-        <div class="section-container">
-            <h2 data-i18n="cta.title">Ready for Your New Website?</h2>
-            <p data-i18n="cta.text">Get a custom-designed website with your own integrated AI chatbot. Start your
-                digital transformation today.</p>
-            <a href="contact.html" class="btn-primary" data-i18n="cta.button">Get Your Free Proposal</a>
+        <div class="value-card card card-gradient" data-animate="animate-fadeInUp" data-delay="300">
+          <div class="value-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="7" height="7"></rect>
+              <rect x="14" y="3" width="7" height="7"></rect>
+              <rect x="14" y="14" width="7" height="7"></rect>
+              <rect x="3" y="14" width="7" height="7"></rect>
+            </svg>
+          </div>
+          <h3 data-i18n="values.scalable_title">Multi-Tenant Architecture</h3>
+          <p data-i18n="values.scalable_desc">Scalable solution supporting multiple chatbots and clients</p>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4 data-i18n="footer.product">Product</h4>
-                <ul>
-                    <li><a href="#features" data-i18n="footer.links.features">Features</a></li>
-                    <li><a href="pricing.html" data-i18n="footer.links.pricing">Pricing</a></li>
-                    <li><a href="security.html" data-i18n="footer.links.security">Security</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4 data-i18n="footer.company">Company</h4>
-                <ul>
-                    <li><a href="#mission" data-i18n="footer.links.mission">Mission</a></li>
-                    <li><a href="about.html" data-i18n="footer.links.about">About</a></li>
-                    <li><a href="#" data-i18n="footer.links.careers">Careers</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4 data-i18n="footer.support">Support</h4>
-                <ul>
-                    <li><a href="#" data-i18n="footer.links.help">Help Center</a></li>
-                    <li><a href="contact.html" data-i18n="footer.links.contact">Contact</a></li>
-                    <li><a href="#" data-i18n="footer.links.status">Status</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4 data-i18n="footer.legal">Legal</h4>
-                <ul>
-                    <li><a href="privacy.html" data-i18n="footer.links.privacy">Privacy</a></li>
-                    <li><a href="#" data-i18n="footer.links.terms">Terms</a></li>
-                    <li><a href="#" data-i18n="footer.links.cookies">Cookies</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p data-i18n="footer.copyright">&copy; 2025 UltimAItech. All rights reserved. Empowering hospitality with
-                human-centric AI.</p>
-        </div>
-    </footer>
+  <!-- How It Works -->
+  <section id="how-it-works" class="section how-it-works">
+    <div class="container">
+      <h2 class="section-title text-center" data-i18n="how_it_works.title" data-animate="animate-fadeInUp">
+        How It Works
+      </h2>
 
-    <script src="js/translations.js"></script>
-    <script src="js/script.js"></script>
+      <div class="process-steps">
+        <div class="process-step" data-animate="animate-fadeInUp" data-delay="0">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3 data-i18n="how_it_works.step1_title">Content Analysis</h3>
+            <p data-i18n="how_it_works.step1_desc">We scrape and analyze your website content</p>
+          </div>
+        </div>
+
+        <div class="process-arrow">→</div>
+
+        <div class="process-step" data-animate="animate-fadeInUp" data-delay="100">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3 data-i18n="how_it_works.step2_title">AI Training</h3>
+            <p data-i18n="how_it_works.step2_desc">Advanced NLP models learn your business knowledge</p>
+          </div>
+        </div>
+
+        <div class="process-arrow">→</div>
+
+        <div class="process-step" data-animate="animate-fadeInUp" data-delay="200">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3 data-i18n="how_it_works.step3_title">Deployment</h3>
+            <p data-i18n="how_it_works.step3_desc">Embed chatbot widget anywhere on your site</p>
+          </div>
+        </div>
+
+        <div class="process-arrow">→</div>
+
+        <div class="process-step" data-animate="animate-fadeInUp" data-delay="300">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h3 data-i18n="how_it_works.step4_title">Continuous Optimization</h3>
+            <p data-i18n="how_it_works.step4_desc">Monitor, maintain, and improve performance</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Use Cases -->
+  <section class="section use-cases">
+    <div class="container">
+      <h2 class="section-title text-center" data-i18n="use_cases.title" data-animate="animate-fadeInUp">
+        Real-World Applications
+      </h2>
+
+      <div class="use-cases-grid">
+        <div class="use-case-card card" data-animate="animate-scaleIn" data-delay="0">
+          <h3 data-i18n="use_cases.support">Customer Support Automation</h3>
+        </div>
+        <div class="use-case-card card" data-animate="animate-scaleIn" data-delay="100">
+          <h3 data-i18n="use_cases.leads">Lead Generation & Qualification</h3>
+        </div>
+        <div class="use-case-card card" data-animate="animate-scaleIn" data-delay="200">
+          <h3 data-i18n="use_cases.faq">FAQ & Knowledge Base Access</h3>
+        </div>
+        <div class="use-case-card card" data-animate="animate-scaleIn" data-delay="300">
+          <h3 data-i18n="use_cases.products">Product Recommendations</h3>
+        </div>
+        <div class="use-case-card card" data-animate="animate-scaleIn" data-delay="400">
+          <h3 data-i18n="use_cases.appointments">Appointment Scheduling</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technology Highlight -->
+  <section class="section technology-highlight">
+    <div class="container">
+      <div class="tech-content card card-glass" data-animate="animate-fadeInUp">
+        <h2 data-i18n="technology.title">Built on Enterprise Technology</h2>
+        <p data-i18n="technology.desc">Robust architecture powered by FastAPI, React, Qdrant vector database, and
+          Perplexity AI LLM</p>
+        <a href="./technology.html" class="btn btn-primary">Learn More About Our Tech Stack</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Section -->
+  <section class="section trust">
+    <div class="container text-center">
+      <h2 class="section-title" data-i18n="trust.title" data-animate="animate-fadeInUp">
+        Trusted by Businesses Worldwide
+      </h2>
+      <div class="trust-metric" data-animate="animate-fadeInUp" data-delay="200">
+        <div class="metric-value" data-counter="1000000">1,000,000</div>
+        <div class="metric-label" data-i18n="trust.metric">conversations automated monthly</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="section cta-final">
+    <div class="container">
+      <div class="cta-content" data-animate="animate-scaleIn">
+        <h2 data-i18n="cta_final.title">Ready to Transform Customer Engagement?</h2>
+        <p data-i18n="cta_final.subtitle">Get started with a free consultation</p>
+        <a href="./contact.html" class="btn btn-accent btn-lg" data-i18n="cta_final.button">Schedule Consultation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <!-- Column 1: Brand -->
+        <div class="footer-column">
+          <h4 class="nav-logo">ultimAItech</h4>
+          <p data-i18n="footer.tagline">Intelligent Chatbots for Modern Businesses</p>
+        </div>
+
+        <!-- Column 2: Company -->
+        <div class="footer-column">
+          <h4 data-i18n="footer.company_title">Company</h4>
+          <a href="./about.html" data-i18n="footer.about">About Us</a>
+          <a href="./contact.html" data-i18n="footer.contact_us">Contact</a>
+          <a href="#" data-i18n="footer.blog">Blog</a>
+        </div>
+
+        <!-- Column 3: Services -->
+        <div class="footer-column">
+          <h4 data-i18n="footer.services_title">Services</h4>
+          <a href="./services.html" data-i18n="footer.chatbot_dev">Chatbot Development</a>
+          <a href="./services.html" data-i18n="footer.training">Content Training</a>
+          <a href="./services.html" data-i18n="footer.deployment">Deployment & Integration</a>
+          <a href="./services.html" data-i18n="footer.maintenance">Ongoing Maintenance</a>
+        </div>
+
+        <!-- Column 4: Legal -->
+        <div class="footer-column">
+          <h4 data-i18n="footer.legal_title">Legal</h4>
+          <a href="privacy-policy.html" data-i18n="footer.privacy">Privacy Policy</a>
+          <a href="terms-of-service.html" data-i18n="footer.terms">Terms of Service</a>
+          <a href="cookie-policy.html" data-i18n="footer.cookies">Cookie Policy</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p data-i18n="footer.copyright">© 2024 ultimAItech. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script type="module" src="js/i18n.js"></script>
+  <script type="module" src="js/navigation.js"></script>
+  <script type="module" src="js/animations.js"></script>
 </body>
 
 </html>

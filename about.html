@@ -1,142 +1,198 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - UltimAItech</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <title>About Us - ultimAItech</title>
+    <meta name="description"
+        content="Learn about ultimAItech's mission to empower businesses with intelligent AI chatbot solutions.">
 
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/decorative-elements.css">
+    <style>
+        .page-hero {
+            padding-top: 140px;
+            padding-bottom: var(--space-16);
+            background: var(--gradient-hero);
+            text-align: center;
+            color: var(--color-white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero h1 {
+            color: var(--color-white);
+            margin-bottom: var(--space-4);
+        }
+
+        .page-hero p {
+            font-size: var(--font-size-xl);
+            color: var(--color-neutral-200);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .mission-card {
+            background: var(--gradient-primary);
+            color: var(--color-white);
+            padding: var(--space-12);
+            border-radius: var(--radius-2xl);
+            text-align: center;
+            margin: var(--space-16) 0;
+            box-shadow: var(--shadow-neon);
+        }
+
+        .mission-card h2,
+        .mission-card p {
+            color: var(--color-white);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-8);
+            margin-top: var(--space-12);
+        }
+    </style>
 </head>
 
 <body>
-    <!-- Navigation -->
-    <nav>
-        <a href="index.html" class="logo">
-            <img src="images/logo_converted.svg" alt="UltimAItech">
-        </a>
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
+    <nav class="nav">
+        <div class="container nav-container">
+            <a href="./" class="nav-logo" aria-label="ultimAItech Home">
+                <img src="images/logo.svg" alt="ultimAItech" style="height: 62px; width: auto;">
+            </a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="./" class="nav-link">Home</a></li>
+                <li><a href="./services.html" class="nav-link">Services</a></li>
+                <li><a href="./technology.html" class="nav-link">Technology</a></li>
+                <li><a href="./pricing.html" class="nav-link">Pricing</a></li>
+                <li><a href="./about.html" class="nav-link">About</a></li>
+                <li><a href="./contact.html" class="btn btn-primary btn-sm">Contact</a></li>
+                <li class="lang-switcher">
+                    <span class="lang-option active" data-lang="en">EN</span>
+                    <span class="lang-option" data-lang="de">DE</span>
+                    <span class="lang-option" data-lang="nl">NL</span>
+                </li>
+            </ul>
         </div>
-        <ul>
-            <li><a href="index.html#mission" data-i18n="nav.mission">Mission</a></li>
-            <li><a href="index.html#features" data-i18n="nav.features">Features</a></li>
-            <li><a href="index.html#industries" data-i18n="nav.industries">Industries</a></li>
-            <li><a href="about.html" data-i18n="nav.about">About</a></li>
-            <li><a href="portfolio.html" data-i18n="nav.portfolio">Portfolio</a></li>
-            <li><a href="pricing.html" data-i18n="nav.pricing">Pricing</a></li>
-            <li><a href="contact.html" class="cta-button" data-i18n="nav.contact">Contact us Now</a></li>
-            <li class="lang-switcher">
-                <button class="lang-btn" data-lang="nl">NL</button>
-                <button class="lang-btn" data-lang="en">EN</button>
-                <button class="lang-btn" data-lang="de">DE</button>
-            </li>
-        </ul>
     </nav>
 
-    <div class="about-section">
-        <div class="about-content">
-            <h1 data-i18n="about.title">About UltimAItech</h1>
-            <p class="about-intro" data-i18n="about.intro">UltimAItech is a founder-led AI studio that helps hospitality
-                businesses design human-centric, revenue-generating experiences with intelligent automation.</p>
-
-            <div class="about-block">
-                <h2 data-i18n="about.who.title">Who we are</h2>
-                <p data-i18n="about.who.text1">UltimAItech is an independent AI studio focused on the hospitality
-                    industry, combining deep technical expertise with a strong feel for guest experience. The studio
-                    helps hotels, restaurants, and experience providers turn complex operations into smooth, personal,
-                    and efficient journeys for their guests.</p>
-                <p data-i18n="about.who.text2">Rather than pushing generic tools, UltimAItech works alongside your team
-                    to understand how you welcome, serve, and retain guests, then designs AI workflows that fit into
-                    your existing way of working. The goal is simple: use AI to reduce friction for your staff and
-                    create more memorable moments for your guests.</p>
-            </div>
-
-            <div class="about-block">
-                <h2 data-i18n="about.believe.title">What we believe</h2>
-                <p data-i18n="about.believe.text1">Hospitality is, above all, human. AI should support that human
-                    connection by freeing staff from repetitive tasks so they can be more present, not by replacing the
-                    people who make your brand special.</p>
-                <p data-i18n="about.believe.text2">UltimAItech believes the best technology is invisible: automations
-                    that quietly handle the background work, while your team stays in control of every important
-                    decision and interaction. Every solution is designed to be explainable, configurable, and
-                    measurable, so you always know how it impacts your guests and your bottom line.</p>
-            </div>
-
-            <div class="about-block">
-                <h2 data-i18n="about.work.title">How we work</h2>
-                <p data-i18n="about.work.text1">Every collaboration starts with a deep-dive into your guest journey,
-                    operational bottlenecks, and data landscape. From there, UltimAItech designs lightweight pilots that
-                    prove value quickly, then scales what works across channels, properties, or brands.</p>
-                <p data-i18n="about.work.text2">You can expect clear communication, practical documentation, and
-                    solutions that your existing teams can actually run and maintain. UltimAItech prefers long-term
-                    partnerships over one-off projects, staying close as your needs, tools, and guests evolve.</p>
-            </div>
-
-            <div class="about-block">
-                <h2 data-i18n="about.founder.title">About the founder</h2>
-                <p data-i18n="about.founder.text1">UltimAItech was founded by Andre Hassler, a multilingual systems
-                    engineer and AI developer with a background in IT operations, chatbot platforms, and data-driven
-                    process optimization. Years of working across teams and countries shaped a simple philosophy:
-                    technology should feel natural to use, even when the systems behind it are complex.</p>
-                <p data-i18n="about.founder.text2">As a founder-led studio, clients work directly with Andre—the person
-                    who designs, builds, and iterates their AI solutions - without layers of handoffs or account
-                    management. This keeps UltimAItech fast, flexible, and deeply invested in every project’s outcome.
-                </p>
-            </div>
+    <section class="page-hero" style="position: relative; overflow: hidden;">
+        <div
+            style="position: absolute; inset: 0; background-image: url('images/innovation-technology.png'); background-size: cover; background-position: center; opacity: 0.2; z-index: 0;">
         </div>
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4 data-i18n="footer.product">Product</h4>
-                <ul>
-                    <li><a href="index.html#features" data-i18n="footer.links.features">Features</a></li>
-                    <li><a href="pricing.html" data-i18n="footer.links.pricing">Pricing</a></li>
-                    <li><a href="security.html" data-i18n="footer.links.security">Security</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4 data-i18n="footer.company">Company</h4>
-                <ul>
-                    <li><a href="index.html#mission" data-i18n="footer.links.mission">Mission</a></li>
-                    <li><a href="about.html" data-i18n="footer.links.about">About</a></li>
-                    <li><a href="#" data-i18n="footer.links.careers">Careers</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4 data-i18n="footer.support">Support</h4>
-                <ul>
-                    <li><a href="#" data-i18n="footer.links.help">Help Center</a></li>
-                    <li><a href="contact.html" data-i18n="footer.links.contact">Contact</a></li>
-                    <li><a href="#" data-i18n="footer.links.status">Status</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4 data-i18n="footer.legal">Legal</h4>
-                <ul>
-                    <li><a href="privacy.html" data-i18n="footer.links.privacy">Privacy</a></li>
-                    <li><a href="#" data-i18n="footer.links.terms">Terms</a></li>
-                    <li><a href="#" data-i18n="footer.links.cookies">Cookies</a></li>
-                </ul>
-            </div>
+        <div
+            style="position: absolute; inset: 0; background: radial-gradient(circle at 30% 50%, rgba(99, 102, 241, 0.1) 0%, transparent 50%); z-index: 1;">
         </div>
-        <div class="footer-bottom">
-            <p data-i18n="footer.copyright">&copy; 2025 UltimAItech. All rights reserved. Empowering hospitality with
-                human-centric AI.</p>
+        <div class="glow-orb blue" style="top: 10%; left: 10%;"></div>
+        <div class="glow-orb purple" style="top: 60%; right: 15%;"></div>
+        <div class="container" style="position: relative; z-index: 2;">
+            <h1>About ultimAItech</h1>
+            <p>We're transforming customer engagement through intelligent, AI-powered chatbot solutions</p>
+        </div>
+    </section>
+
+    <section class="section" style="background: var(--color-dark-900);">
+        <div class="container about-content">
+
+            <div data-animate="animate-fadeInUp" style="text-align: center; max-width: 900px; margin: 0 auto;">
+                <h2>Our Story</h2>
+                <p>ultimAItech emerged from a clear vision: to bridge the gap between cutting-edge AI technology and
+                    practical business applications. As specialists in AI and machine learning, we recognized that
+                    businesses needed more than just chatbots—they needed intelligent conversational agents that truly
+                    understand their unique context and deliver accurate, helpful responses.</p>
+
+                <p>Our journey led us to develop VYBR!S, our proprietary multi-tenant chatbot platform. Built on
+                    advanced Retrieval-Augmented Generation (RAG) technology, VYBR!S represents our commitment to
+                    creating chatbot solutions that are not only powerful but also easy to deploy and manage.</p>
+            </div>
+
+            <div class="mission-card" data-animate="animate-scaleIn">
+                <h2>Our Mission</h2>
+                <p style="font-size: var(--font-size-lg);">Empowering businesses to provide intelligent, instant
+                    customer engagement through advanced AI chatbot technology that's accessible, reliable, and truly
+                    understands your business.</p>
+            </div>
+
+            <div data-animate="animate-fadeInUp" style="text-align: center;">
+                <h2>Why choose ultimAItech</h2>
+                <div class="values-grid"
+                    style="grid-template-columns: repeat(2, 1fr); max-width: 900px; margin: 0 auto;">
+                    <div class="card card-gradient">
+                        <h3>Specialized Expertise</h3>
+                        <p>Focused exclusively on conversational AI and chatbot solutions, bringing deep technical
+                            knowledge to every project.</p>
+                    </div>
+                    <div class="card card-gradient">
+                        <h3>Proprietary Technology</h3>
+                        <p>Our VYBR!S platform provides enterprise-grade capabilities with the flexibility to scale as
+                            you grow.</p>
+                    </div>
+                    <div class="card card-gradient">
+                        <h3>End-to-End Service</h3>
+                        <p>From initial consultation to ongoing optimization, we handle every aspect of your chatbot
+                            lifecycle.</p>
+                    </div>
+                    <div class="card card-gradient">
+                        <h3>Proven Reliability</h3>
+                        <p>Built on robust, scalable architecture designed for enterprise performance and security.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: var(--space-16); text-align: center;" data-animate="animate-fadeInUp">
+                <h2>Your Success is Our Success</h2>
+                <p style="max-width: 700px; margin: var(--space-6) auto;">We're not just building chatbots—we're
+                    creating intelligent digital assistants that enhance customer experiences, streamline operations,
+                    and drive real business value. Every solution we deliver is tailored to your specific needs and
+                    optimized for your success.</p>
+                <a href="./contact.html" class="btn btn-primary btn-lg" style="margin-top: var(--space-8);">Let's Build
+                    Together</a>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4 class="nav-logo">ultimAItech</h4>
+                    <p>Intelligent Chatbots for Modern Businesses</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <a href="./about.html">About Us</a>
+                    <a href="./contact.html">Contact</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <a href="./services.html">Chatbot Development</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 ultimAItech. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
-    <script src="js/translations.js"></script>
-    <script src="js/script.js"></script>
+    <script type="module" src="js/i18n.js"></script>
+    <script type="module" src="js/navigation.js"></script>
+    <script type="module" src="js/animations.js"></script>
 </body>
 
 </html>

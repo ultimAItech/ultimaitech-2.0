@@ -1,0 +1,111 @@
+{
+    "nav": {
+        "logo": "ultimAItech",
+        "home": "Startseite",
+        "services": "Dienstleistungen",
+        "technology": "Technologie",
+        "pricing": "Preise",
+        "about": "Über uns",
+        "contact": "Kontakt"
+    },
+    "hero": {
+        "headline": "Intelligente Chatbots, die Ihr Geschäft verstehen",
+        "subheadline": "Setzen Sie KI-gestützte Konversationsagenten ein, die auf Ihren Website-Inhalten trainiert sind. Keine Programmierung erforderlich.",
+        "cta_primary": "Holen Sie sich Ihren eigenen Chatbot",
+        "cta_secondary": "Wie es funktioniert"
+    },
+    "values": {
+        "title": "Warum ultimAItech?",
+        "trained_title": "Basierend auf Ihren Inhalten",
+        "trained_desc": "RAG-Technologie gewährleistet präzise, kontextbezogene Antworten basierend auf Ihrem Unternehmenswissen",
+        "deploy_title": "Deployment in Minuten",
+        "deploy_desc": "Einfaches Einbettungs-Widget ohne technische Expertise",
+        "management_title": "Vollständige Verwaltung",
+        "management_desc": "Komplette Entwicklung, Training, Deployment und laufende Wartung inklusive",
+        "scalable_title": "Multi-Tenant-Architektur",
+        "scalable_desc": "Skalierbare Lösung für mehrere Chatbots und Kunden"
+    },
+    "how_it_works": {
+        "title": "So funktioniert es",
+        "step1_title": "Inhaltsanalyse",
+        "step1_desc": "Wir scannen und analysieren Ihre Website-Inhalte",
+        "step2_title": "KI-Training",
+        "step2_desc": "Fortgeschrittene NLP-Modelle lernen Ihr Unternehmenswissen",
+        "step3_title": "Deployment",
+        "step3_desc": "Chatbot-Widget überall auf Ihrer Website einbinden",
+        "step4_title": "Kontinuierliche Optimierung",
+        "step4_desc": "Überwachen, warten und verbessern Sie die Leistung"
+    },
+    "use_cases": {
+        "title": "Praxisnahe Anwendungen",
+        "support": "Automatisierung des Kundenservice",
+        "leads": "Lead-Generierung & -Qualifizierung",
+        "faq": "FAQ & Wissensdatenbank-Zugriff",
+        "products": "Produktempfehlungen",
+        "appointments": "Terminplanung"
+    },
+    "technology": {
+        "title": "Aufgebaut auf Unternehmenstechnologie",
+        "desc": "Robuste Architektur basierend auf FastAPI, React, Qdrant-Vektordatenbank und Perplexity AI LLM"
+    },
+    "trust": {
+        "title": "Vertraut von Unternehmen weltweit",
+        "metric": "monatlich automatisierte Konversationen"
+    },
+    "cta_final": {
+        "title": "Bereit, das Kundenerlebnis zu transformieren?",
+        "subtitle": "Starten Sie mit einer kostenlosen Beratung",
+        "button": "Beratung vereinbaren"
+    },
+    "footer": {
+        "tagline": "Intelligente Chatbots für moderne Unternehmen",
+        "company_title": "Unternehmen",
+        "services_title": "Dienstleistungen",
+        "legal_title": "Rechtliches",
+        "about": "Über uns",
+        "contact_us": "Kontakt",
+        "blog": "Blog",
+        "chatbot_dev": "Chatbot-Entwicklung",
+        "training": "Content-Training",
+        "deployment": "Deployment & Integration",
+        "maintenance": "Laufende Wartung",
+        "privacy": "Datenschutzerklärung",
+        "terms": "Nutzungsbedingungen",
+        "cookies": "Cookie-Richtlinie",
+        "copyright": "© 2024 ultimAItech. Alle Rechte vorbehalten."
+    },
+    "contact": {
+        "title": "Kontaktieren Sie uns",
+        "subtitle": "Starten Sie heute Ihr Chatbot-Projekt",
+        "name_label": "Name",
+        "name_placeholder": "Ihr Name",
+        "email_label": "E-Mail",
+        "email_placeholder": "ihre@email.de",
+        "company_label": "Unternehmen",
+        "company_placeholder": "Ihr Unternehmensname",
+        "phone_label": "Telefon (optional)",
+        "phone_placeholder": "+49 (555) 000-0000",
+        "service_label": "Service-Interesse",
+        "service_placeholder": "Wählen Sie einen Service",
+        "message_label": "Nachricht",
+        "message_placeholder": "Erzählen Sie uns von Ihrem Projekt...",
+        "submit": "Nachricht senden",
+        "success": "Vielen Dank! Wir melden uns innerhalb von 24 Stunden bei Ihnen.",
+        "error": "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.",
+        "response_promise": "Wir antworten auf alle Anfragen innerhalb von 24 Stunden"
+    },
+    "services": {
+        "chatbot_dev": "Chatbot-Entwicklung",
+        "training": "Content-Training & -Optimierung",
+        "deployment": "Deployment & Integration",
+        "maintenance": "Laufende Wartung & Support",
+        "addons": "Zusatzdienste"
+    },
+    "pricing": {
+        "starter": "Starter",
+        "professional": "Professional",
+        "enterprise": "Enterprise",
+        "per_month": "/Monat",
+        "contact_sales": "Vertrieb kontaktieren"
+    }
+}

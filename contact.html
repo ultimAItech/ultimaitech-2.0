@@ -1,166 +1,228 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - UltimAItech</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <title>Contact Us - ultimAItech</title>
+    <meta name="description"
+        content="Get in touch with ultimAItech. Start your chatbot project today with a free consultation.">
+
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/decorative-elements.css">
 </head>
 
 <body>
     <!-- Navigation -->
-    <nav>
-        <a href="index.html" class="logo">
-            <img src="images/logo_converted.svg" alt="UltimAItech">
-        </a>
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
+    <nav class="nav">
+        <div class="container nav-container">
+            <a href="./" class="nav-logo" aria-label="ultimAItech Home">
+                <img src="images/logo.svg" alt="ultimAItech" style="height: 62px; width: auto;">
+            </a>
+
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-menu">
+                <li><a href="./" class="nav-link" data-i18n="nav.home">Home</a></li>
+                <li><a href="./services.html" class="nav-link" data-i18n="nav.services">Services</a></li>
+                <li><a href="./technology.html" class="nav-link" data-i18n="nav.technology">Technology</a></li>
+                <li><a href="./pricing.html" class="nav-link" data-i18n="nav.pricing">Pricing</a></li>
+                <li><a href="./about.html" class="nav-link" data-i18n="nav.about">About</a></li>
+                <li><a href="./contact.html" class="btn btn-primary btn-sm">Contact</a></li>
+
+                <li class="lang-switcher">
+                    <span class="lang-option active" data-lang="en">EN</span>
+                    <span class="lang-option" data-lang="de">DE</span>
+                    <span class="lang-option" data-lang="nl">NL</span>
+                </li>
+            </ul>
         </div>
-        <ul>
-            <li><a href="index.html#mission" data-i18n="nav.mission">Mission</a></li>
-            <li><a href="index.html#features" data-i18n="nav.features">Features</a></li>
-            <li><a href="index.html#industries" data-i18n="nav.industries">Industries</a></li>
-            <li><a href="about.html" data-i18n="nav.about">About</a></li>
-            <li><a href="portfolio.html" data-i18n="nav.portfolio">Portfolio</a></li>
-            <li><a href="pricing.html" data-i18n="nav.pricing">Pricing</a></li>
-            <li><a href="contact.html" class="cta-button" data-i18n="nav.contact">Contact us Now</a></li>
-            <li class="lang-switcher">
-                <button class="lang-btn" data-lang="nl">NL</button>
-                <button class="lang-btn" data-lang="en">EN</button>
-                <button class="lang-btn" data-lang="de">DE</button>
-            </li>
-        </ul>
     </nav>
 
-    <!-- Contact Section -->
-    <section class="contact-page-section">
-        <div class="section-container">
-            <h1 style="text-align: center; margin-bottom: 1rem; font-size: 3.5rem; background: linear-gradient(to right, #ffffff 20%, #94a3b8 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;"
-                data-i18n="contact.title">
-                Contact Us</h1>
-            <p class="section-subtitle" data-i18n="contact.subtitle">Ready to transform your guest experience? We're
-                here to help.</p>
+    <section class="page-hero" style="position: relative; overflow: hidden;">
+        <div
+            style="position: absolute; inset: 0; background-image: url('images/innovation-technology.png'); background-size: cover; background-position: center; opacity: 0.2; z-index: 0;">
+        </div>
+        <div
+            style="position: absolute; inset: 0; background: radial-gradient(circle at 30% 50%, rgba(99, 102, 241, 0.1) 0%, transparent 50%); z-index: 1;">
+        </div>
+        <div class="glow-orb purple" style="top: 20%; right: 15%;"></div>
+        <div class="glow-orb blue" style="bottom: 30%; left: 10%;"></div>
+        <div class="container" style="position: relative; z-index: 2;">
+            <h1>Get in Touch</h1>
+            <p>Ready to transform your customer engagement? Let's talk about your chatbot needs</p>
+        </div>
+    </section>
 
-            <div class="contact-content-grid">
-                <!-- Contact Info -->
-                <div class="contact-info">
-                    <h2 data-i18n="contact.info.title">Get in Touch</h2>
-                    <div class="contact-detail">
-                        <span>📍</span>
-                        <div>
-                            <span style="display:block; font-size: 0.9rem; margin-bottom: 0.2rem;"
-                                data-i18n="contact.info.address">Address</span>
-                            <span style="color: var(--color-white); display: block;">ultimAItech</span>
-                            <span style="color: var(--color-white); display: block;">Veneweg 199</span>
-                            <span style="color: var(--color-white); display: block;">7946 LP Wanneperveen</span>
-                        </div>
-                    </div>
-                    <div class="contact-detail">
-                        <span>📧</span>
-                        <div>
-                            <span style="display:block; font-size: 0.9rem; margin-bottom: 0.2rem;"
-                                data-i18n="contact.info.email">Email</span>
-                            <a href="mailto:info@ultimaitech.com">info@ultimaitech.com</a>
-                        </div>
-                    </div>
-                    <div class="contact-detail">
-                        <span>🏢</span>
-                        <div>
-                            <span style="display:block; font-size: 0.9rem; margin-bottom: 0.2rem;"
-                                data-i18n="contact.info.kvk">KVK-Nr.</span>
-                            <span style="color: var(--color-white);">98782800</span>
-                        </div>
-                    </div>
-                </div>
-
+    <!-- Contact Form Section -->
+    <section class="section contact-section">
+        <div class="container">
+            <div class="contact-grid">
                 <!-- Contact Form -->
-                <div class="contact-form-container">
-                    <form action="mailto:info@ultimaitech.com" method="post" enctype="text/plain">
+                <div class="contact-form-wrapper" data-animate="animate-fadeInUp">
+                    <form id="contact-form" class="contact-form">
+                        <!-- Honeypot for spam protection -->
+                        <input type="text" name="website" style="display: none;" tabindex="-1" autocomplete="off">
+
                         <div class="form-group">
-                            <label for="name" data-i18n="contact.form.name">Name</label>
-                            <input type="text" id="name" name="name" class="form-control" required>
+                            <label class="form-label" for="name" data-i18n="contact.name_label">Name</label>
+                            <input type="text" id="name" name="name" class="form-input" required
+                                data-i18n="contact.name_placeholder" placeholder="Your name">
                         </div>
+
                         <div class="form-group">
-                            <label for="email" data-i18n="contact.form.email">Email</label>
-                            <input type="email" id="email" name="email" class="form-control" required>
+                            <label class="form-label" for="email" data-i18n="contact.email_label">Email</label>
+                            <input type="email" id="email" name="email" class="form-input" required
+                                data-i18n="contact.email_placeholder" placeholder="your@email.com">
                         </div>
+
                         <div class="form-group">
-                            <label for="subject" data-i18n="contact.form.subject">Subject</label>
-                            <select id="subject" name="subject" class="form-control" required>
-                                <option value="" disabled selected data-i18n="contact.form.options.select">Select a
-                                    topic</option>
-                                <option value="Website Development" data-i18n="contact.form.options.website">Website
-                                    Development</option>
-                                <option value="AI Chatbot Integration" data-i18n="contact.form.options.chatbot">AI
-                                    Chatbot Integration</option>
-                                <option value="Complete Digital Bundle" data-i18n="contact.form.options.bundle">Complete
-                                    Digital Bundle</option>
-                                <option value="Other" data-i18n="contact.form.options.other">Other</option>
+                            <label class="form-label" for="company" data-i18n="contact.company_label">Company</label>
+                            <input type="text" id="company" name="company" class="form-input"
+                                data-i18n="contact.company_placeholder" placeholder="Your company name">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="phone" data-i18n="contact.phone_label">Phone
+                                (optional)</label>
+                            <input type="tel" id="phone" name="phone" class="form-input"
+                                data-i18n="contact.phone_placeholder" placeholder="+1 (555) 000-0000">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="service" data-i18n="contact.service_label">Service
+                                Interest</label>
+                            <select id="service" name="service" class="form-select" required>
+                                <option value="" data-i18n="contact.service_placeholder">Select a service</option>
+                                <option value="chatbot_dev">Chatbot Development</option>
+                                <option value="training">Content Training</option>
+                                <option value="deployment">Deployment & Integration</option>
+                                <option value="maintenance">Ongoing Maintenance</option>
+                                <option value="consultation">Free Consultation</option>
+                                <option value="other">Other</option>
                             </select>
                         </div>
+
                         <div class="form-group">
-                            <label for="message" data-i18n="contact.form.message">Message</label>
-                            <textarea id="message" name="message" class="form-control" required></textarea>
+                            <label class="form-label" for="message" data-i18n="contact.message_label">Message</label>
+                            <textarea id="message" name="message" class="form-textarea" required
+                                data-i18n="contact.message_placeholder"
+                                placeholder="Tell us about your project..."></textarea>
                         </div>
-                        <button type="submit" class="btn-primary" style="width: 100%;"
-                            data-i18n="contact.form.send">Send Message</button>
+
+                        <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;"
+                            data-i18n="contact.submit">
+                            Send Message
+                        </button>
+
+                        <!-- Success Message -->
+                        <div id="form-success" class="form-success hidden" data-i18n="contact.success">
+                            Thank you! We'll get back to you within 24 hours.
+                        </div>
+
+                        <!-- Error Message -->
+                        <div id="form-error" class="form-error hidden"></div>
                     </form>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="contact-info" data-animate="animate-fadeInUp" data-delay="200">
+                    <div class="info-card card card-gradient">
+                        <h3>Why Contact Us?</h3>
+                        <ul class="info-list">
+                            <li>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="m9 12 2 2 4-4"></path>
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                </svg>
+                                <span>Free consultation and project assessment</span>
+                            </li>
+                            <li>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="m9 12 2 2 4-4"></path>
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                </svg>
+                                <span>Custom pricing based on your needs</span>
+                            </li>
+                            <li>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="m9 12 2 2 4-4"></path>
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                </svg>
+                                <span>Expert guidance on chatbot strategy</span>
+                            </li>
+                            <li>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="m9 12 2 2 4-4"></path>
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                </svg>
+                                <span>No obligation, no pressure</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card card">
+                        <h3>Response Time</h3>
+                        <p class="response-promise" data-i18n="contact.response_promise">We respond to all inquiries
+                            within 24 hours</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4 data-i18n="footer.product">Product</h4>
-                <ul>
-                    <li><a href="index.html#features" data-i18n="footer.links.features">Features</a></li>
-                    <li><a href="pricing.html" data-i18n="footer.links.pricing">Pricing</a></li>
-                    <li><a href="security.html" data-i18n="footer.links.security">Security</a></li>
-                </ul>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4 class="nav-logo">ultimAItech</h4>
+                    <p data-i18n="footer.tagline">Intelligent Chatbots for Modern Businesses</p>
+                </div>
+
+                <div class="footer-column">
+                    <h4 data-i18n="footer.company_title">Company</h4>
+                    <a href="./about.html" data-i18n="footer.about">About Us</a>
+                    <a href="./contact.html" data-i18n="footer.contact_us">Contact</a>
+                    <a href="#" data-i18n="footer.blog">Blog</a>
+                </div>
+
+                <div class="footer-column">
+                    <h4 data-i18n="footer.services_title">Services</h4>
+                    <a href="./services.html" data-i18n="footer.chatbot_dev">Chatbot Development</a>
+                    <a href="./services.html" data-i18n="footer.training">Content Training</a>
+                    <a href="./services.html" data-i18n="footer.deployment">Deployment & Integration</a>
+                    <a href="./services.html" data-i18n="footer.maintenance">Ongoing Maintenance</a>
+                </div>
+
+                <div class="footer-column">
+                    <h4 data-i18n="footer.legal_title">Legal</h4>
+                    <a href="privacy-policy.html" data-i18n="footer.privacy">Privacy Policy</a>
+                    <a href="terms-of-service.html" data-i18n="footer.terms">Terms of Service</a>
+                    <a href="cookie-policy.html" data-i18n="footer.cookies">Cookie Policy</a>
+                </div>
             </div>
-            <div class="footer-section">
-                <h4 data-i18n="footer.company">Company</h4>
-                <ul>
-                    <li><a href="index.html#mission" data-i18n="footer.links.mission">Mission</a></li>
-                    <li><a href="about.html" data-i18n="footer.links.about">About</a></li>
-                    <li><a href="#" data-i18n="footer.links.careers">Careers</a></li>
-                </ul>
+
+            <div class="footer-bottom">
+                <p data-i18n="footer.copyright">© 2024 ultimAItech. All rights reserved.</p>
             </div>
-            <div class="footer-section">
-                <h4 data-i18n="footer.support">Support</h4>
-                <ul>
-                    <li><a href="#" data-i18n="footer.links.help">Help Center</a></li>
-                    <li><a href="contact.html" data-i18n="footer.links.contact">Contact</a></li>
-                    <li><a href="#" data-i18n="footer.links.status">Status</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4 data-i18n="footer.legal">Legal</h4>
-                <ul>
-                    <li><a href="privacy.html" data-i18n="footer.links.privacy">Privacy</a></li>
-                    <li><a href="#" data-i18n="footer.links.terms">Terms</a></li>
-                    <li><a href="#" data-i18n="footer.links.cookies">Cookies</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p data-i18n="footer.copyright">&copy; 2025 UltimAItech. All rights reserved. Empowering hospitality with
-                human-centric AI.</p>
         </div>
     </footer>
 
-    <script src="js/translations.js"></script>
-    <script src="js/script.js"></script>
+    <!-- Scripts -->
+    <script type="module" src="js/i18n.js"></script>
+    <script type="module" src="js/navigation.js"></script>
+    <script type="module" src="js/animations.js"></script>
+    <script type="module" src="js/contact-form.js"></script>
 </body>
 
 </html>

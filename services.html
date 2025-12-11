@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - ultimAItech</title>
+    <meta name="description"
+        content="Comprehensive AI chatbot services: development, training, deployment, and maintenance.">
+
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/decorative-elements.css">
+    <style>
+        .page-hero {
+            padding-top: 140px;
+            padding-bottom: var(--space-16);
+            background: var(--gradient-hero);
+            text-align: center;
+            color: var(--color-white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero h1 {
+            color: var(--color-white);
+            margin-bottom: var(--space-4);
+        }
+
+        .page-hero p {
+            font-size: var(--font-size-xl);
+            color: var(--color-neutral-200);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-8);
+        }
+
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .service-item {
+            position: relative;
+            background: linear-gradient(145deg, rgba(30, 30, 60, 0.8) 0%, rgba(15, 15, 30, 0.9) 100%);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: var(--space-10);
+            border-radius: var(--radius-2xl);
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        /* Subtle gradient glow effect */
+        .service-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.5), transparent);
+            opacity: 0.5;
+            transition: opacity 0.4s ease;
+        }
+
+        /* Inner glow on hover */
+        .service-item::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: var(--radius-2xl);
+            padding: 1px;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.4), rgba(236, 72, 153, 0.1), transparent);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            pointer-events: none;
+        }
+
+        .service-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.6), 0 0 30px rgba(99, 102, 241, 0.15);
+            background: linear-gradient(145deg, rgba(35, 35, 70, 0.9) 0%, rgba(20, 20, 40, 0.95) 100%);
+        }
+
+        .service-item:hover::after {
+            opacity: 1;
+        }
+
+        .service-item:hover::before {
+            opacity: 1;
+            background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 1), transparent);
+        }
+
+        .service-item h3 {
+            font-size: var(--font-size-2xl);
+            background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: var(--space-4);
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+        }
+
+        .service-item p {
+            color: var(--color-neutral-400);
+            line-height: 1.6;
+            margin-bottom: var(--space-6);
+        }
+
+        .service-features {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-4);
+            position: relative;
+            z-index: 2;
+        }
+
+        .service-features li {
+            display: flex;
+            align-items: center;
+            color: var(--color-neutral-300);
+            font-size: var(--font-size-sm);
+        }
+
+        .service-features li::before {
+            content: "✓";
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 22px;
+            height: 22px;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.3), rgba(139, 92, 246, 0.3));
+            color: var(--color-primary-300);
+            border-radius: 50%;
+            font-weight: bold;
+            font-size: 11px;
+            margin-right: var(--space-3);
+            flex-shrink: 0;
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .service-item:hover .service-features li::before {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.5), rgba(139, 92, 246, 0.5));
+            border-color: var(--color-primary-400);
+            box-shadow: 0 0 10px rgba(99, 102, 241, 0.4);
+            transform: scale(1.1);
+        }
+
+        /* Service icon */
+        .service-icon {
+            font-size: 2rem;
+            filter: grayscale(0.3);
+            transition: all 0.3s ease;
+        }
+
+        .service-item:hover .service-icon {
+            filter: grayscale(0);
+            transform: scale(1.1) rotate(5deg);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="nav">
+        <div class="container nav-container">
+            <a href="./" class="nav-logo" aria-label="ultimAItech Home">
+                <img src="images/logo.svg" alt="ultimAItech" style="height: 62px; width: auto;">
+            </a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="./" class="nav-link">Home</a></li>
+                <li><a href="./services.html" class="nav-link">Services</a></li>
+                <li><a href="./technology.html" class="nav-link">Technology</a></li>
+                <li><a href="./pricing.html" class="nav-link">Pricing</a></li>
+                <li><a href="./about.html" class="nav-link">About</a></li>
+                <li><a href="./contact.html" class="btn btn-primary btn-sm">Contact</a></li>
+                <li class="lang-switcher">
+                    <span class="lang-option active" data-lang="en">EN</span>
+                    <span class="lang-option" data-lang="de">DE</span>
+                    <span class="lang-option" data-lang="nl">NL</span>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="page-hero" style="position: relative; overflow: hidden;">
+        <div
+            style="position: absolute; inset: 0; background-image: url('images/innovation-technology.png'); background-size: cover; background-position: center; opacity: 0.2; z-index: 0;">
+        </div>
+        <div
+            style="position: absolute; inset: 0; background: radial-gradient(circle at 30% 50%, rgba(99, 102, 241, 0.1) 0%, transparent 50%); z-index: 1;">
+        </div>
+        <div class="tech-pattern"></div>
+        <div class="glow-orb purple" style="top: 20%; right: 10%;"></div>
+        <div class="container" style="position: relative; z-index: 2;">
+            <h1>Our Services</h1>
+            <p>Comprehensive AI chatbot solutions tailored to your business needs</p>
+        </div>
+    </section>
+
+    <!-- Visual Feature Section -->
+    <section class="section" style="background: var(--color-dark-800); position: relative; overflow: hidden;">
+        <div
+            style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(10, 10, 10, 0.8) 0%, rgba(26, 26, 62, 0.85) 100%); z-index: 1;">
+        </div>
+        <div class="container" style="position: relative; z-index: 2;">
+            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <h2
+                    style="font-size: var(--font-size-4xl); margin-bottom: var(--space-6); background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">
+                    AI-Powered Solutions Tailored to Your Needs
+                </h2>
+                <p style="font-size: var(--font-size-lg); color: var(--color-neutral-300); line-height: 1.8;">
+                    From initial development to ongoing optimization, we provide end-to-end chatbot lifecycle management
+                    that scales with your business.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background: var(--color-dark-900); position: relative; overflow: hidden;">
+        <div
+            style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(10, 10, 10, 0.95) 0%, rgba(26, 26, 62, 0.95) 100%); z-index: 1;">
+        </div>
+        <div class="container" style="position: relative; z-index: 2;">
+            <div class="services-grid">
+
+                <div class="service-item" data-animate="animate-fadeInUp">
+                    <h3><span class="service-icon">🤖</span>Chatbot Development</h3>
+                    <p>Custom chatbot creation tailored to your business requirements using cutting-edge RAG technology.
+                    </p>
+                    <ul class="service-features">
+                        <li>Custom chatbot architecture design</li>
+                        <li>RAG-powered knowledge base integration</li>
+                        <li>Multi-language support capability</li>
+                        <li>Brand-aligned UI/UX customization</li>
+                        <li>Conversational flow optimization</li>
+                    </ul>
+                </div>
+
+                <div class="service-item" data-animate="animate-fadeInUp" data-delay="100">
+                    <h3><span class="service-icon">📚</span>Content Training & Optimization</h3>
+                    <p>Automated content extraction and intelligent training for accurate, contextual responses.</p>
+                    <ul class="service-features">
+                        <li>Automated web scraping (up to 10 levels deep)</li>
+                        <li>Sitemap parsing and JavaScript rendering</li>
+                        <li>Content chunking and embedding optimization</li>
+                        <li>Regular knowledge base updates</li>
+                        <li>Response accuracy testing</li>
+                    </ul>
+                </div>
+
+                <div class="service-item" data-animate="animate-fadeInUp" data-delay="200">
+                    <h3><span class="service-icon">🚀</span>Deployment & Integration</h3>
+                    <p>Seamless chatbot deployment with simple integration across all your digital platforms.</p>
+                    <ul class="service-features">
+                        <li>Lightweight JavaScript widget embedding</li>
+                        <li>Responsive design for all devices</li>
+                        <li>Custom styling matching brand guidelines</li>
+                        <li>API access for advanced integrations</li>
+                        <li>CRM and ticketing system integration</li>
+                    </ul>
+                </div>
+
+                <div class="service-item" data-animate="animate-fadeInUp" data-delay="300">
+                    <h3><span class="service-icon">⚙️</span>Ongoing Maintenance & Support</h3>
+                    <p>Continuous optimization and support to ensure your chatbot delivers exceptional performance.</p>
+                    <ul class="service-features">
+                        <li>Performance monitoring and analytics</li>
+                        <li>Continuous model refinement</li>
+                        <li>Content updates and retraining</li>
+                        <li>Technical support and troubleshooting</li>
+                        <li>Role-based dashboard access</li>
+                    </ul>
+                </div>
+
+                <div class="service-item" data-animate="animate-fadeInUp" data-delay="350">
+                    <h3><span class="service-icon">💡</span>AI Strategy & Consulting</h3>
+                    <p>Expert guidance to define your AI roadmap, identify high-impact use cases, and ensure measurable
+                        ROI.</p>
+                    <ul class="service-features">
+                        <li>Use case identification & ROI analysis</li>
+                        <li>Technical feasibility assessment</li>
+                        <li>Data readiness audit</li>
+                        <li>Governance & compliance planning</li>
+                        <li>Employee training & workshops</li>
+                    </ul>
+                </div>
+
+                <div class="service-item card-gradient" data-animate="animate-fadeInUp" data-delay="400">
+                    <h3><span class="service-icon">✨</span>Add-On Services</h3>
+                    <p>Additional capabilities to extend your chatbot functionality and business intelligence.</p>
+                    <ul class="service-features">
+                        <li>Multi-chatbot management for enterprise</li>
+                        <li>Advanced analytics and reporting</li>
+                        <li>Custom integrations (CRM, ERP systems)</li>
+                        <li>Sentiment analysis & insights</li>
+                        <li>White-label solutions</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="text-center" style="margin-top: var(--space-16);">
+                <h2>Ready to Get Started?</h2>
+                <p style="max-width: 600px; margin: var(--space-4) auto var(--space-8);">Let's discuss how our chatbot
+                    solutions can transform your customer engagement.</p>
+                <a href="./contact.html" class="btn btn-primary btn-lg">Schedule a Consultation</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4 class="nav-logo">ultimAItech</h4>
+                    <p>Intelligent Chatbots for Modern Businesses</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <a href="./about.html">About Us</a>
+                    <a href="./contact.html">Contact</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <a href="./services.html">Chatbot Development</a>
+                    <a href="./services.html">Content Training</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-of-service.html">Terms of Service</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 ultimAItech. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="js/i18n.js"></script>
+    <script type="module" src="js/navigation.js"></script>
+    <script type="module" src="js/animations.js"></script>
+</body>
+
+</html>

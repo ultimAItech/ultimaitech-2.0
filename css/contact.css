@@ -1,0 +1,111 @@
+/* ==========================================================================
+   CONTACT PAGE STYLES
+   ========================================================================== */
+
+.contact-hero {
+    padding-top: 140px;
+    padding-bottom: var(--space-16);
+    background: var(--gradient-hero);
+    text-align: center;
+    color: var(--color-white);
+}
+
+.contact-hero h1 {
+    color: var(--color-white);
+    font-size: var(--font-size-5xl);
+    margin-bottom: var(--space-4);
+}
+
+.contact-hero p {
+    font-size: var(--font-size-xl);
+    color: var(--color-neutral-200);
+    margin-bottom: 0;
+}
+
+.contact-section {
+    background: var(--color-dark-900);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--space-12);
+    align-items: start;
+}
+
+.contact-form-wrapper {
+    background: rgba(26, 26, 62, 0.4);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    padding: var(--space-10);
+    border-radius: var(--radius-2xl);
+    box-shadow: var(--shadow-lg), var(--shadow-glow);
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+}
+
+.info-card {
+    padding: var(--space-8);
+}
+
+.info-card h3 {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--space-6);
+    color: var(--color-white);
+}
+
+.info-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.info-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+    color: var(--color-neutral-300);
+}
+
+.info-list svg {
+    flex-shrink: 0;
+    color: var(--color-primary-400);
+    margin-top: 2px;
+}
+
+.response-promise {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-white);
+    text-align: center;
+    padding: var(--space-6);
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.2) 0%, rgba(139, 92, 246, 0.2) 100%);
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-glow);
+}
+
+@media (max-width: 1024px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-hero {
+        padding-top: 100px;
+    }
+
+    .contact-hero h1 {
+        font-size: var(--font-size-4xl);
+    }
+
+    .contact-form-wrapper {
+        padding: var(--space-6);
+    }
+}

@@ -1,0 +1,111 @@
+{
+  "nav": {
+    "logo": "ultimAItech",
+    "home": "Home",
+    "services": "Services",
+    "technology": "Technology",
+    "pricing": "Pricing",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "hero": {
+    "headline": "Intelligent Chatbots That Understand Your Business",
+    "subheadline": "Deploy AI-powered conversational agents trained on your website content. No coding required.",
+    "cta_primary": "Get Your Custom Chatbot",
+    "cta_secondary": "See How It Works"
+  },
+  "values": {
+    "title": "Why Choose ultimAItech",
+    "trained_title": "Trained on Your Content",
+    "trained_desc": "RAG technology ensures accurate, contextual responses based on your business knowledge",
+    "deploy_title": "Deploy in Minutes",
+    "deploy_desc": "Simple embedding widget with no technical expertise needed",
+    "management_title": "Full Management",
+    "management_desc": "Complete development, training, deployment, and ongoing maintenance included",
+    "scalable_title": "Multi-Tenant Architecture",
+    "scalable_desc": "Scalable solution supporting multiple chatbots and clients"
+  },
+  "how_it_works": {
+    "title": "How It Works",
+    "step1_title": "Content Analysis",
+    "step1_desc": "We scrape and analyze your website content",
+    "step2_title": "AI Training",
+    "step2_desc": "Advanced NLP models learn your business knowledge",
+    "step3_title": "Deployment",
+    "step3_desc": "Embed chatbot widget anywhere on your site",
+    "step4_title": "Continuous Optimization",
+    "step4_desc": "Monitor, maintain, and improve performance"
+  },
+  "use_cases": {
+    "title": "Real-World Applications",
+    "support": "Customer Support Automation",
+    "leads": "Lead Generation & Qualification",
+    "faq": "FAQ & Knowledge Base Access",
+    "products": "Product Recommendations",
+    "appointments": "Appointment Scheduling"
+  },
+  "technology": {
+    "title": "Built on Enterprise Technology",
+    "desc": "Robust architecture powered by FastAPI, React, Qdrant vector database, and Perplexity AI LLM"
+  },
+  "trust": {
+    "title": "Trusted by Businesses Worldwide",
+    "metric": "conversations automated monthly"
+  },
+  "cta_final": {
+    "title": "Ready to Transform Customer Engagement?",
+    "subtitle": "Get started with a free consultation",
+    "button": "Schedule Consultation"
+  },
+  "footer": {
+    "tagline": "Intelligent Chatbots for Modern Businesses",
+    "company_title": "Company",
+    "services_title": "Services",
+    "legal_title": "Legal",
+    "about": "About Us",
+    "contact_us": "Contact",
+    "blog": "Blog",
+    "chatbot_dev": "Chatbot Development",
+    "training": "Content Training",
+    "deployment": "Deployment & Integration",
+    "maintenance": "Ongoing Maintenance",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "cookies": "Cookie Policy",
+    "copyright": "© 2024 ultimAItech. All rights reserved."
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "subtitle": "Start your chatbot project today",
+    "name_label": "Name",
+    "name_placeholder": "Your name",
+    "email_label": "Email",
+    "email_placeholder": "your@email.com",
+    "company_label": "Company",
+    "company_placeholder": "Your company name",
+    "phone_label": "Phone (optional)",
+    "phone_placeholder": "+1 (555) 000-0000",
+    "service_label": "Service Interest",
+    "service_placeholder": "Select a service",
+    "message_label": "Message",
+    "message_placeholder": "Tell us about your project...",
+    "submit": "Send Message",
+    "success": "Thank you! We'll get back to you within 24 hours.",
+    "error": "An error occurred. Please try again.",
+    "response_promise": "We respond to all inquiries within 24 hours"
+  },
+  "services": {
+    "chatbot_dev": "Chatbot Development",
+    "training": "Content Training & Optimization",
+    "deployment": "Deployment & Integration",
+    "maintenance": "Ongoing Maintenance & Support",
+    "addons": "Add-On Services"
+  },
+  "pricing": {
+    "starter": "Starter",
+    "professional": "Professional",
+    "enterprise": "Enterprise",
+    "per_month": "/month",
+    "contact_sales": "Contact Sales"
+  }
+}

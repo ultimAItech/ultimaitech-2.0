@@ -1,0 +1,111 @@
+{
+    "nav": {
+        "logo": "ultimAItech",
+        "home": "Home",
+        "services": "Diensten",
+        "technology": "Technologie",
+        "pricing": "Prijzen",
+        "about": "Over ons",
+        "contact": "Contact"
+    },
+    "hero": {
+        "headline": "Intelligente chatbots die uw bedrijf begrijpen",
+        "subheadline": "Implementeer AI-aangedreven gespreksagenten getraind op uw website-inhoud. Geen codering vereist.",
+        "cta_primary": "Verkrijg uw aangepaste chatbot",
+        "cta_secondary": "Zie hoe het werkt"
+    },
+    "values": {
+        "title": "Waarom kiezen voor ultimAItech?",
+        "trained_title": "Getraind op uw inhoud",
+        "trained_desc": "RAG-technologie zorgt voor nauwkeurige, contextuele antwoorden op basis van uw bedrijfskennis",
+        "deploy_title": "Implementeer in minuten",
+        "deploy_desc": "Eenvoudige inbeddings-widget zonder technische expertise",
+        "management_title": "Volledig beheer",
+        "management_desc": "Volledige ontwikkeling, training, implementatie en doorlopend onderhoud inbegrepen",
+        "scalable_title": "Multi-tenant architectuur",
+        "scalable_desc": "Schaalbare oplossing voor meerdere chatbots en klanten"
+    },
+    "how_it_works": {
+        "title": "Hoe het werkt",
+        "step1_title": "Inhoudsanalyse",
+        "step1_desc": "We scannen en analyseren uw website-inhoud",
+        "step2_title": "AI-training",
+        "step2_desc": "Geavanceerde NLP-modellen leren uw bedrijfskennis",
+        "step3_title": "Implementatie",
+        "step3_desc": "Chatbot-widget overal op uw site inbedden",
+        "step4_title": "Continue optimalisatie",
+        "step4_desc": "Prestaties monitoren, onderhouden en verbeteren"
+    },
+    "use_cases": {
+        "title": "Praktische toepassingen",
+        "support": "Automatisering klantenondersteuning",
+        "leads": "Leadgeneratie & -kwalificatie",
+        "faq": "FAQ & kennisbank toegang",
+        "products": "Productaanbevelingen",
+        "appointments": "Afsprakenplanning"
+    },
+    "technology": {
+        "title": "Gebouwd op bedrijfstechnologie",
+        "desc": "Robuuste architectuur aangedreven door FastAPI, React, Qdrant vector database en Perplexity AI LLM"
+    },
+    "trust": {
+        "title": "Vertrouwd door bedrijven wereldwijd",
+        "metric": "maandelijks geautomatiseerde gesprekken"
+    },
+    "cta_final": {
+        "title": "Klaar om klantbetrokkenheid te transformeren?",
+        "subtitle": "Ga van start met een gratis consultatie",
+        "button": "Plan consultatie"
+    },
+    "footer": {
+        "tagline": "Intelligente chatbots voor moderne bedrijven",
+        "company_title": "Bedrijf",
+        "services_title": "Diensten",
+        "legal_title": "Juridisch",
+        "about": "Over ons",
+        "contact_us": "Contact",
+        "blog": "Blog",
+        "chatbot_dev": "Chatbot-ontwikkeling",
+        "training": "Content-training",
+        "deployment": "Implementatie & integratie",
+        "maintenance": "Doorlopend onderhoud",
+        "privacy": "Privacybeleid",
+        "terms": "Servicevoorwaarden",
+        "cookies": "Cookiebeleid",
+        "copyright": "© 2024 ultimAItech. Alle rechten voorbehouden."
+    },
+    "contact": {
+        "title": "Neem contact op",
+        "subtitle": "Start vandaag uw chatbot-project",
+        "name_label": "Naam",
+        "name_placeholder": "Uw naam",
+        "email_label": "E-mail",
+        "email_placeholder": "uw@email.nl",
+        "company_label": "Bedrijf",
+        "company_placeholder": "Uw bedrijfsnaam",
+        "phone_label": "Telefoon (optioneel)",
+        "phone_placeholder": "+31 (555) 000-0000",
+        "service_label": "Service interesse",
+        "service_placeholder": "Selecteer een service",
+        "message_label": "Bericht",
+        "message_placeholder": "Vertel ons over uw project...",
+        "submit": "Verstuur bericht",
+        "success": "Dank u! We nemen binnen 24 uur contact met u op.",
+        "error": "Er is een fout opgetreden. Probeer het opnieuw.",
+        "response_promise": "We reageren op alle aanvragen binnen 24 uur"
+    },
+    "services": {
+        "chatbot_dev": "Chatbot-ontwikkeling",
+        "training": "Content-training & -optimalisatie",
+        "deployment": "Implementatie & integratie",
+        "maintenance": "Doorlopend onderhoud & support",
+        "addons": "Extra diensten"
+    },
+    "pricing": {
+        "starter": "Starter",
+        "professional": "Professioneel",
+        "enterprise": "Enterprise",
+        "per_month": "/maand",
+        "contact_sales": "Contact verkoop"
+    }
+}
