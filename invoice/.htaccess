@@ -1,4 +1,0 @@
-# Protect .env file from being accessed via web
-<FilesMatch "^\.env$">
-    Require all denied
-</FilesMatch>
