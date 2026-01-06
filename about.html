@@ -2,82 +2,71 @@
 <html lang="en">
 
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QSGC4HFV7M"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-QSGC4HFV7M');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - ultimAItech</title>
+    <title>About ultimAItech | AI Chatbot Experts & Innovation Leaders</title>
     <meta name="description"
-        content="Learn about ultimAItech's mission to empower businesses with intelligent AI chatbot solutions.">
+        content="ultimAItech specializes in RAG-powered AI chatbot solutions for businesses. Expert team, cutting-edge technology, and commitment to customer success.">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://ultimaitech.com/about.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ultimaitech.com/about.html">
+    <meta property="og:title" content="About ultimAItech | AI Chatbot Experts">
+    <meta property="og:description"
+        content="ultimAItech specializes in RAG-powered AI chatbot solutions for businesses.">
+    <meta property="og:image" content="https://ultimaitech.com/images/logo.svg">
+    <meta property="og:site_name" content="ultimAItech">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@ultimaitech">
+    <meta name="twitter:title" content="About ultimAItech">
+    <meta name="twitter:description" content="Specialists in RAG-powered AI chatbot solutions.">
+    <meta name="twitter:image" content="https://ultimaitech.com/images/logo.svg">
 
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/decorative-elements.css">
-    <style>
-        .page-hero {
-            padding-top: 140px;
-            padding-bottom: var(--space-16);
-            background: var(--gradient-hero);
-            text-align: center;
-            color: var(--color-white);
-            position: relative;
-            overflow: hidden;
-        }
+    <link rel="stylesheet" href="css/pages.css">
 
-        .page-hero h1 {
-            color: var(--color-white);
-            margin-bottom: var(--space-4);
-        }
-
-        .page-hero p {
-            font-size: var(--font-size-xl);
-            color: var(--color-neutral-200);
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .about-content {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .mission-card {
-            background: var(--gradient-primary);
-            color: var(--color-white);
-            padding: var(--space-12);
-            border-radius: var(--radius-2xl);
-            text-align: center;
-            margin: var(--space-16) 0;
-            box-shadow: var(--shadow-neon);
-        }
-
-        .mission-card h2,
-        .mission-card p {
-            color: var(--color-white);
-        }
-
-        .values-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: var(--space-8);
-            margin-top: var(--space-12);
-        }
-    </style>
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "ultimAItech",
+      "url": "https://ultimaitech.com"
+    }
+    </script>
 </head>
 
 <body>
     <nav class="nav">
         <div class="container nav-container">
             <a href="./" class="nav-logo" aria-label="ultimAItech Home">
-                <img src="images/logo.svg" alt="ultimAItech" style="height: 62px; width: auto;">
+                <img src="images/logo.svg" alt="ultimAItech">
             </a>
             <button class="nav-toggle" aria-label="Toggle navigation">
                 <span></span><span></span><span></span>
             </button>
             <ul class="nav-menu">
-                <li><a href="./" class="nav-link">Home</a></li>
-                <li><a href="./services.html" class="nav-link">Services</a></li>
-                <li><a href="./technology.html" class="nav-link">Technology</a></li>
-                <li><a href="./pricing.html" class="nav-link">Pricing</a></li>
-                <li><a href="./about.html" class="nav-link">About</a></li>
-                <li><a href="./contact.html" class="btn btn-primary btn-sm">Contact</a></li>
+                <li><a href="./" class="nav-link" data-i18n="nav.home">Home</a></li>
+                <li><a href="./services.html" class="nav-link" data-i18n="nav.services">Services</a></li>
+                <li><a href="./technology.html" class="nav-link" data-i18n="nav.technology">Technology</a></li>
+                <li><a href="./pricing.html" class="nav-link" data-i18n="nav.pricing">Pricing</a></li>
+                <li><a href="./about.html" class="nav-link" data-i18n="nav.about">About</a></li>
+                <li><a href="./contact.html" class="btn btn-primary btn-sm" data-i18n="nav.contact">Contact</a></li>
                 <li class="lang-switcher">
                     <span class="lang-option active" data-lang="en">EN</span>
                     <span class="lang-option" data-lang="de">DE</span>
@@ -87,76 +76,81 @@
         </div>
     </nav>
 
-    <section class="page-hero" style="position: relative; overflow: hidden;">
-        <div
-            style="position: absolute; inset: 0; background-image: url('images/innovation-technology.png'); background-size: cover; background-position: center; opacity: 0.2; z-index: 0;">
-        </div>
-        <div
-            style="position: absolute; inset: 0; background: radial-gradient(circle at 30% 50%, rgba(99, 102, 241, 0.1) 0%, transparent 50%); z-index: 1;">
-        </div>
+    <section class="page-hero">
+        <div class="hero-bg-image" style="background-image: url('images/innovation-technology.png');"></div>
+        <div class="hero-gradient-overlay"></div>
         <div class="glow-orb blue" style="top: 10%; left: 10%;"></div>
         <div class="glow-orb purple" style="top: 60%; right: 15%;"></div>
-        <div class="container" style="position: relative; z-index: 2;">
-            <h1>About ultimAItech</h1>
-            <p>We're transforming customer engagement through intelligent, AI-powered chatbot solutions</p>
+        <div class="container relative z-2">
+            <h1 data-i18n="about.hero_title">About ultimAItech</h1>
+            <p data-i18n="about.hero_subtitle">We're transforming customer engagement through intelligent, AI-powered
+                chatbot solutions</p>
         </div>
     </section>
 
-    <section class="section" style="background: var(--color-dark-900);">
+    <section class="section bg-dark-900">
         <div class="container about-content">
 
-            <div data-animate="animate-fadeInUp" style="text-align: center; max-width: 900px; margin: 0 auto;">
-                <h2>Our Story</h2>
-                <p>ultimAItech emerged from a clear vision: to bridge the gap between cutting-edge AI technology and
+            <div data-animate="animate-fadeInUp" class="text-center max-w-900 mx-auto">
+                <h2 data-i18n="about.story_title">Our Story</h2>
+                <p data-i18n="about.story_p1">ultimAItech emerged from a clear vision: to bridge the gap between
+                    cutting-edge AI technology and
                     practical business applications. As specialists in AI and machine learning, we recognized that
                     businesses needed more than just chatbots—they needed intelligent conversational agents that truly
                     understand their unique context and deliver accurate, helpful responses.</p>
 
-                <p>Our journey led us to develop VYBR!S, our proprietary multi-tenant chatbot platform. Built on
+                <p data-i18n="about.story_p2">Our journey led us to develop VYBR!S, our proprietary multi-tenant chatbot
+                    platform. Built on
                     advanced Retrieval-Augmented Generation (RAG) technology, VYBR!S represents our commitment to
                     creating chatbot solutions that are not only powerful but also easy to deploy and manage.</p>
             </div>
 
             <div class="mission-card" data-animate="animate-scaleIn">
-                <h2>Our Mission</h2>
-                <p style="font-size: var(--font-size-lg);">Empowering businesses to provide intelligent, instant
+                <h2 data-i18n="about.mission_title">Our Mission</h2>
+                <p class="text-lg" data-i18n="about.mission_text">Empowering businesses to
+                    provide intelligent, instant
                     customer engagement through advanced AI chatbot technology that's accessible, reliable, and truly
                     understands your business.</p>
             </div>
 
-            <div data-animate="animate-fadeInUp" style="text-align: center;">
-                <h2>Why choose ultimAItech</h2>
-                <div class="values-grid"
-                    style="grid-template-columns: repeat(2, 1fr); max-width: 900px; margin: 0 auto;">
+            <div data-animate="animate-fadeInUp" class="text-center">
+                <h2 data-i18n="about.why_title">Why choose ultimAItech</h2>
+                <div class="values-grid grid-2-cols max-w-900 mx-auto">
                     <div class="card card-gradient">
-                        <h3>Specialized Expertise</h3>
-                        <p>Focused exclusively on conversational AI and chatbot solutions, bringing deep technical
+                        <h3 data-i18n="about.expertise_title">Specialized Expertise</h3>
+                        <p data-i18n="about.expertise_text">Focused exclusively on conversational AI and chatbot
+                            solutions, bringing deep technical
                             knowledge to every project.</p>
                     </div>
                     <div class="card card-gradient">
-                        <h3>Proprietary Technology</h3>
-                        <p>Our VYBR!S platform provides enterprise-grade capabilities with the flexibility to scale as
+                        <h3 data-i18n="about.proprietary_title">Proprietary Technology</h3>
+                        <p data-i18n="about.proprietary_text">Our VYBR!S platform provides enterprise-grade capabilities
+                            with the flexibility to scale as
                             you grow.</p>
                     </div>
                     <div class="card card-gradient">
-                        <h3>End-to-End Service</h3>
-                        <p>From initial consultation to ongoing optimization, we handle every aspect of your chatbot
+                        <h3 data-i18n="about.e2e_title">End-to-End Service</h3>
+                        <p data-i18n="about.e2e_text">From initial consultation to ongoing optimization, we handle every
+                            aspect of your chatbot
                             lifecycle.</p>
                     </div>
                     <div class="card card-gradient">
-                        <h3>Proven Reliability</h3>
-                        <p>Built on robust, scalable architecture designed for enterprise performance and security.</p>
+                        <h3 data-i18n="about.reliability_title">Proven Reliability</h3>
+                        <p data-i18n="about.reliability_text">Built on robust, scalable architecture designed for
+                            enterprise performance and security.</p>
                     </div>
                 </div>
             </div>
 
-            <div style="margin-top: var(--space-16); text-align: center;" data-animate="animate-fadeInUp">
-                <h2>Your Success is Our Success</h2>
-                <p style="max-width: 700px; margin: var(--space-6) auto;">We're not just building chatbots—we're
+            <div class="mt-16 text-center" data-animate="animate-fadeInUp">
+                <h2 data-i18n="about.success_title">Your Success is Our Success</h2>
+                <p class="max-w-700 mx-auto" style="margin: var(--space-6) auto;" data-i18n="about.success_text">We're
+                    not just
+                    building chatbots—we're
                     creating intelligent digital assistants that enhance customer experiences, streamline operations,
                     and drive real business value. Every solution we deliver is tailored to your specific needs and
                     optimized for your success.</p>
-                <a href="./contact.html" class="btn btn-primary btn-lg" style="margin-top: var(--space-8);">Let's Build
+                <a href="./contact.html" class="btn btn-primary btn-lg mt-8" data-i18n="about.cta_button">Let's Build
                     Together</a>
             </div>
 
@@ -166,33 +160,53 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
+                <!-- Column 1: Brand -->
                 <div class="footer-column">
                     <h4 class="nav-logo">ultimAItech</h4>
-                    <p>Intelligent Chatbots for Modern Businesses</p>
+                    <p data-i18n="footer.tagline">Intelligent Chatbots for Modern Businesses</p>
                 </div>
+
+                <!-- Column 2: Company -->
                 <div class="footer-column">
-                    <h4>Company</h4>
-                    <a href="./about.html">About Us</a>
-                    <a href="./contact.html">Contact</a>
+                    <h4 data-i18n="footer.company_title">Company</h4>
+                    <a href="./about.html" data-i18n="footer.about">About Us</a>
+                    <a href="./contact.html" data-i18n="footer.contact_us">Contact</a>
+                    <a href="#" data-i18n="footer.blog">Blog</a>
                 </div>
+
+                <!-- Column 3: Services -->
                 <div class="footer-column">
-                    <h4>Services</h4>
-                    <a href="./services.html">Chatbot Development</a>
+                    <h4 data-i18n="footer.services_title">Services</h4>
+                    <a href="./services.html" data-i18n="footer.chatbot_dev">Chatbot Development</a>
+                    <a href="./services.html" data-i18n="footer.training">Content Training</a>
+                    <a href="./services.html" data-i18n="footer.deployment">Deployment & Integration</a>
+                    <a href="./services.html" data-i18n="footer.maintenance">Ongoing Maintenance</a>
                 </div>
+
+                <!-- Column 4: Legal -->
                 <div class="footer-column">
-                    <h4>Legal</h4>
-                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <h4 data-i18n="footer.legal_title">Legal</h4>
+                    <a href="privacy-policy.html" data-i18n="footer.privacy">Privacy Policy</a>
+                    <a href="terms-of-service.html" data-i18n="footer.terms">Terms of Service</a>
+                    <a href="cookie-policy.html" data-i18n="footer.cookies">Cookie Policy</a>
                 </div>
             </div>
+
             <div class="footer-bottom">
-                <p>© 2024 ultimAItech. All rights reserved.</p>
+                <p data-i18n="footer.copyright">© 2024 ultimAItech. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <script type="module" src="js/i18n.js"></script>
     <script type="module" src="js/navigation.js"></script>
-    <script type="module" src="js/animations.js"></script>
+    <script defer type="module" src="js/i18n.js"></script>
+    <script defer type="module" src="js/animations.js"></script>
+    <script>
+        function loadChatbot() { const script = document.createElement('script'); script.src = 'https://ultimaitech.com/vybris/api/static/widget.js?v=3'; script.setAttribute('data-id', 'bot_4efd6d886c97'); document.body.appendChild(script); }
+        let loaded = false;
+        setTimeout(() => { if (!loaded) { loadChatbot(); loaded = true; } }, 3000);
+        ['click', 'scroll', 'mousemove'].forEach(event => { window.addEventListener(event, () => { if (!loaded) { loadChatbot(); loaded = true; } }, { once: true }); });
+    </script>
 </body>
 
 </html>

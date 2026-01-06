@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You! - ultimAItech</title>
+    <meta name="description" content="Thank you for joining the ultimAItech waitlist.">
+
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/pages.css">
+
+    <style>
+        .thank-you-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 80vh;
+            text-align: center;
+        }
+
+        .thank-you-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 3rem;
+            max-width: 600px;
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .success-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            animation: bounceIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        @keyframes bounceIn {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+
+            60% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container nav-container">
+            <a href="./" class="nav-logo" aria-label="ultimAItech Home">
+                <img src="images/logo.svg" alt="ultimAItech" style="height: 62px; width: auto;">
+            </a>
+
+            <ul class="nav-menu">
+                <li><a href="./" class="nav-link">Home</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="thank-you-section">
+        <div class="glow-orb purple" style="top: 20%; right: 15%;"></div>
+        <div class="glow-orb blue" style="bottom: 30%; left: 10%;"></div>
+
+        <div class="container">
+            <div class="thank-you-card">
+                <div class="success-icon">🎉</div>
+                <h1>Thank You!</h1>
+                <p style="font-size: 1.25rem; margin-bottom: 2rem; color: var(--text-secondary);">
+                    We have received your details securely.
+                </p>
+                <div
+                    style="background: rgba(99, 102, 241, 0.1); padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem;">
+                    <p style="margin: 0; color: var(--color-primary); font-weight: 500;">
+                        We will reach out to you within 24 hours.
+                    </p>
+                </div>
+                <a href="./" class="btn btn-primary">Return to Home</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>© 2024 ultimAItech. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

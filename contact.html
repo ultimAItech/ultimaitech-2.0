@@ -2,15 +2,58 @@
 <html lang="en">
 
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QSGC4HFV7M"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-QSGC4HFV7M');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - ultimAItech</title>
+    <title>Contact ultimAItech | Get Your Custom AI Chatbot Today</title>
     <meta name="description"
-        content="Get in touch with ultimAItech. Start your chatbot project today with a free consultation.">
+        content="Ready to deploy an AI chatbot? Contact ultimAItech for a free consultation. Fast response, expert guidance, and custom solutions for your business.">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://ultimaitech.com/contact.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ultimaitech.com/contact.html">
+    <meta property="og:title" content="Contact ultimAItech | Get Your Custom AI Chatbot Today">
+    <meta property="og:description" content="Ready to deploy an AI chatbot? Contact us for a free consultation.">
+    <meta property="og:image" content="https://ultimaitech.com/images/logo.svg">
+    <meta property="og:site_name" content="ultimAItech">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@ultimaitech">
+    <meta name="twitter:title" content="Contact ultimAItech">
+    <meta name="twitter:description" content="Get started with AI chatbots - free consultation available.">
+    <meta name="twitter:image" content="https://ultimaitech.com/images/logo.svg">
 
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/contact.css">
-    <link rel="stylesheet" href="css/decorative-elements.css">
+    <link rel="stylesheet" href="css/pages.css">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "ultimAItech",
+      "url": "https://ultimaitech.com",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Sales",
+        "email": "info@ultimaitech.com",
+        "availableLanguage": ["English", "German", "Dutch"]
+      }
+    }
+    </script>
 </head>
 
 <body>
@@ -54,8 +97,9 @@
         <div class="glow-orb purple" style="top: 20%; right: 15%;"></div>
         <div class="glow-orb blue" style="bottom: 30%; left: 10%;"></div>
         <div class="container" style="position: relative; z-index: 2;">
-            <h1>Get in Touch</h1>
-            <p>Ready to transform your customer engagement? Let's talk about your chatbot needs</p>
+            <h1 data-i18n="contact_page.hero_title">Become an Agency Partner</h1>
+            <p data-i18n="contact_page.hero_subtitle">Apply to join the VYBR!S partner program and start reselling AI
+                chatbots to your clients</p>
         </div>
     </section>
 
@@ -65,64 +109,85 @@
             <div class="contact-grid">
                 <!-- Contact Form -->
                 <div class="contact-form-wrapper" data-animate="animate-fadeInUp">
+                    <h2 style="margin-bottom: var(--space-2);" data-i18n="contact.form_title">Apply as an Agency Partner
+                    </h2>
+                    <p style="color: var(--color-neutral-300); margin-bottom: var(--space-6);"
+                        data-i18n="contact.form_intro">Fill out the form below, then book a 20-minute call to discuss
+                        your agency's needs.</p>
                     <form id="contact-form" class="contact-form">
                         <!-- Honeypot for spam protection -->
                         <input type="text" name="website" style="display: none;" tabindex="-1" autocomplete="off">
 
                         <div class="form-group">
-                            <label class="form-label" for="name" data-i18n="contact.name_label">Name</label>
+                            <label class="form-label" for="company" data-i18n="contact.agency_label">Agency Name
+                                *</label>
+                            <input type="text" id="company" name="company" class="form-input" required
+                                placeholder="Your agency name">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="agency-website" data-i18n="contact.website_label">Agency
+                                Website *</label>
+                            <input type="url" id="agency-website" name="agency-website" class="form-input" required
+                                placeholder="https://youragency.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="name" data-i18n="contact.contact_name_label">Primary Contact
+                                Name *</label>
                             <input type="text" id="name" name="name" class="form-input" required
-                                data-i18n="contact.name_placeholder" placeholder="Your name">
+                                placeholder="Your name">
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label" for="email" data-i18n="contact.email_label">Email</label>
+                            <label class="form-label" for="email" data-i18n="contact.email_label">Email *</label>
                             <input type="email" id="email" name="email" class="form-input" required
-                                data-i18n="contact.email_placeholder" placeholder="your@email.com">
+                                placeholder="your@agency.com">
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label" for="company" data-i18n="contact.company_label">Company</label>
-                            <input type="text" id="company" name="company" class="form-input"
-                                data-i18n="contact.company_placeholder" placeholder="Your company name">
-                        </div>
-
-                        <div class="form-group">
-                            <label class="form-label" for="phone" data-i18n="contact.phone_label">Phone
-                                (optional)</label>
-                            <input type="tel" id="phone" name="phone" class="form-input"
-                                data-i18n="contact.phone_placeholder" placeholder="+1 (555) 000-0000">
-                        </div>
-
-                        <div class="form-group">
-                            <label class="form-label" for="service" data-i18n="contact.service_label">Service
-                                Interest</label>
-                            <select id="service" name="service" class="form-select" required>
-                                <option value="" data-i18n="contact.service_placeholder">Select a service</option>
-                                <option value="chatbot_dev">Chatbot Development</option>
-                                <option value="training">Content Training</option>
-                                <option value="deployment">Deployment & Integration</option>
-                                <option value="maintenance">Ongoing Maintenance</option>
-                                <option value="consultation">Free Consultation</option>
-                                <option value="other">Other</option>
+                            <label class="form-label" for="clients" data-i18n="contact.clients_label">Number of
+                                Clients</label>
+                            <select id="clients" name="clients" class="form-select">
+                                <option value="">Select range</option>
+                                <option value="1-10">1–10 clients</option>
+                                <option value="11-25">11–25 clients</option>
+                                <option value="26-50">26–50 clients</option>
+                                <option value="50+">50+ clients</option>
                             </select>
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label" for="message" data-i18n="contact.message_label">Message</label>
-                            <textarea id="message" name="message" class="form-textarea" required
-                                data-i18n="contact.message_placeholder"
-                                placeholder="Tell us about your project..."></textarea>
+                            <label class="form-label" for="offering-ai" data-i18n="contact.offering_label">Are you
+                                already offering AI/chatbots?</label>
+                            <select id="offering-ai" name="offering-ai" class="form-select">
+                                <option value="">Select one</option>
+                                <option value="yes">Yes, currently offering</option>
+                                <option value="no">No, not yet</option>
+                                <option value="planning">Planning to start</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="timeline" data-i18n="contact.timeline_label">When do you want
+                                to launch your first AI chatbot offer?</label>
+                            <select id="timeline" name="timeline" class="form-select">
+                                <option value="">Select timeline</option>
+                                <option value="immediately">Immediately</option>
+                                <option value="1-3-months">1–3 months</option>
+                                <option value="3-6-months">3–6 months</option>
+                                <option value="exploring">Just exploring</option>
+                            </select>
                         </div>
 
                         <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;"
                             data-i18n="contact.submit">
-                            Send Message
+                            Submit Application
                         </button>
 
                         <!-- Success Message -->
                         <div id="form-success" class="form-success hidden" data-i18n="contact.success">
-                            Thank you! We'll get back to you within 24 hours.
+                            Thank you! Your application has been received. Book your 20-minute onboarding call below.
                         </div>
 
                         <!-- Error Message -->
@@ -130,10 +195,9 @@
                     </form>
                 </div>
 
-                <!-- Contact Info -->
                 <div class="contact-info" data-animate="animate-fadeInUp" data-delay="200">
-                    <div class="info-card card card-gradient">
-                        <h3>Why Contact Us?</h3>
+                    <div class="info-card">
+                        <h3 data-i18n="contact_page.why_title">Why Partner with Us?</h3>
                         <ul class="info-list">
                             <li>
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -141,7 +205,7 @@
                                     <path d="m9 12 2 2 4-4"></path>
                                     <circle cx="12" cy="12" r="10"></circle>
                                 </svg>
-                                <span>Free consultation and project assessment</span>
+                                <span data-i18n="contact_page.why1">Founder pricing for early partners</span>
                             </li>
                             <li>
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -149,7 +213,7 @@
                                     <path d="m9 12 2 2 4-4"></path>
                                     <circle cx="12" cy="12" r="10"></circle>
                                 </svg>
-                                <span>Custom pricing based on your needs</span>
+                                <span data-i18n="contact_page.why2">Direct access to the product roadmap</span>
                             </li>
                             <li>
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -157,7 +221,7 @@
                                     <path d="m9 12 2 2 4-4"></path>
                                     <circle cx="12" cy="12" r="10"></circle>
                                 </svg>
-                                <span>Expert guidance on chatbot strategy</span>
+                                <span data-i18n="contact_page.why3">White-label platform ready in a week</span>
                             </li>
                             <li>
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -165,15 +229,78 @@
                                     <path d="m9 12 2 2 4-4"></path>
                                     <circle cx="12" cy="12" r="10"></circle>
                                 </svg>
-                                <span>No obligation, no pressure</span>
+                                <span data-i18n="contact_page.why4">First client bot deployed within hours</span>
                             </li>
                         </ul>
                     </div>
 
-                    <div class="info-card card">
-                        <h3>Response Time</h3>
+                    <div class="info-card">
+                        <h3 data-i18n="contact_page.response_title">Response Time</h3>
                         <p class="response-promise" data-i18n="contact.response_promise">We respond to all inquiries
                             within 24 hours</p>
+                    </div>
+
+                    <div class="info-card">
+                        <h3 data-i18n="contact_page.contact_info_title">Contact Information</h3>
+                        <div class="contact-details">
+                            <div class="contact-detail-item">
+                                <div class="contact-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                        <circle cx="12" cy="10" r="3"></circle>
+                                    </svg>
+                                </div>
+                                <div class="contact-text">
+                                    <strong>UltimAItech</strong>
+                                    <span>Veneweg 199</span>
+                                    <span>7946 LP Wanneperveen, NL</span>
+                                </div>
+                            </div>
+                            <div class="contact-detail-item">
+                                <div class="contact-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                        <line x1="8" y1="21" x2="16" y2="21"></line>
+                                        <line x1="12" y1="17" x2="12" y2="21"></line>
+                                    </svg>
+                                </div>
+                                <div class="contact-text">
+                                    <strong data-i18n="contact_page.kvk_label">KVK:</strong>
+                                    <span>98782800</span>
+                                </div>
+                            </div>
+                            <div class="contact-detail-item">
+                                <div class="contact-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                        <polyline points="14 2 14 8 20 8"></polyline>
+                                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    </svg>
+                                </div>
+                                <div class="contact-text">
+                                    <strong data-i18n="contact_page.btw_label">BTW:</strong>
+                                    <span>NL005353550860</span>
+                                </div>
+                            </div>
+                            <div class="contact-detail-item">
+                                <div class="contact-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path
+                                            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                        </path>
+                                        <polyline points="22,6 12,13 2,6"></polyline>
+                                    </svg>
+                                </div>
+                                <div class="contact-text">
+                                    <a href="mailto:info@ultimaitech.com" class="contact-email">info@ultimaitech.com</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -219,10 +346,16 @@
     </footer>
 
     <!-- Scripts -->
-    <script type="module" src="js/i18n.js"></script>
     <script type="module" src="js/navigation.js"></script>
-    <script type="module" src="js/animations.js"></script>
-    <script type="module" src="js/contact-form.js"></script>
+    <script defer type="module" src="js/i18n.js"></script>
+    <script defer type="module" src="js/animations.js"></script>
+    <script defer type="module" src="js/contact-form.js"></script>
+    <script>
+        function loadChatbot() { const script = document.createElement('script'); script.src = 'https://ultimaitech.com/vybris/api/static/widget.js?v=3'; script.setAttribute('data-id', 'bot_4efd6d886c97'); document.body.appendChild(script); }
+        let loaded = false;
+        setTimeout(() => { if (!loaded) { loadChatbot(); loaded = true; } }, 3000);
+        ['click', 'scroll', 'mousemove'].forEach(event => { window.addEventListener(event, () => { if (!loaded) { loadChatbot(); loaded = true; } }, { once: true }); });
+    </script>
 </body>
 
 </html>

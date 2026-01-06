@@ -2,187 +2,54 @@
 <html lang="en">
 
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QSGC4HFV7M"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-QSGC4HFV7M');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Technology - ultimAItech</title>
+    <title>AI Chatbot Technology | RAG, FastAPI & Vector Database - ultimAItech</title>
     <meta name="description"
-        content="Built on enterprise-grade technology stack with RAG, vector databases, and advanced NLP.">
+        content="Enterprise-grade chatbot platform built with FastAPI, Qdrant vector database, and Perplexity AI. Scalable RAG architecture for accurate, intelligent responses.">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://ultimaitech.com/technology.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ultimaitech.com/technology.html">
+    <meta property="og:title" content="AI Chatbot Technology | RAG, FastAPI & Vector Database">
+    <meta property="og:description"
+        content="Enterprise-grade chatbot platform built with FastAPI, Qdrant, and RAG architecture.">
+    <meta property="og:image" content="https://ultimaitech.com/images/logo.svg">
+    <meta property="og:site_name" content="ultimAItech">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@ultimaitech">
+    <meta name="twitter:title" content="AI Chatbot Technology Stack">
+    <meta name="twitter:description"
+        content="Enterprise-grade RAG architecture with FastAPI, Qdrant, and Perplexity AI.">
+    <meta name="twitter:image" content="https://ultimaitech.com/images/logo.svg">
 
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/decorative-elements.css">
-    <style>
-        .page-hero {
-            padding-top: 140px;
-            padding-bottom: var(--space-16);
-            background: var(--gradient-hero);
-            text-align: center;
-            color: var(--color-white);
-            position: relative;
-            overflow: hidden;
-        }
+    <link rel="stylesheet" href="css/pages.css">
 
-        .page-hero h1 {
-            color: var(--color-white);
-            margin-bottom: var(--space-4);
-        }
-
-        .page-hero p {
-            font-size: var(--font-size-xl);
-            color: var(--color-neutral-200);
-        }
-
-        .tech-section {
-            background: var(--color-dark-900);
-        }
-
-        .tech-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: var(--space-8);
-            margin-top: var(--space-12);
-        }
-
-        @media (max-width: 768px) {
-            .tech-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .tech-card {
-            position: relative;
-            background: linear-gradient(145deg, rgba(30, 30, 60, 0.8) 0%, rgba(15, 15, 30, 0.9) 100%);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            padding: var(--space-10);
-            border-radius: var(--radius-2xl);
-            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            overflow: hidden;
-            z-index: 1;
-        }
-
-        /* Subtle gradient glow effect */
-        .tech-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.5), transparent);
-            opacity: 0.5;
-            transition: opacity 0.4s ease;
-        }
-
-        /* Inner glow on hover */
-        .tech-card::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border-radius: var(--radius-2xl);
-            padding: 1px;
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.4), rgba(236, 72, 153, 0.1), transparent);
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            opacity: 0;
-            transition: opacity 0.4s ease;
-            pointer-events: none;
-        }
-
-        .tech-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.6), 0 0 30px rgba(99, 102, 241, 0.15);
-            background: linear-gradient(145deg, rgba(35, 35, 70, 0.9) 0%, rgba(20, 20, 40, 0.95) 100%);
-        }
-
-        .tech-card:hover::after {
-            opacity: 1;
-        }
-
-        .tech-card:hover::before {
-            opacity: 1;
-            background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 1), transparent);
-        }
-
-        .tech-card h3 {
-            font-size: var(--font-size-2xl);
-            background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: var(--space-6);
-        }
-
-        .tech-card p {
-            color: var(--color-neutral-300);
-            font-size: var(--font-size-base);
-            line-height: 1.6;
-            margin-bottom: var(--space-6);
-        }
-
-        .tech-card ul {
-            list-style: none;
-            display: grid;
-            gap: var(--space-3);
-            position: relative;
-            z-index: 2;
-            padding: 0;
-            margin: 0;
-        }
-
-        .tech-card li {
-            display: flex;
-            align-items: center;
-            color: var(--color-neutral-300);
-            font-size: var(--font-size-sm);
-        }
-
-        .tech-card li::before {
-            content: "✓";
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 20px;
-            height: 20px;
-            background: rgba(99, 102, 241, 0.2);
-            color: var(--color-primary-400);
-            border-radius: 50%;
-            font-weight: bold;
-            font-size: 10px;
-            margin-right: var(--space-3);
-            flex-shrink: 0;
-        }
-
-        .tech-stack {
-            display: flex;
-            flex-wrap: wrap;
-            gap: var(--space-3);
-            margin-top: var(--space-6);
-        }
-
-        .tech-badge {
-            background: rgba(99, 102, 241, 0.1);
-            color: var(--color-primary-300);
-            border: 1px solid rgba(99, 102, 241, 0.2);
-            padding: var(--space-2) var(--space-4);
-            border-radius: var(--radius-md);
-            font-size: var(--font-size-xs);
-            font-weight: var(--font-weight-semibold);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            transition: all 0.3s ease;
-        }
-
-        .tech-badge:hover {
-            background: rgba(99, 102, 241, 0.2);
-            border-color: var(--color-primary-400);
-            color: var(--color-white);
-            box-shadow: 0 0 15px rgba(99, 102, 241, 0.3);
-            transform: translateY(-1px);
-        }
-    </style>
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "ultimAItech",
+      "url": "https://ultimaitech.com"
+    }
+    </script>
 </head>
 
 <body>
@@ -195,12 +62,12 @@
                 <span></span><span></span><span></span>
             </button>
             <ul class="nav-menu">
-                <li><a href="./" class="nav-link">Home</a></li>
-                <li><a href="./services.html" class="nav-link">Services</a></li>
-                <li><a href="./technology.html" class="nav-link">Technology</a></li>
-                <li><a href="./pricing.html" class="nav-link">Pricing</a></li>
-                <li><a href="./about.html" class="nav-link">About</a></li>
-                <li><a href="./contact.html" class="btn btn-primary btn-sm">Contact</a></li>
+                <li><a href="./" class="nav-link" data-i18n="nav.home">Home</a></li>
+                <li><a href="./services.html" class="nav-link" data-i18n="nav.services">Services</a></li>
+                <li><a href="./technology.html" class="nav-link" data-i18n="nav.technology">Technology</a></li>
+                <li><a href="./pricing.html" class="nav-link" data-i18n="nav.pricing">Pricing</a></li>
+                <li><a href="./about.html" class="nav-link" data-i18n="nav.about">About</a></li>
+                <li><a href="./contact.html" class="btn btn-primary btn-sm" data-i18n="nav.contact">Contact</a></li>
                 <li class="lang-switcher">
                     <span class="lang-option active" data-lang="en">EN</span>
                     <span class="lang-option" data-lang="de">DE</span>
@@ -220,66 +87,72 @@
         <div class="glow-orb blue" style="top: 20%; left: 10%;"></div>
         <div class="glow-orb purple" style="top: 60%; right: 15%;"></div>
         <div class="container" style="position: relative; z-index: 2;">
-            <h1>Our Technology</h1>
-            <p>Advanced AI and RAG technology powering intelligent chatbot solutions</p>
+            <h1 data-i18n="tech_page.hero_title">Reliable Technology, Zero Maintenance</h1>
+            <p data-i18n="tech_page.hero_subtitle">Modern, scalable stack designed for multi-tenant, white-label
+                deployments. Secure, fast, and maintained for you.</p>
         </div>
     </section>
 
     <section class="section tech-section">
         <div class="container">
-            <h2 class="section-title text-center">Platform Architecture</h2>
+            <h2 class="section-title text-center" data-i18n="tech_page.architecture_title">Platform Architecture</h2>
 
             <div class="tech-grid">
                 <div class="tech-card" data-animate="animate-fadeInUp">
-                    <h3>Intelligent Response Generation</h3>
-                    <p>Retrieval-Augmented Generation (RAG) ensures factual, context-aware responses based solely on
-                        your trained content. No hallucinations, just accurate information.</p>
+                    <h3 data-i18n="tech_page.rag_title">Intelligent Response Generation</h3>
+                    <p data-i18n="tech_page.rag_desc">Retrieval-Augmented Generation (RAG) ensures factual,
+                        context-aware responses based solely on
+                        your trained content. No hallucinations, just accurate information. The initial training process
+                        takes up to 48 hours, but deployment is instant once training completes.</p>
                     <ul style="margin-top: var(--space-4);">
-                        <li>Vector-based semantic search</li>
-                        <li>Configurable confidence thresholds</li>
-                        <li>Fallback message system</li>
-                        <li>Context-aware responses</li>
+                        <li data-i18n="tech_page.rag_f1">Vector-based semantic search</li>
+                        <li data-i18n="tech_page.rag_f2">Configurable confidence thresholds</li>
+                        <li data-i18n="tech_page.rag_f3">Fallback message system</li>
+                        <li data-i18n="tech_page.rag_f4">Context-aware responses</li>
                     </ul>
                 </div>
 
                 <div class="tech-card" data-animate="animate-fadeInUp" data-delay="100">
-                    <h3>Advanced Web Scraping</h3>
-                    <p>Playwright-powered rendering handles modern JavaScript sites with automatic sitemap discovery and
+                    <h3 data-i18n="tech_page.scraping_title">Advanced Web Scraping</h3>
+                    <p data-i18n="tech_page.scraping_desc">Playwright-powered rendering handles modern JavaScript sites
+                        with automatic sitemap discovery and
                         intelligent content extraction.</p>
                     <ul style="margin-top: var(--space-4);">
-                        <li>JavaScript rendering for SPAs</li>
-                        <li>Automatic sitemap discovery</li>
-                        <li>Configurable crawl depth (up to 10 levels)</li>
-                        <li>Content normalization</li>
+                        <li data-i18n="tech_page.scraping_f1">JavaScript rendering for SPAs</li>
+                        <li data-i18n="tech_page.scraping_f2">Automatic sitemap discovery</li>
+                        <li data-i18n="tech_page.scraping_f3">Configurable crawl depth (up to 10 levels)</li>
+                        <li data-i18n="tech_page.scraping_f4">Content normalization</li>
                     </ul>
                 </div>
 
                 <div class="tech-card" data-animate="animate-fadeInUp" data-delay="200">
-                    <h3>Admin Dashboard</h3>
-                    <p>Comprehensive management interface with real-time training monitoring and chatbot testing
+                    <h3 data-i18n="tech_page.dashboard_title">Admin Dashboard</h3>
+                    <p data-i18n="tech_page.dashboard_desc">Comprehensive management interface with real-time training
+                        monitoring and chatbot testing
                         capabilities.</p>
                     <ul style="margin-top: var(--space-4);">
-                        <li>Real-time training progress (SSE)</li>
-                        <li>Interactive chatbot testing</li>
-                        <li>User management with invites</li>
-                        <li>Analytics and insights</li>
+                        <li data-i18n="tech_page.dashboard_f1">Real-time training progress (SSE)</li>
+                        <li data-i18n="tech_page.dashboard_f2">Interactive chatbot testing</li>
+                        <li data-i18n="tech_page.dashboard_f3">User management with invites</li>
+                        <li data-i18n="tech_page.dashboard_f4">Analytics and insights</li>
                     </ul>
                 </div>
 
                 <div class="tech-card" data-animate="animate-fadeInUp" data-delay="300">
-                    <h3>Embeddable Widget</h3>
-                    <p>Lightweight, customizable JavaScript widget that integrates seamlessly with any website.</p>
+                    <h3 data-i18n="tech_page.widget_title">Embeddable Widget</h3>
+                    <p data-i18n="tech_page.widget_desc">Lightweight, customizable JavaScript widget that integrates
+                        seamlessly with any website.</p>
                     <ul style="margin-top: var(--space-4);">
-                        <li>Self-contained JavaScript snippet</li>
-                        <li>Customizable branding and colors</li>
-                        <li>Mobile-responsive design</li>
-                        <li>Smooth typing indicators</li>
+                        <li data-i18n="tech_page.widget_f1">Self-contained JavaScript snippet</li>
+                        <li data-i18n="tech_page.widget_f2">Customizable branding and colors</li>
+                        <li data-i18n="tech_page.widget_f3">Mobile-responsive design</li>
+                        <li data-i18n="tech_page.widget_f4">Smooth typing indicators</li>
                     </ul>
                 </div>
             </div>
 
             <div class="text-center" style="margin-top: var(--space-16);">
-                <h2>Technology Stack</h2>
+                <h2 data-i18n="tech_page.stack_title">Technology Stack</h2>
                 <div class="tech-stack" style="justify-content: center; max-width: 800px; margin: var(--space-8) auto;">
                     <span class="tech-badge">FastAPI</span>
                     <span class="tech-badge">React</span>
@@ -293,33 +166,49 @@
             </div>
 
             <div style="margin-top: var(--space-16); text-align: center;">
-                <h2>Security & Compliance</h2>
-                <p
-                    style="color: var(--color-neutral-300); max-width: 700px; margin: var(--space-4) auto var(--space-12);">
+                <h2 data-i18n="tech_page.security_title">Security & Compliance</h2>
+                <p style="color: var(--color-neutral-300); max-width: 700px; margin: var(--space-4) auto var(--space-12);"
+                    data-i18n="tech_page.security_subtitle">
                     Enterprise-grade security built into every layer of our platform
                 </p>
                 <div
                     style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-8); margin-top: var(--space-8);">
                     <div class="tech-card" data-animate="animate-fadeInUp">
                         <div style="font-size: 3rem; margin-bottom: var(--space-4);">🔐</div>
-                        <h4>Authentication</h4>
-                        <p>Session-based authentication with Redis-backed session management</p>
+                        <h4 data-i18n="tech_page.auth_title">Authentication</h4>
+                        <p data-i18n="tech_page.auth_desc">Session-based authentication with Redis-backed session
+                            management</p>
                     </div>
                     <div class="tech-card" data-animate="animate-fadeInUp" data-delay="100">
                         <div style="font-size: 3rem; margin-bottom: var(--space-4);">👥</div>
-                        <h4>Access Control</h4>
-                        <p>Role-based permissions (admin/editor/viewer)</p>
+                        <h4 data-i18n="tech_page.access_title">Access Control</h4>
+                        <p data-i18n="tech_page.access_desc">Role-based permissions (admin/editor/viewer)</p>
                     </div>
                     <div class="tech-card" data-animate="animate-fadeInUp" data-delay="200">
                         <div style="font-size: 3rem; margin-bottom: var(--space-4);">🔒</div>
-                        <h4>Data Isolation</h4>
-                        <p>Complete tenant separation in multi-tenant architecture</p>
+                        <h4 data-i18n="tech_page.isolation_title">Data Isolation</h4>
+                        <p data-i18n="tech_page.isolation_desc">Complete tenant separation in multi-tenant architecture
+                        </p>
                     </div>
                     <div class="tech-card" data-animate="animate-fadeInUp" data-delay="300">
                         <div style="font-size: 3rem; margin-bottom: var(--space-4);">🛡️</div>
-                        <h4>Encryption</h4>
-                        <p>Data encryption in transit and at rest</p>
+                        <h4 data-i18n="tech_page.encryption_title">Encryption</h4>
+                        <p data-i18n="tech_page.encryption_desc">Data encryption in transit and at rest</p>
                     </div>
+                </div>
+            </div>
+
+            <!-- Internal Links CTA -->
+            <div class="text-center" style="margin-top: var(--space-16);">
+                <h2 data-i18n="tech_page.cta_title">Ready to Leverage This Technology?</h2>
+                <p style="max-width: 600px; margin: var(--space-4) auto var(--space-8); color: var(--color-neutral-300);"
+                    data-i18n="tech_page.cta_text">See how agencies use our platform to deliver AI chatbot solutions to
+                    their clients.</p>
+                <div style="display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap;">
+                    <a href="./services.html" class="btn btn-primary btn-lg" data-i18n="tech_page.cta_services">Explore
+                        Agency Services</a>
+                    <a href="./pricing.html" class="btn btn-secondary btn-lg" data-i18n="tech_page.cta_pricing">View
+                        Partner Pricing</a>
                 </div>
             </div>
         </div>
@@ -328,33 +217,60 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
+                <!-- Column 1: Brand -->
                 <div class="footer-column">
                     <h4 class="nav-logo">ultimAItech</h4>
-                    <p>Intelligent Chatbots for Modern Businesses</p>
+                    <p data-i18n="footer.tagline">Intelligent Chatbots for Modern Businesses</p>
                 </div>
+
+                <!-- Column 2: Company -->
                 <div class="footer-column">
-                    <h4>Company</h4>
-                    <a href="./about.html">About Us</a>
-                    <a href="./contact.html">Contact</a>
+                    <h4 data-i18n="footer.company_title">Company</h4>
+                    <a href="./about.html" data-i18n="footer.about">About Us</a>
+                    <a href="./contact.html" data-i18n="footer.contact_us">Contact</a>
+                    <a href="#" data-i18n="footer.blog">Blog</a>
                 </div>
+
+                <!-- Column 3: Services -->
                 <div class="footer-column">
-                    <h4>Services</h4>
-                    <a href="./services.html">Chatbot Development</a>
+                    <h4 data-i18n="footer.services_title">Services</h4>
+                    <a href="./services.html" data-i18n="footer.chatbot_dev">Chatbot Development</a>
+                    <a href="./services.html" data-i18n="footer.training">Content Training</a>
+                    <a href="./services.html" data-i18n="footer.deployment">Deployment & Integration</a>
+                    <a href="./services.html" data-i18n="footer.maintenance">Ongoing Maintenance</a>
                 </div>
+
+                <!-- Column 4: Legal -->
                 <div class="footer-column">
-                    <h4>Legal</h4>
-                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <h4 data-i18n="footer.legal_title">Legal</h4>
+                    <a href="privacy-policy.html" data-i18n="footer.privacy">Privacy Policy</a>
+                    <a href="terms-of-service.html" data-i18n="footer.terms">Terms of Service</a>
+                    <a href="cookie-policy.html" data-i18n="footer.cookies">Cookie Policy</a>
                 </div>
             </div>
+
             <div class="footer-bottom">
-                <p>© 2024 ultimAItech. All rights reserved.</p>
+                <p data-i18n="footer.copyright">© 2024 ultimAItech. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <script type="module" src="js/i18n.js"></script>
     <script type="module" src="js/navigation.js"></script>
-    <script type="module" src="js/animations.js"></script>
+    <script defer type="module" src="js/i18n.js"></script>
+    <script defer type="module" src="js/animations.js"></script>
+    <script>
+        function loadChatbot() {
+            const script = document.createElement('script');
+            script.src = 'https://ultimaitech.com/vybris/api/static/widget.js?v=3';
+            script.setAttribute('data-id', 'bot_4efd6d886c97');
+            document.body.appendChild(script);
+        }
+        let loaded = false;
+        setTimeout(() => { if (!loaded) { loadChatbot(); loaded = true; } }, 3000);
+        ['click', 'scroll', 'mousemove'].forEach(event => {
+            window.addEventListener(event, () => { if (!loaded) { loadChatbot(); loaded = true; } }, { once: true });
+        });
+    </script>
 </body>
 
 </html>

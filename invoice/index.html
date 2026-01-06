@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ultimAItech - Professional Invoice</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #f3f4f6;
+            color: #333;
+            line-height: 1.5;
+            padding: 20px;
+        }
+
+        /* Main Invoice Container */
+        .invoice-page {
+            width: 210mm;
+            min-height: 297mm;
+            max-height: 297mm;
+            margin: 0 auto;
+            background: white;
+            position: relative;
+            padding: 15mm 20mm 25mm 20mm;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        /* Header Section */
+        .invoice-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #6366f1;
+            margin-bottom: 20px;
+        }
+
+        .logo-section img {
+            height: 70px;
+            width: auto;
+        }
+
+        .invoice-title-section {
+            text-align: right;
+        }
+
+        .invoice-title {
+            font-size: 28px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: #6366f1;
+            margin-bottom: 8px;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        /* Language Selector */
+        .lang-selector {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .lang-selector label {
+            font-size: 14px;
+            font-weight: 500;
+            color: #666;
+        }
+
+        .lang-selector select {
+            padding: 8px 12px;
+            font-size: 14px;
+            font-family: inherit;
+            border: 2px solid #6366f1;
+            border-radius: 8px;
+            background: white;
+            color: #333;
+            cursor: pointer;
+            min-width: 120px;
+        }
+
+        .lang-selector select:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+        }
+
+        .invoice-number {
+            font-size: 12px;
+            color: #666;
+        }
+
+        /* Address Grid */
+        .address-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+
+        .address-block h4 {
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #6366f1;
+            margin-bottom: 8px;
+            border-bottom: 1px solid #e5e7eb;
+            padding-bottom: 4px;
+        }
+
+        .address-block p {
+            font-size: 11px;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Invoice Details */
+        .invoice-details {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%);
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid rgba(99, 102, 241, 0.15);
+        }
+
+        .detail-item label {
+            display: block;
+            font-size: 9px;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: #6366f1;
+            margin-bottom: 4px;
+        }
+
+        .detail-item input {
+            width: 100%;
+            padding: 6px 8px;
+            font-size: 11px;
+            font-family: inherit;
+            border: 1px solid #e5e7eb;
+            border-radius: 4px;
+            background: white;
+            color: #333;
+        }
+
+        .detail-item input:focus {
+            outline: none;
+            border-color: #6366f1;
+            box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.1);
+        }
+
+        /* Items Table */
+        .items-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 15px;
+            font-size: 11px;
+        }
+
+        .items-table thead {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+        }
+
+        .items-table th {
+            padding: 10px 8px;
+            text-align: left;
+            font-weight: 600;
+            color: white;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .items-table th:first-child {
+            border-radius: 6px 0 0 0;
+        }
+
+        .items-table th:last-child {
+            border-radius: 0 6px 0 0;
+            text-align: right;
+        }
+
+        .items-table th.qty,
+        .items-table th.rate,
+        .items-table th.amount {
+            text-align: right;
+        }
+
+        .items-table td {
+            padding: 8px;
+            border-bottom: 1px solid #f0f0f0;
+            vertical-align: middle;
+        }
+
+        .items-table tbody tr:hover {
+            background: rgba(99, 102, 241, 0.02);
+        }
+
+        .items-table td.qty,
+        .items-table td.rate,
+        .items-table td.amount {
+            text-align: right;
+        }
+
+        .items-table input[type="text"],
+        .items-table input[type="number"] {
+            width: 100%;
+            padding: 5px 6px;
+            font-size: 11px;
+            font-family: inherit;
+            border: 1px solid transparent;
+            border-radius: 3px;
+            background: transparent;
+        }
+
+        .items-table input[type="text"]:focus,
+        .items-table input[type="number"]:focus {
+            background: white;
+            border-color: #6366f1;
+            outline: none;
+        }
+
+        .items-table input[type="number"] {
+            text-align: right;
+        }
+
+        .items-table td.description input {
+            min-width: 200px;
+        }
+
+        /* Add Item Button */
+        .add-item-btn {
+            background: none;
+            border: 1px dashed #6366f1;
+            color: #6366f1;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 11px;
+            font-weight: 500;
+            margin-bottom: 15px;
+            transition: all 0.2s ease;
+        }
+
+        .add-item-btn:hover {
+            background: rgba(99, 102, 241, 0.05);
+        }
+
+        .remove-btn {
+            background: none;
+            border: none;
+            color: #ef4444;
+            cursor: pointer;
+            font-size: 14px;
+            padding: 2px 6px;
+            opacity: 0.5;
+            transition: opacity 0.2s;
+        }
+
+        .remove-btn:hover {
+            opacity: 1;
+        }
+
+        /* Totals Section */
+        .totals-section {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 15px;
+        }
+
+        .totals-box {
+            width: 250px;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%);
+            border-radius: 8px;
+            padding: 12px;
+            border: 1px solid rgba(99, 102, 241, 0.15);
+        }
+
+        .total-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 6px 0;
+            font-size: 11px;
+        }
+
+        .total-row label {
+            color: #666;
+        }
+
+        .total-row input {
+            width: 100px;
+            text-align: right;
+            padding: 4px 6px;
+            font-size: 11px;
+            font-family: inherit;
+            border: 1px solid transparent;
+            border-radius: 3px;
+            background: transparent;
+        }
+
+        .total-row input:focus {
+            background: white;
+            border-color: #6366f1;
+            outline: none;
+        }
+
+        .total-row.grand-total {
+            border-top: 2px solid #6366f1;
+            margin-top: 8px;
+            padding-top: 10px;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .total-row.grand-total label {
+            color: #333;
+        }
+
+        .total-row.grand-total input {
+            font-weight: 700;
+            font-size: 14px;
+            color: #6366f1;
+        }
+
+        /* Notes Section */
+        .notes-section {
+            margin-bottom: 15px;
+        }
+
+        .notes-section h4 {
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #6366f1;
+            margin-bottom: 6px;
+        }
+
+        .notes-section textarea {
+            width: 100%;
+            min-height: 40px;
+            padding: 8px;
+            font-size: 10px;
+            font-family: inherit;
+            border: 1px solid #e5e7eb;
+            border-radius: 4px;
+            resize: vertical;
+            line-height: 1.5;
+        }
+
+        .notes-section textarea:focus {
+            outline: none;
+            border-color: #6366f1;
+        }
+
+        /* Payment Info */
+        .payment-section {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%);
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid rgba(99, 102, 241, 0.15);
+            margin-bottom: 15px;
+        }
+
+        .payment-section h4 {
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #6366f1;
+            margin-bottom: 8px;
+        }
+
+        .payment-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+
+        .payment-item label {
+            display: block;
+            font-size: 9px;
+            font-weight: 500;
+            color: #666;
+            margin-bottom: 3px;
+        }
+
+        .payment-item input {
+            width: 100%;
+            padding: 5px 8px;
+            font-size: 10px;
+            font-family: inherit;
+            border: 1px solid #e5e7eb;
+            border-radius: 4px;
+            background: white;
+        }
+
+        .payment-item input:focus {
+            outline: none;
+            border-color: #6366f1;
+        }
+
+        /* Footer */
+        .invoice-footer {
+            position: absolute;
+            bottom: 10mm;
+            left: 20mm;
+            right: 20mm;
+            padding-top: 10px;
+            border-top: 1px solid #e5e7eb;
+            text-align: center;
+            font-size: 8px;
+            color: #999;
+        }
+
+        .footer-details {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        /* Controls Section (hidden in print) */
+        .controls {
+            max-width: 210mm;
+            margin: 0 auto 20px;
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .controls button {
+            padding: 12px 24px;
+            font-size: 14px;
+            font-weight: 600;
+            font-family: inherit;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #6366f1;
+            border: 2px solid #6366f1;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(99, 102, 241, 0.05);
+        }
+
+        /* Editable styling */
+        [contenteditable="true"] {
+            outline: none;
+            border-radius: 2px;
+            transition: background 0.2s;
+        }
+
+        [contenteditable="true"]:hover {
+            background: rgba(99, 102, 241, 0.05);
+        }
+
+        [contenteditable="true"]:focus {
+            background: rgba(99, 102, 241, 0.1);
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .controls {
+                display: none !important;
+            }
+
+            .invoice-page {
+                box-shadow: none;
+                margin: 0;
+                padding: 15mm 20mm 25mm 20mm;
+            }
+
+            .add-item-btn,
+            .remove-btn {
+                display: none !important;
+            }
+
+            .items-table input,
+            .detail-item input,
+            .total-row input,
+            .payment-item input,
+            .notes-section textarea {
+                border: none !important;
+                background: transparent !important;
+            }
+
+            .invoice-title {
+                -webkit-text-fill-color: #6366f1 !important;
+                background: none !important;
+                color: #6366f1 !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Controls -->
+    <div class="controls">
+        <div class="lang-selector">
+            <label>🌐 Language:</label>
+            <select id="langSelect" onchange="changeLanguage(this.value)">
+                <option value="en">English</option>
+                <option value="de">Deutsch</option>
+                <option value="nl">Nederlands</option>
+            </select>
+        </div>
+        <button class="btn-primary" onclick="downloadPDF()">📄 Download PDF</button>
+        <button class="btn-secondary" onclick="window.print()">🖨️ Print Invoice</button>
+        <button class="btn-secondary" onclick="clearForm()">🗑️ Clear Form</button>
+    </div>
+
+    <!-- Invoice Page -->
+    <div class="invoice-page" id="invoice">
+        <!-- Header -->
+        <div class="invoice-header">
+            <div class="logo-section">
+                <img src="logo-invoice.png" alt="ultimAItech">
+            </div>
+            <div class="invoice-title-section">
+                <div class="invoice-title">INVOICE</div>
+                <div class="invoice-number">
+                    <input type="text" id="invoiceNumber" value="INV-2026-001" placeholder="Invoice Number">
+                </div>
+            </div>
+        </div>
+
+        <!-- Address Grid -->
+        <div class="address-grid">
+            <div class="address-block">
+                <h4>From</h4>
+                <p>
+                    <strong>UltimAItech</strong><br>
+                    Veneweg 199<br>
+                    7946 LP Wanneperveen, NL<br>
+                    info@ultimaitech.com<br>
+                    www.ultimaitech.com
+                </p>
+            </div>
+            <div class="address-block">
+                <h4>Bill To</h4>
+                <p contenteditable="true" id="billTo">
+                    <strong>Client Name</strong><br>
+                    Company Name<br>
+                    Street Address<br>
+                    City, Postal Code<br>
+                    Country
+                </p>
+            </div>
+        </div>
+
+        <!-- Invoice Details -->
+        <div class="invoice-details">
+            <div class="detail-item">
+                <label>Invoice Date</label>
+                <input type="date" id="invoiceDate" value="2026-01-06">
+            </div>
+            <div class="detail-item">
+                <label>Due Date</label>
+                <input type="date" id="dueDate" value="2026-02-05">
+            </div>
+            <div class="detail-item">
+                <label>Payment Terms</label>
+                <input type="text" id="paymentTerms" value="Net 30" placeholder="e.g., Net 30">
+            </div>
+            <div class="detail-item">
+                <label>Currency</label>
+                <input type="text" id="currency" value="EUR" placeholder="EUR, USD, etc.">
+            </div>
+        </div>
+
+        <!-- Items Table -->
+        <table class="items-table">
+            <thead>
+                <tr>
+                    <th style="width: 40%">Description</th>
+                    <th class="qty" style="width: 12%">Qty</th>
+                    <th class="rate" style="width: 18%">Unit Price</th>
+                    <th class="amount" style="width: 20%">Amount</th>
+                    <th style="width: 10%"></th>
+                </tr>
+            </thead>
+            <tbody id="itemsBody">
+                <tr class="item-row">
+                    <td class="description"><input type="text" placeholder="Item description"
+                            onchange="calculateTotals()"></td>
+                    <td class="qty"><input type="number" value="1" min="0" step="1" onchange="calculateTotals()"></td>
+                    <td class="rate"><input type="number" value="0.00" min="0" step="0.01" onchange="calculateTotals()">
+                    </td>
+                    <td class="amount"><input type="number" value="0.00" readonly></td>
+                    <td><button class="remove-btn" onclick="removeRow(this)">×</button></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <button class="add-item-btn" onclick="addItemRow()">+ Add Line Item</button>
+
+        <!-- Totals -->
+        <div class="totals-section">
+            <div class="totals-box">
+                <div class="total-row">
+                    <label>Subtotal</label>
+                    <input type="text" id="subtotal" value="€0.00" readonly>
+                </div>
+                <div class="total-row">
+                    <label>VAT (21%)</label>
+                    <input type="text" id="vat" value="€0.00" readonly>
+                </div>
+                <div class="total-row grand-total">
+                    <label>Total Due</label>
+                    <input type="text" id="grandTotal" value="€0.00" readonly>
+                </div>
+            </div>
+        </div>
+
+        <!-- Notes -->
+        <div class="notes-section">
+            <h4>Notes / Terms</h4>
+            <textarea id="notes"
+                placeholder="Thank you for your business. Payment is due within 30 days.">Thank you for your business. Payment is due within 30 days.</textarea>
+        </div>
+
+        <!-- Payment Information -->
+        <div class="payment-section">
+            <h4>Payment Information</h4>
+            <div class="payment-grid">
+                <div class="payment-item">
+                    <label>Bank Name</label>
+                    <input type="text" id="bankName" value="ING Bank" placeholder="Bank Name">
+                </div>
+                <div class="payment-item">
+                    <label>IBAN</label>
+                    <input type="text" id="iban" value="" placeholder="NL00 INGB 0000 0000 00">
+                </div>
+                <div class="payment-item">
+                    <label>BIC/SWIFT</label>
+                    <input type="text" id="bic" value="INGBNL2A" placeholder="BIC/SWIFT Code">
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="invoice-footer">
+            <div class="footer-details">
+                <span>KVK: 98782800</span>
+                <span>•</span>
+                <span>BTW: NL005353550860</span>
+                <span>•</span>
+                <span>Veneweg 199, 7946 LP Wanneperveen, Netherlands</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script>
+        // Translations
+        const translations = {
+            en: {
+                invoice: 'INVOICE',
+                from: 'From',
+                billTo: 'Bill To',
+                invoiceDate: 'Invoice Date',
+                dueDate: 'Due Date',
+                paymentTerms: 'Payment Terms',
+                currency: 'Currency',
+                description: 'Description',
+                qty: 'Qty',
+                unitPrice: 'Unit Price',
+                amount: 'Amount',
+                addLineItem: '+ Add Line Item',
+                subtotal: 'Subtotal',
+                vat: 'VAT (21%)',
+                totalDue: 'Total Due',
+                notesTerms: 'Notes / Terms',
+                notesPlaceholder: 'Thank you for your business. Payment is due within 30 days.',
+                paymentInfo: 'Payment Information',
+                bankName: 'Bank Name',
+                iban: 'IBAN',
+                bic: 'BIC/SWIFT',
+                itemPlaceholder: 'Item description',
+                clientName: 'Client Name',
+                companyName: 'Company Name',
+                streetAddress: 'Street Address',
+                cityPostal: 'City, Postal Code',
+                country: 'Country'
+            },
+            de: {
+                invoice: 'RECHNUNG',
+                from: 'Von',
+                billTo: 'Rechnungsadresse',
+                invoiceDate: 'Rechnungsdatum',
+                dueDate: 'Fälligkeitsdatum',
+                paymentTerms: 'Zahlungsbedingungen',
+                currency: 'Währung',
+                description: 'Beschreibung',
+                qty: 'Menge',
+                unitPrice: 'Einzelpreis',
+                amount: 'Betrag',
+                addLineItem: '+ Position hinzufügen',
+                subtotal: 'Zwischensumme',
+                vat: 'MwSt. (21%)',
+                totalDue: 'Gesamtbetrag',
+                notesTerms: 'Hinweise / Bedingungen',
+                notesPlaceholder: 'Vielen Dank für Ihr Vertrauen. Zahlung ist innerhalb von 30 Tagen fällig.',
+                paymentInfo: 'Zahlungsinformationen',
+                bankName: 'Bank',
+                iban: 'IBAN',
+                bic: 'BIC/SWIFT',
+                itemPlaceholder: 'Artikelbeschreibung',
+                clientName: 'Kundenname',
+                companyName: 'Firmenname',
+                streetAddress: 'Straße',
+                cityPostal: 'PLZ, Ort',
+                country: 'Land'
+            },
+            nl: {
+                invoice: 'FACTUUR',
+                from: 'Van',
+                billTo: 'Factuuradres',
+                invoiceDate: 'Factuurdatum',
+                dueDate: 'Vervaldatum',
+                paymentTerms: 'Betalingsvoorwaarden',
+                currency: 'Valuta',
+                description: 'Omschrijving',
+                qty: 'Aantal',
+                unitPrice: 'Prijs per stuk',
+                amount: 'Bedrag',
+                addLineItem: '+ Regel toevoegen',
+                subtotal: 'Subtotaal',
+                vat: 'BTW (21%)',
+                totalDue: 'Totaal te betalen',
+                notesTerms: 'Opmerkingen / Voorwaarden',
+                notesPlaceholder: 'Bedankt voor uw vertrouwen. Betaling dient binnen 30 dagen te geschieden.',
+                paymentInfo: 'Betalingsgegevens',
+                bankName: 'Bank',
+                iban: 'IBAN',
+                bic: 'BIC/SWIFT',
+                itemPlaceholder: 'Artikelomschrijving',
+                clientName: 'Klantnaam',
+                companyName: 'Bedrijfsnaam',
+                streetAddress: 'Adres',
+                cityPostal: 'Postcode, Plaats',
+                country: 'Land'
+            }
+        };
+
+        let currentLang = 'en';
+
+        // Change language
+        function changeLanguage(lang) {
+            currentLang = lang;
+            const t = translations[lang];
+
+            // Update title
+            document.querySelector('.invoice-title').textContent = t.invoice;
+
+            // Update address headers
+            const addressHeaders = document.querySelectorAll('.address-block h4');
+            addressHeaders[0].textContent = t.from;
+            addressHeaders[1].textContent = t.billTo;
+
+            // Update bill to placeholder
+            document.getElementById('billTo').innerHTML = `<strong>${t.clientName}</strong><br>${t.companyName}<br>${t.streetAddress}<br>${t.cityPostal}<br>${t.country}`;
+
+            // Update detail labels
+            const detailLabels = document.querySelectorAll('.detail-item label');
+            detailLabels[0].textContent = t.invoiceDate;
+            detailLabels[1].textContent = t.dueDate;
+            detailLabels[2].textContent = t.paymentTerms;
+            detailLabels[3].textContent = t.currency;
+
+            // Update table headers
+            const tableHeaders = document.querySelectorAll('.items-table th');
+            tableHeaders[0].textContent = t.description;
+            tableHeaders[1].textContent = t.qty;
+            tableHeaders[2].textContent = t.unitPrice;
+            tableHeaders[3].textContent = t.amount;
+
+            // Update add item button
+            document.querySelector('.add-item-btn').textContent = t.addLineItem;
+
+            // Update total labels
+            const totalLabels = document.querySelectorAll('.total-row label');
+            totalLabels[0].textContent = t.subtotal;
+            totalLabels[1].textContent = t.vat;
+            totalLabels[2].textContent = t.totalDue;
+
+            // Update notes section
+            document.querySelector('.notes-section h4').textContent = t.notesTerms;
+            document.getElementById('notes').placeholder = t.notesPlaceholder;
+            document.getElementById('notes').value = t.notesPlaceholder;
+
+            // Update payment section
+            document.querySelector('.payment-section h4').textContent = t.paymentInfo;
+            const paymentLabels = document.querySelectorAll('.payment-item label');
+            paymentLabels[0].textContent = t.bankName;
+            paymentLabels[1].textContent = t.iban;
+            paymentLabels[2].textContent = t.bic;
+
+            // Update item placeholders
+            document.querySelectorAll('.item-row .description input').forEach(input => {
+                input.placeholder = t.itemPlaceholder;
+            });
+        }
+
+        // Add new item row
+        function addItemRow() {
+            const tbody = document.getElementById('itemsBody');
+            const newRow = document.createElement('tr');
+            newRow.className = 'item-row';
+            newRow.innerHTML = `
+                <td class="description"><input type="text" placeholder="Item description" onchange="calculateTotals()"></td>
+                <td class="qty"><input type="number" value="1" min="0" step="1" onchange="calculateTotals()"></td>
+                <td class="rate"><input type="number" value="0.00" min="0" step="0.01" onchange="calculateTotals()"></td>
+                <td class="amount"><input type="number" value="0.00" readonly></td>
+                <td><button class="remove-btn" onclick="removeRow(this)">×</button></td>
+            `;
+            tbody.appendChild(newRow);
+        }
+
+        // Remove item row
+        function removeRow(btn) {
+            const row = btn.closest('tr');
+            const tbody = document.getElementById('itemsBody');
+            if (tbody.querySelectorAll('.item-row').length > 1) {
+                row.remove();
+                calculateTotals();
+            }
+        }
+
+        // Calculate all totals
+        function calculateTotals() {
+            const rows = document.querySelectorAll('.item-row');
+            let subtotal = 0;
+            const currency = document.getElementById('currency').value || 'EUR';
+            const currencySymbol = getCurrencySymbol(currency);
+
+            rows.forEach(row => {
+                const qty = parseFloat(row.querySelector('.qty input').value) || 0;
+                const rate = parseFloat(row.querySelector('.rate input').value) || 0;
+                const amount = qty * rate;
+                row.querySelector('.amount input').value = amount.toFixed(2);
+                subtotal += amount;
+            });
+
+            const vatRate = 0.21;
+            const vat = subtotal * vatRate;
+            const total = subtotal + vat;
+
+            document.getElementById('subtotal').value = currencySymbol + subtotal.toFixed(2);
+            document.getElementById('vat').value = currencySymbol + vat.toFixed(2);
+            document.getElementById('grandTotal').value = currencySymbol + total.toFixed(2);
+        }
+
+        // Get currency symbol
+        function getCurrencySymbol(currency) {
+            const symbols = {
+                'EUR': '€',
+                'USD': '$',
+                'GBP': '£',
+                'CHF': 'CHF ',
+                'JPY': '¥',
+                'CAD': 'C$',
+                'AUD': 'A$'
+            };
+            return symbols[currency.toUpperCase()] || currency + ' ';
+        }
+
+        // Download as PDF
+        function downloadPDF() {
+            const element = document.getElementById('invoice');
+            const invoiceNumber = document.getElementById('invoiceNumber').value || 'invoice';
+
+            // Temporarily hide buttons
+            const addBtn = document.querySelector('.add-item-btn');
+            const removeBtns = document.querySelectorAll('.remove-btn');
+            addBtn.style.display = 'none';
+            removeBtns.forEach(btn => btn.style.display = 'none');
+
+            const opt = {
+                margin: 0,
+                filename: invoiceNumber + '.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: {
+                    scale: 2,
+                    useCORS: true,
+                    letterRendering: true
+                },
+                jsPDF: {
+                    unit: 'mm',
+                    format: 'a4',
+                    orientation: 'portrait'
+                }
+            };
+
+            html2pdf().set(opt).from(element).save().then(() => {
+                // Restore buttons
+                addBtn.style.display = '';
+                removeBtns.forEach(btn => btn.style.display = '');
+            });
+        }
+
+        // Clear form
+        function clearForm() {
+            if (confirm('Are you sure you want to clear all invoice data?')) {
+                document.getElementById('invoiceNumber').value = 'INV-2026-001';
+                document.getElementById('billTo').innerHTML = '<strong>Client Name</strong><br>Company Name<br>Street Address<br>City, Postal Code<br>Country';
+
+                const today = new Date();
+                const dueDate = new Date(today);
+                dueDate.setDate(dueDate.getDate() + 30);
+
+                document.getElementById('invoiceDate').value = today.toISOString().split('T')[0];
+                document.getElementById('dueDate').value = dueDate.toISOString().split('T')[0];
+
+                // Reset items table
+                const tbody = document.getElementById('itemsBody');
+                tbody.innerHTML = `
+                    <tr class="item-row">
+                        <td class="description"><input type="text" placeholder="Item description" onchange="calculateTotals()"></td>
+                        <td class="qty"><input type="number" value="1" min="0" step="1" onchange="calculateTotals()"></td>
+                        <td class="rate"><input type="number" value="0.00" min="0" step="0.01" onchange="calculateTotals()"></td>
+                        <td class="amount"><input type="number" value="0.00" readonly></td>
+                        <td><button class="remove-btn" onclick="removeRow(this)">×</button></td>
+                    </tr>
+                `;
+
+                document.getElementById('notes').value = 'Thank you for your business. Payment is due within 30 days.';
+                calculateTotals();
+            }
+        }
+
+        // Initialize currency input listener
+        document.getElementById('currency').addEventListener('change', calculateTotals);
+
+        // Initial calculation
+        calculateTotals();
+    </script>
+</body>
+
+</html>

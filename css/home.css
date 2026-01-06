@@ -389,6 +389,53 @@
     backdrop-filter: blur(20px);
     border: 1px solid rgba(99, 102, 241, 0.2);
     transition: all var(--transition-base);
+    position: relative;
+    cursor: pointer;
+}
+
+/* Tooltip Styles */
+.tooltip {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-10px);
+    background: rgba(10, 10, 10, 0.98);
+    border: 1px solid rgba(99, 102, 241, 0.4);
+    border-radius: var(--radius-lg);
+    padding: var(--space-4);
+    margin-bottom: var(--space-2);
+    min-width: 200px;
+    max-width: 300px;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(99, 102, 241, 0.3);
+}
+
+.tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 8px solid transparent;
+    border-top-color: rgba(99, 102, 241, 0.4);
+}
+
+.tooltip p {
+    color: var(--color-neutral-200);
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-relaxed);
+    margin: 0;
+}
+
+.use-case-card:hover .tooltip,
+.use-case-card.active .tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
 }
 
 .use-case-card:hover {
@@ -633,6 +680,9 @@
     }
 
     .process-step {
+        display: flex;
+        align-items: flex-start;
+        gap: var(--space-4);
         text-align: left;
     }
 
@@ -640,10 +690,21 @@
         width: 50px;
         height: 50px;
         font-size: var(--font-size-xl);
+        flex-shrink: 0;
+        margin-bottom: 0;
+        /* Remove desktop margin */
+        display: flex;
+        /* Override inline-flex from desktop */
+    }
+
+    .step-content {
+        flex: 1;
     }
 
     .step-content h3 {
         font-size: var(--font-size-base);
+        margin-top: 0;
+        /* Align with step number */
     }
 
     .step-content p {
@@ -662,6 +723,20 @@
 
     .use-case-card h3 {
         font-size: var(--font-size-base);
+    }
+
+    /* Tooltip Mobile Adjustments */
+    .tooltip {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 85vw;
+        margin: 0;
+    }
+
+    .tooltip::after {
+        display: none;
     }
 
     /* Technology Highlight Mobile */
@@ -734,6 +809,8 @@
         width: 40px;
         height: 40px;
         font-size: var(--font-size-lg);
+        flex-shrink: 0;
+        margin-bottom: 0;
     }
 
     .metric-value {

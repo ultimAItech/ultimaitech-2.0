@@ -2,176 +2,77 @@
 <html lang="en">
 
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QSGC4HFV7M"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-QSGC4HFV7M');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Services - ultimAItech</title>
+    <title>AI Chatbot Services | Development, Training & Deployment - ultimAItech</title>
     <meta name="description"
-        content="Comprehensive AI chatbot services: development, training, deployment, and maintenance.">
+        content="Full-service AI chatbot solutions: custom development, RAG training, website integration, and ongoing maintenance. No coding required. Get started in 48 hours.">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://ultimaitech.com/services.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ultimaitech.com/services.html">
+    <meta property="og:title" content="AI Chatbot Services | Development, Training & Deployment - ultimAItech">
+    <meta property="og:description"
+        content="Full-service AI chatbot solutions: custom development, RAG training, website integration, and ongoing maintenance.">
+    <meta property="og:image" content="https://ultimaitech.com/images/logo.svg">
+    <meta property="og:site_name" content="ultimAItech">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@ultimaitech">
+    <meta name="twitter:title" content="AI Chatbot Services | Development, Training & Deployment">
+    <meta name="twitter:description"
+        content="Full-service AI chatbot solutions including development, training, deployment, and maintenance.">
+    <meta name="twitter:image" content="https://ultimaitech.com/images/logo.svg">
 
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/decorative-elements.css">
-    <style>
-        .page-hero {
-            padding-top: 140px;
-            padding-bottom: var(--space-16);
-            background: var(--gradient-hero);
-            text-align: center;
-            color: var(--color-white);
-            position: relative;
-            overflow: hidden;
-        }
+    <link rel="stylesheet" href="css/pages.css">
 
-        .page-hero h1 {
-            color: var(--color-white);
-            margin-bottom: var(--space-4);
-        }
+    <!-- Structured Data: Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "ultimAItech",
+      "url": "https://ultimaitech.com",
+      "logo": "https://ultimaitech.com/images/logo.svg"
+    }
+    </script>
 
-        .page-hero p {
-            font-size: var(--font-size-xl);
-            color: var(--color-neutral-200);
+    <!-- Structured Data: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://ultimaitech.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://ultimaitech.com/services.html"
         }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: var(--space-8);
-        }
-
-        @media (max-width: 768px) {
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .service-item {
-            position: relative;
-            background: linear-gradient(145deg, rgba(30, 30, 60, 0.8) 0%, rgba(15, 15, 30, 0.9) 100%);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            padding: var(--space-10);
-            border-radius: var(--radius-2xl);
-            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            overflow: hidden;
-            z-index: 1;
-        }
-
-        /* Subtle gradient glow effect */
-        .service-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.5), transparent);
-            opacity: 0.5;
-            transition: opacity 0.4s ease;
-        }
-
-        /* Inner glow on hover */
-        .service-item::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border-radius: var(--radius-2xl);
-            padding: 1px;
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.4), rgba(236, 72, 153, 0.1), transparent);
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            opacity: 0;
-            transition: opacity 0.4s ease;
-            pointer-events: none;
-        }
-
-        .service-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.6), 0 0 30px rgba(99, 102, 241, 0.15);
-            background: linear-gradient(145deg, rgba(35, 35, 70, 0.9) 0%, rgba(20, 20, 40, 0.95) 100%);
-        }
-
-        .service-item:hover::after {
-            opacity: 1;
-        }
-
-        .service-item:hover::before {
-            opacity: 1;
-            background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 1), transparent);
-        }
-
-        .service-item h3 {
-            font-size: var(--font-size-2xl);
-            background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: var(--space-4);
-            display: flex;
-            align-items: center;
-            gap: var(--space-3);
-        }
-
-        .service-item p {
-            color: var(--color-neutral-400);
-            line-height: 1.6;
-            margin-bottom: var(--space-6);
-        }
-
-        .service-features {
-            list-style: none;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: var(--space-4);
-            position: relative;
-            z-index: 2;
-        }
-
-        .service-features li {
-            display: flex;
-            align-items: center;
-            color: var(--color-neutral-300);
-            font-size: var(--font-size-sm);
-        }
-
-        .service-features li::before {
-            content: "✓";
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 22px;
-            height: 22px;
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.3), rgba(139, 92, 246, 0.3));
-            color: var(--color-primary-300);
-            border-radius: 50%;
-            font-weight: bold;
-            font-size: 11px;
-            margin-right: var(--space-3);
-            flex-shrink: 0;
-            border: 1px solid rgba(99, 102, 241, 0.3);
-            transition: all 0.3s ease;
-        }
-
-        .service-item:hover .service-features li::before {
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.5), rgba(139, 92, 246, 0.5));
-            border-color: var(--color-primary-400);
-            box-shadow: 0 0 10px rgba(99, 102, 241, 0.4);
-            transform: scale(1.1);
-        }
-
-        /* Service icon */
-        .service-icon {
-            font-size: 2rem;
-            filter: grayscale(0.3);
-            transition: all 0.3s ease;
-        }
-
-        .service-item:hover .service-icon {
-            filter: grayscale(0);
-            transform: scale(1.1) rotate(5deg);
-        }
-    </style>
+      ]
+    }
+    </script>
 </head>
 
 <body>
@@ -184,12 +85,12 @@
                 <span></span><span></span><span></span>
             </button>
             <ul class="nav-menu">
-                <li><a href="./" class="nav-link">Home</a></li>
-                <li><a href="./services.html" class="nav-link">Services</a></li>
-                <li><a href="./technology.html" class="nav-link">Technology</a></li>
-                <li><a href="./pricing.html" class="nav-link">Pricing</a></li>
-                <li><a href="./about.html" class="nav-link">About</a></li>
-                <li><a href="./contact.html" class="btn btn-primary btn-sm">Contact</a></li>
+                <li><a href="./" class="nav-link" data-i18n="nav.home">Home</a></li>
+                <li><a href="./services.html" class="nav-link" data-i18n="nav.services">Services</a></li>
+                <li><a href="./technology.html" class="nav-link" data-i18n="nav.technology">Technology</a></li>
+                <li><a href="./pricing.html" class="nav-link" data-i18n="nav.pricing">Pricing</a></li>
+                <li><a href="./about.html" class="nav-link" data-i18n="nav.about">About</a></li>
+                <li><a href="./contact.html" class="btn btn-primary btn-sm" data-i18n="nav.contact">Contact</a></li>
                 <li class="lang-switcher">
                     <span class="lang-option active" data-lang="en">EN</span>
                     <span class="lang-option" data-lang="de">DE</span>
@@ -209,118 +110,134 @@
         <div class="tech-pattern"></div>
         <div class="glow-orb purple" style="top: 20%; right: 10%;"></div>
         <div class="container" style="position: relative; z-index: 2;">
-            <h1>Our Services</h1>
-            <p>Comprehensive AI chatbot solutions tailored to your business needs</p>
+            <h1 data-i18n="services_page.hero_title">Built for Agencies, Not End-Users</h1>
+            <p data-i18n="services_page.hero_subtitle">VYBR!S is a white-label AI chatbot platform designed for agencies
+                to resell—not a direct-to-SMB tool. You own the client relationship, branding, and pricing.</p>
         </div>
     </section>
 
-    <!-- Visual Feature Section -->
+    <!-- Agency Benefits Section -->
     <section class="section" style="background: var(--color-dark-800); position: relative; overflow: hidden;">
         <div
             style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(10, 10, 10, 0.8) 0%, rgba(26, 26, 62, 0.85) 100%); z-index: 1;">
         </div>
         <div class="container" style="position: relative; z-index: 2;">
-            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
-                <h2
-                    style="font-size: var(--font-size-4xl); margin-bottom: var(--space-6); background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">
-                    AI-Powered Solutions Tailored to Your Needs
-                </h2>
-                <p style="font-size: var(--font-size-lg); color: var(--color-neutral-300); line-height: 1.8;">
-                    From initial development to ongoing optimization, we provide end-to-end chatbot lifecycle management
-                    that scales with your business.
-                </p>
+            <h2 class="section-title text-center" data-i18n="services_page.benefits_title"
+                data-animate="animate-fadeInUp">Why Agencies Partner with Us</h2>
+            <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-8); margin-top: var(--space-8);">
+                <div class="value-card card card-gradient" data-animate="animate-fadeInUp" data-delay="0">
+                    <h3 data-i18n="services_page.benefit1_title">Win More Retainers</h3>
+                    <p data-i18n="services_page.benefit1_desc">Package chatbots as ongoing services and increase MRR per
+                        client—without extra dev staff.</p>
+                </div>
+                <div class="value-card card card-gradient" data-animate="animate-fadeInUp" data-delay="100">
+                    <h3 data-i18n="services_page.benefit2_title">Stickier Client Relationships</h3>
+                    <p data-i18n="services_page.benefit2_desc">A platform clients log into regularly is harder to cancel
+                        than a one-off project.</p>
+                </div>
+                <div class="value-card card card-gradient" data-animate="animate-fadeInUp" data-delay="200">
+                    <h3 data-i18n="services_page.benefit3_title">Zero AI Infrastructure</h3>
+                    <p data-i18n="services_page.benefit3_desc">We handle models, vector DB, uptime, and updates.
+                        Agencies focus on selling and strategy, not infrastructure.</p>
+                </div>
+            </div>
+
+            <!-- Agency Economics -->
+            <div style="max-width: 700px; margin: var(--space-16) auto 0; text-align: center;">
+                <h3 style="margin-bottom: var(--space-4);" data-i18n="services_page.economics_title">Agency Economics
+                    Example</h3>
+                <p style="color: var(--color-neutral-300); margin-bottom: var(--space-6);"
+                    data-i18n="services_page.economics_intro">See how agencies profit from the VYBR!S partnership:</p>
+                <div class="card card-gradient" style="padding: var(--space-6); text-align: left;">
+                    <div style="display: grid; gap: var(--space-3);">
+                        <div
+                            style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--color-neutral-700); padding-bottom: var(--space-2);">
+                            <span data-i18n="services_page.econ_pay">You pay VYBR!S:</span>
+                            <strong>799€/mo</strong>
+                        </div>
+                        <div
+                            style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--color-neutral-700); padding-bottom: var(--space-2);">
+                            <span data-i18n="services_page.econ_bots">Bots included:</span>
+                            <strong>10</strong>
+                        </div>
+                        <div
+                            style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--color-neutral-700); padding-bottom: var(--space-2);">
+                            <span data-i18n="services_page.econ_charge">You charge per client:</span>
+                            <strong>250€/mo</strong>
+                        </div>
+                        <div
+                            style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--color-neutral-700); padding-bottom: var(--space-2);">
+                            <span data-i18n="services_page.econ_clients">With 10 clients:</span>
+                            <strong style="color: var(--color-accent);">2,500€/mo gross MRR</strong>
+                        </div>
+                    </div>
+                    <p style="margin-top: var(--space-4); text-align: center; font-weight: 600; color: var(--color-primary-400);"
+                        data-i18n="services_page.econ_takeaway">You keep ~70% margin; we keep the lights on.</p>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- Partner Services Section -->
     <section class="section" style="background: var(--color-dark-900); position: relative; overflow: hidden;">
         <div
             style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(10, 10, 10, 0.95) 0%, rgba(26, 26, 62, 0.95) 100%); z-index: 1;">
         </div>
         <div class="container" style="position: relative; z-index: 2;">
-            <div class="services-grid">
+            <h2 class="section-title text-center" data-i18n="services_page.partner_services_title"
+                data-animate="animate-fadeInUp">What We Provide to Agency Partners</h2>
+            <p style="text-align: center; color: var(--color-neutral-300); max-width: 700px; margin: 0 auto var(--space-12);"
+                data-i18n="services_page.partner_services_intro">These are services for agency partners, not end-clients
+                directly.</p>
+            <div class="services-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
 
                 <div class="service-item" data-animate="animate-fadeInUp">
-                    <h3><span class="service-icon">🤖</span>Chatbot Development</h3>
-                    <p>Custom chatbot creation tailored to your business requirements using cutting-edge RAG technology.
-                    </p>
-                    <ul class="service-features">
-                        <li>Custom chatbot architecture design</li>
-                        <li>RAG-powered knowledge base integration</li>
-                        <li>Multi-language support capability</li>
-                        <li>Brand-aligned UI/UX customization</li>
-                        <li>Conversational flow optimization</li>
-                    </ul>
+                    <h3><span class="service-icon">🎨</span><span data-i18n="services_page.onboarding_title">Platform
+                            Onboarding & Branding</span></h3>
+                    <p data-i18n="services_page.onboarding_desc">We configure VYBR!S on your domain with your logo,
+                        colors, and custom email templates. Full white-label setup included.</p>
                 </div>
 
                 <div class="service-item" data-animate="animate-fadeInUp" data-delay="100">
-                    <h3><span class="service-icon">📚</span>Content Training & Optimization</h3>
-                    <p>Automated content extraction and intelligent training for accurate, contextual responses.</p>
-                    <ul class="service-features">
-                        <li>Automated web scraping (up to 10 levels deep)</li>
-                        <li>Sitemap parsing and JavaScript rendering</li>
-                        <li>Content chunking and embedding optimization</li>
-                        <li>Regular knowledge base updates</li>
-                        <li>Response accuracy testing</li>
-                    </ul>
+                    <h3><span class="service-icon">🚀</span><span data-i18n="services_page.implementation_title">First
+                            Client Implementation Support</span></h3>
+                    <p data-i18n="services_page.implementation_desc">We help you launch your first client bot—from
+                        content sync to deployment. Get hands-on guidance to ensure a successful first project.</p>
                 </div>
 
                 <div class="service-item" data-animate="animate-fadeInUp" data-delay="200">
-                    <h3><span class="service-icon">🚀</span>Deployment & Integration</h3>
-                    <p>Seamless chatbot deployment with simple integration across all your digital platforms.</p>
-                    <ul class="service-features">
-                        <li>Lightweight JavaScript widget embedding</li>
-                        <li>Responsive design for all devices</li>
-                        <li>Custom styling matching brand guidelines</li>
-                        <li>API access for advanced integrations</li>
-                        <li>CRM and ticketing system integration</li>
-                    </ul>
+                    <h3><span class="service-icon">📋</span><span data-i18n="services_page.templates_title">Template
+                            Flows & Best Practices</span></h3>
+                    <p data-i18n="services_page.templates_desc">Access pre-built conversational flows and best practices
+                        for common verticals—rental, local services, professional services, and more.</p>
                 </div>
 
                 <div class="service-item" data-animate="animate-fadeInUp" data-delay="300">
-                    <h3><span class="service-icon">⚙️</span>Ongoing Maintenance & Support</h3>
-                    <p>Continuous optimization and support to ensure your chatbot delivers exceptional performance.</p>
-                    <ul class="service-features">
-                        <li>Performance monitoring and analytics</li>
-                        <li>Continuous model refinement</li>
-                        <li>Content updates and retraining</li>
-                        <li>Technical support and troubleshooting</li>
-                        <li>Role-based dashboard access</li>
-                    </ul>
-                </div>
-
-                <div class="service-item" data-animate="animate-fadeInUp" data-delay="350">
-                    <h3><span class="service-icon">💡</span>AI Strategy & Consulting</h3>
-                    <p>Expert guidance to define your AI roadmap, identify high-impact use cases, and ensure measurable
-                        ROI.</p>
-                    <ul class="service-features">
-                        <li>Use case identification & ROI analysis</li>
-                        <li>Technical feasibility assessment</li>
-                        <li>Data readiness audit</li>
-                        <li>Governance & compliance planning</li>
-                        <li>Employee training & workshops</li>
-                    </ul>
-                </div>
-
-                <div class="service-item card-gradient" data-animate="animate-fadeInUp" data-delay="400">
-                    <h3><span class="service-icon">✨</span>Add-On Services</h3>
-                    <p>Additional capabilities to extend your chatbot functionality and business intelligence.</p>
-                    <ul class="service-features">
-                        <li>Multi-chatbot management for enterprise</li>
-                        <li>Advanced analytics and reporting</li>
-                        <li>Custom integrations (CRM, ERP systems)</li>
-                        <li>Sentiment analysis & insights</li>
-                        <li>White-label solutions</li>
-                    </ul>
+                    <h3><span class="service-icon">📊</span><span data-i18n="services_page.optimization_title">Ongoing
+                            Optimization Guidance</span></h3>
+                    <p data-i18n="services_page.optimization_desc">Leverage conversation data to improve bot performance
+                        over time. We provide insights and recommendations based on real usage patterns.</p>
                 </div>
 
             </div>
 
             <div class="text-center" style="margin-top: var(--space-16);">
-                <h2>Ready to Get Started?</h2>
-                <p style="max-width: 600px; margin: var(--space-4) auto var(--space-8);">Let's discuss how our chatbot
-                    solutions can transform your customer engagement.</p>
-                <a href="./contact.html" class="btn btn-primary btn-lg">Schedule a Consultation</a>
+                <h2 data-i18n="services_page.cta_title">Ready to Partner?</h2>
+                <p style="max-width: 600px; margin: var(--space-4) auto var(--space-8);"
+                    data-i18n="services_page.cta_text">Apply as an agency partner and start reselling AI chatbots to
+                    your clients.</p>
+                <div style="display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap;">
+                    <a href="./contact.html" class="btn btn-primary btn-lg" data-i18n="services_page.cta_button">Apply
+                        as
+                        Agency Partner</a>
+                    <a href="./pricing.html" class="btn btn-secondary btn-lg"
+                        data-i18n="services_page.view_pricing">View Agency Pricing</a>
+                </div>
+                <p style="margin-top: var(--space-6); color: var(--color-neutral-400); font-size: var(--font-size-sm);">
+                    Powered by <a href="./technology.html" style="color: var(--color-primary-400);">enterprise-grade RAG
+                        technology</a>
+                </p>
             </div>
         </div>
     </section>
@@ -328,35 +245,66 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
+                <!-- Column 1: Brand -->
                 <div class="footer-column">
                     <h4 class="nav-logo">ultimAItech</h4>
-                    <p>Intelligent Chatbots for Modern Businesses</p>
+                    <p data-i18n="footer.tagline">Intelligent Chatbots for Modern Businesses</p>
                 </div>
+
+                <!-- Column 2: Company -->
                 <div class="footer-column">
-                    <h4>Company</h4>
-                    <a href="./about.html">About Us</a>
-                    <a href="./contact.html">Contact</a>
+                    <h4 data-i18n="footer.company_title">Company</h4>
+                    <a href="./about.html" data-i18n="footer.about">About Us</a>
+                    <a href="./contact.html" data-i18n="footer.contact_us">Contact</a>
+                    <a href="#" data-i18n="footer.blog">Blog</a>
                 </div>
+
+                <!-- Column 3: Services -->
                 <div class="footer-column">
-                    <h4>Services</h4>
-                    <a href="./services.html">Chatbot Development</a>
-                    <a href="./services.html">Content Training</a>
+                    <h4 data-i18n="footer.services_title">Services</h4>
+                    <a href="./services.html" data-i18n="footer.chatbot_dev">Chatbot Development</a>
+                    <a href="./services.html" data-i18n="footer.training">Content Training</a>
+                    <a href="./services.html" data-i18n="footer.deployment">Deployment & Integration</a>
+                    <a href="./services.html" data-i18n="footer.maintenance">Ongoing Maintenance</a>
                 </div>
+
+                <!-- Column 4: Legal -->
                 <div class="footer-column">
-                    <h4>Legal</h4>
-                    <a href="privacy-policy.html">Privacy Policy</a>
-                    <a href="terms-of-service.html">Terms of Service</a>
+                    <h4 data-i18n="footer.legal_title">Legal</h4>
+                    <a href="privacy-policy.html" data-i18n="footer.privacy">Privacy Policy</a>
+                    <a href="terms-of-service.html" data-i18n="footer.terms">Terms of Service</a>
+                    <a href="cookie-policy.html" data-i18n="footer.cookies">Cookie Policy</a>
                 </div>
             </div>
+
             <div class="footer-bottom">
-                <p>© 2024 ultimAItech. All rights reserved.</p>
+                <p data-i18n="footer.copyright">© 2024 ultimAItech. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <script type="module" src="js/i18n.js"></script>
     <script type="module" src="js/navigation.js"></script>
-    <script type="module" src="js/animations.js"></script>
+    <script defer type="module" src="js/i18n.js"></script>
+    <script defer type="module" src="js/animations.js"></script>
+
+    <!-- Lazy Load Chatbot Widget -->
+    <script>
+        function loadChatbot() {
+            const script = document.createElement('script');
+            script.src = 'https://ultimaitech.com/vybris/api/static/widget.js?v=3';
+            script.setAttribute('data-id', 'bot_4efd6d886c97');
+            document.body.appendChild(script);
+        }
+        let loaded = false;
+        setTimeout(() => {
+            if (!loaded) { loadChatbot(); loaded = true; }
+        }, 3000);
+        ['click', 'scroll', 'mousemove'].forEach(event => {
+            window.addEventListener(event, () => {
+                if (!loaded) { loadChatbot(); loaded = true; }
+            }, { once: true });
+        });
+    </script>
 </body>
 
 </html>

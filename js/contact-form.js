@@ -59,36 +59,41 @@ class ContactForm {
         submitButton.disabled = true;
         submitButton.textContent = 'Sending...';
 
-        // Simulate form submission (replace with actual backend API)
-        setTimeout(() => {
-            this.showSuccess();
-            submitButton.disabled = false;
-            submitButton.textContent = originalText;
-            this.form.reset();
-        }, 1500);
-
-        // TODO: Replace with actual form submission to backend
-        /*
-        fetch('/api/contact', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(data),
+        // Send form data to FormSubmit.co (sends to info@ultimaitech.com)
+        fetch('https://formsubmit.co/ajax/info@ultimaitech.com', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+                name: data.name,
+                email: data.email,
+                company: data.company || 'Not provided',
+                phone: data.phone || 'Not provided',
+                service: data.service,
+                message: data.message,
+                _subject: `New Contact Form Submission from ${data.name}`,
+                _template: 'table'
+            }),
         })
-        .then(response => response.json())
-        .then(data => {
-          this.showSuccess();
-          this.form.reset();
-        })
-        .catch((error) => {
-          this.showError('An error occurred. Please try again.');
-        })
-        .finally(() => {
-          submitButton.disabled = false;
-          submitButton.textContent = originalText;
-        });
-        */
+            .then(response => response.json())
+            .then(result => {
+                if (result.success) {
+                    this.showSuccess();
+                    this.form.reset();
+                } else {
+                    this.showError('An error occurred. Please try again.');
+                }
+            })
+            .catch((error) => {
+                console.error('Form submission error:', error);
+                this.showError('An error occurred. Please try again.');
+            })
+            .finally(() => {
+                submitButton.disabled = false;
+                submitButton.textContent = originalText;
+            });
     }
 
     validateField(field) {

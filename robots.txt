@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+Disallow: /admin/
+Disallow: /private/
+
+Allow: /css/
+Allow: /js/
+Allow: /images/
+
+Sitemap: https://ultimaitech.com/sitemap.xml

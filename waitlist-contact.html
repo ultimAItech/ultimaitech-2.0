@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Your Waitlist Request - ultimAItech</title>
+    <meta name="description"
+        content="Finalize your waitlist application for ultimAItech Enterprise AI Chatbots.">
+
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/pages.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container nav-container">
+            <a href="./" class="nav-logo" aria-label="ultimAItech Home">
+                <img src="images/logo.svg" alt="ultimAItech" style="height: 62px; width: auto;">
+            </a>
+            
+            <!-- Simplified nav for specific flow focus -->
+             <ul class="nav-menu">
+                <li><a href="./" class="nav-link">Home</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="page-hero" style="position: relative; overflow: hidden; min-height: 40vh;">
+        <div class="glow-orb purple" style="top: 20%; right: 15%;"></div>
+        <div class="glow-orb blue" style="bottom: 30%; left: 10%;"></div>
+        <div class="container" style="position: relative; z-index: 2;">
+            <h1>One Last Step</h1>
+            <p>Please provide a few more details to secure your spot.</p>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="section contact-section" style="padding-top: 2rem;">
+        <div class="container">
+            <div class="contact-grid" style="grid-template-columns: 1fr; max-width: 800px; margin: 0 auto;">
+                <!-- Contact Form -->
+                <div class="contact-form-wrapper" data-animate="animate-fadeInUp">
+                    <form id="waitlist-contact-form" class="contact-form">
+                        <!-- Honeypot for spam protection -->
+                        <input type="text" name="website" style="display: none;" tabindex="-1" autocomplete="off">
+
+                        <div class="form-group">
+                            <label class="form-label" for="name">Name</label>
+                            <input type="text" id="name" name="name" class="form-input" required
+                                placeholder="Your name">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="email">Email</label>
+                            <input type="email" id="email" name="email" class="form-input" required readonly
+                                style="background-color: rgba(255, 255, 255, 0.05); cursor: not-allowed;"
+                                placeholder="your@email.com">
+                            <p style="font-size: 0.8rem; opacity: 0.7; margin-top: 0.5rem;">Email used for waitlist reservation.</p>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="company">Company</label>
+                            <input type="text" id="company" name="company" class="form-input"
+                                placeholder="Your company name">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="phone">Phone (optional)</label>
+                            <input type="tel" id="phone" name="phone" class="form-input"
+                                placeholder="+31 6 12 34 56 78">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="chatbot-count">Estimated Number of Chatbots</label>
+                            <select id="chatbot-count" name="chatbot_count" class="form-select" required>
+                                <option value="" disabled selected>Select an amount</option>
+                                <option value="1">1 Chatbot</option>
+                                <option value="2-5">2-5 Chatbots</option>
+                                <option value="6-10">6-10 Chatbots</option>
+                                <option value="10+">10+ Chatbots</option>
+                                <option value="unsure">Unsure / Need Advice</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="message">Anything else we should know? (Optional)</label>
+                            <textarea id="message" name="message" class="form-textarea"
+                                placeholder="Tell us about your use case..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+                            Secure My Spot
+                        </button>
+
+                        <!-- Error Message -->
+                        <div id="form-error" class="form-error hidden"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>© 2024 ultimAItech. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script type="module" src="js/waitlist-contact.js"></script>
+</body>
+
+</html>

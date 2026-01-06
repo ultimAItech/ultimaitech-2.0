@@ -51,12 +51,12 @@ class I18n {
     document.querySelectorAll('[data-i18n]').forEach(element => {
       const key = element.getAttribute('data-i18n');
       const translation = this.getNestedTranslation(key);
-      
+
       if (translation) {
         if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
           element.placeholder = translation;
         } else {
-          element.textContent = translation;
+          element.innerHTML = translation;
         }
       }
     });
@@ -71,10 +71,10 @@ class I18n {
 
   setupLanguageSwitcher() {
     const langButtons = document.querySelectorAll('.lang-option');
-    
+
     langButtons.forEach(button => {
       const lang = button.getAttribute('data-lang');
-      
+
       // Set active state
       if (lang === this.currentLang) {
         button.classList.add('active');
@@ -97,7 +97,7 @@ class I18n {
 
     this.currentLang = lang;
     localStorage.setItem('preferredLanguage', lang);
-    
+
     await this.loadTranslations(lang);
     this.applyTranslations();
     this.setupLanguageSwitcher();
